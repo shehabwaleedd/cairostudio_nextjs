@@ -1,0 +1,38 @@
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 2rem;
+    @media (max-width: 456px) {
+        flex-direction: column;
+        
+    }
+    a{
+        color: var(--container-color);
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    p{
+        margin: 0px;
+        display: flex;
+        overflow: hidden;
+        padding-right: 30px;
+        padding-top: 10px;
+        font-family: 'Outfit-Regular', sans-serif;
+        color: var(--container-color);
+        @media (max-width: 456px) {
+            font-size: 3vh;
+        }
+    }
+}
+@media only screen and (min-width: 600px) {
+    .body{
+        max-width: 1200px;
+        margin-top: 80px;
+
+        p{
+            font-size: 5vw;
+            padding-right: 2vw;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.aboutBelievers {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 3rem;
+    text-transform: uppercase;
+    padding-left: 2rem;
+    width: 90%;
+    @media (max-width: 456px) {
+        padding-left: 0rem;
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--container-color);
+        font-family: 'Outfit-Black';
+        width: 100%;
+        padding: 1rem;
+        height: 30%;
+        text-align: left;
+        padding-right: 2rem;
+        @media (max-width: 756px) {
+            font-size: 1.5rem;
+            padding-right: 5rem;
+        }
+        @media (max-width: 456px) {
+            width: 100%;
+            padding-right: 0rem;
+        }
+    }
+    span {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--container-color);
+        width: 51%;
+        padding: 1rem;
+        height: 30%;
+        text-align: justify;
+        font-family: 'Outfit-ExtraLight';
+        text-transform: capitalize;
+        @media (max-width: 1356px) {
+            width: 80%;
+        }
+        @media (max-width: 756px) {
+            width: 80%;
+            padding-right: 5rem;
+        }
+        @media (max-width: 456px) {
+            width: 100%;
+            padding-right: 0rem;
+            font-size: 1rem;
+        }
+    }
+}

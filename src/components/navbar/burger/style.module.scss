@@ -1,0 +1,116 @@
+.subMenu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .button {
+        width: 9.375rem;
+        height: 1.875rem;
+        background-color: var(--container-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        right: 0rem;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 9999;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        p {
+            display: none;
+            color: var(--nav-overlay-color);
+            margin: 0px;
+            text-transform: uppercase;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Outfit-Bold';
+            letter-spacing: 0.0rem;
+            font-size: 1.4rem;
+        }
+
+        .background {
+            background-color: var(--accent-color-second);
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            height: 0;
+            transition: height 0.3s;
+        }
+
+        &:hover {
+            p {
+                color: var(--nav-overlay-color);
+            }
+
+            .background {
+                height: 100%;
+
+                @media (max-width: 1120px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 270px) {
+        .button {
+            height: 7.5rem;
+
+            p {
+                display: block;
+            }
+        }
+    }
+
+    @media (max-width: 456px) {
+        .button {
+            width: 4.775rem;
+            height: 3.875rem;
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            .background {
+                display: none;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--container-color);
+        font-family: 'Outfit-Bold';
+        font-size: 0.9vw;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        transition: all 0.3s ease-in-out;
+        position: fixed;
+        z-index: 99;
+        top: 8rem;
+        right: 0rem;
+
+        @media (max-width: 1445px) {
+            font-size: 1.3vw;
+        }
+
+        @media (max-width: 1123px) {
+            font-size: 1.7vw;
+        }
+
+        @media (max-width: 778px) {
+            font-size: 2.5vw;
+        }
+
+        @media (max-width: 456px) {
+            font-size: 0.75rem;
+            top: 4.5rem;
+        }
+
+        &:hover {
+            color: var(--accent-color-second);
+        }
+    }
+}

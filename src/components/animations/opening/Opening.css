@@ -1,0 +1,73 @@
+.opening{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;  
+    z-index: 999999;
+    display: flex;
+    top: 0;
+    
+}
+
+.bar {
+    width: 10vw;
+    height: 115vh;
+    background-color: var(--background-color);
+}
+.counter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999;
+    display: flex;
+    right: 0;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: var(--container-color);
+    padding: 0.2em 0.4em;
+    font-size: 20vw;
+    font-family: "Outfit-Black", sans-serif;
+}
+
+.opening h2 {
+    position: fixed;
+    z-index: 9999999999;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--container-color);
+    font-size: 6vw;
+    text-transform: uppercase;
+    opacity: 0;
+    letter-spacing: 0.5rem;
+    line-height: 0;
+    width: 100%;
+    font-family: "Outfit-Black", sans-serif;
+}
+
+.opening h1 {
+    color: var(--container-color);
+}
+
+@media (max-width: 476px) {
+    .counter {
+        font-size: 15vw;
+    }
+    .logoname {
+        font-size: 6vw;
+        top: 40%;
+        left: 0%;
+    }
+}

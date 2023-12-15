@@ -1,0 +1,41 @@
+.cursor {
+    width: 2.25rem;
+    height: 2.25rem;
+    position: fixed;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+}
+
+.trail {
+    position: fixed;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--first-cursor-color);
+    pointer-events: none;
+    z-index: 1;
+    transition: all cubic-bezier(0.16, 1, 0.3, 1);
+    display: block;
+}
+
+.orange-trail {
+    background-color: var(--first-cursor-color);
+    width: 2.25rem;
+    height: 2.25rem;
+    z-index: 1;
+    position: fixed;
+    cursor: pointer;
+    pointer-events: none;
+    display: block;
+}
+
+.gray-trail {
+    background-color: var(--first-cursor-color);
+    width: 2.25rem;
+    height: 2.25rem;
+    z-index: 1;
+    position: fixed;
+    cursor: pointer;
+    mix-blend-mode: lighten;
+    display: block;
+}
