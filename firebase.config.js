@@ -10,8 +10,8 @@ const firebaseConfig = {
     projectId: "cairo-studio-94ed8",
     storageBucket: "cairo-studio-94ed8.appspot.com",
     messagingSenderId: "330092202147",
-    appId: "1:330092202147:web:3c3ed818acd76fbe5e5716",
-    measurementId: "G-0PP8CTFSLS"
+    appId: "1:330092202147:web:d444d60c4613c29e5e5716",
+    measurementId: "G-CW4KFYRLLJ"
 };
 
 // Initialize Firebase

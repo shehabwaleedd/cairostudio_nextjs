@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = dynamic(() => import('../components/hero/Hero'));
 const MainProjects = dynamic(() => import('../components/mainProjects/MainProjects'), {
   loading: () => <div style={{ height: 100 }}>loading...</div>,
-  ssr: false
+  ssr: true
 });
 const TextMask = dynamic(() => import('../components/textMask/TextMask'), { ssr: true });
 const AboutUs = dynamic(() => import('../components/aboutUs/AboutUs'), { ssr: true });

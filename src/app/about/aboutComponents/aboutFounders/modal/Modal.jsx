@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './style.module.css';
+import Image from 'next/image';
 import gsap from 'gsap';
 
 const scaleAnimation = {
@@ -46,7 +47,7 @@ const Modal = ({ modal, projects })  => {
                         projects.map((project, index) => {
                             const { src, color } = project
                             return <div className={styles.modal} style={{ backgroundColor: color }} key={`modal_${index}`}>
-                                <img src={src} width={300} height={0} alt="founders" title='founders' loading='lazy' />
+                                <Image src={src} width={300} height={0} alt="founders" title='founders' loading='lazy' />
                             </div>
                         })
                     }
