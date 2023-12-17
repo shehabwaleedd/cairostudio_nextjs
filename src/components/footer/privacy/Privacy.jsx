@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './Privacy.scss'
 import Data from './Data'
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head'
 
 const Privacy = () => {
     useEffect(() => {
@@ -9,34 +9,14 @@ const Privacy = () => {
     }, [])
     return (
         <section className='privacy'>
-            <Helmet>
-                <title>Cairo Studio - Privacy Policy</title>
-                <meta
-                    name="description"
-                    content="Learn about Cairo Studio's Privacy Policy and how we handle your personal information."
-                />
-                <meta name="keywords" content="Cairo Studio, Privacy Policy, Privacy, Policy" />
-                <meta name="robots" content="index, follow" />
+            <Head>
+                <title> Privacy Policy </title>
+                <meta name="description" content="Privacy Policy" />
+                <meta name="keywords" content="Privacy Policy" />
                 <meta name="author" content="Cairo Studio" />
-                <meta name="url" content="https://cairo-studio.com/privacy" />
-                <meta name="og:title" content="Cairo Studio - Privacy Policy" />
-                <meta name="og:description" content="Learn about Cairo Studio's Privacy Policy and how we handle your personal information." />
-                <meta name="og:image" content="https://cairo-studio.com/images/cairo.jpg" />
-                <meta name="og:url" content="https://cairo-studio.com/privacy" />
-                <meta name="og:site_name" content="Cairo Studio" />
-                <meta name="og:type" content="website" />
-                <meta name="twitter:card" content="summary" />
-                <meta name="twitter:site" content="@cairostudio1" />
-                <meta name="twitter:creator" content="@cairostudio1" />
-                <meta name="twitter:title" content="Cairo Studio - Privacy Policy" />
-                <meta name="twitter:description" content="Learn about Cairo Studio's Privacy Policy and how we handle your personal information." />
-                <meta name="twitter:url" content="https://cairo-studio.com/privacy" />
-                <meta name="format-detection" content="telephone=no" />
-                <meta name="application-name" content="Cairo Studio" />
-                <meta name="msapplication-TileColor" content="#ffffff" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 
-                <link rel="canonical" href="https://cairo-studio.com/privacy" />
-            </Helmet>
+            </Head>
             <h1>  Privacy Policy </h1>
             <div className="privacy__container">
                 {Data.map((item, index) => {

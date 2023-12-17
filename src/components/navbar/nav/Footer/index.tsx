@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                     variants={translate} initial="initial"
                     animate="enter"
                     exit="exit">
-                    <span>Location: </span> Cairo, Egypt
+                    Cairo, Egypt
                 </motion.li>
             </ul>
             <ul>

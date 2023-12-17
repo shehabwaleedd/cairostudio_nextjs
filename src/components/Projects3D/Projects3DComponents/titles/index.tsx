@@ -6,6 +6,7 @@ export interface ProjectData {
     title: string;
     speed: number;
     i: number;
+    link: string;
 }
 
 interface TitlesProps {

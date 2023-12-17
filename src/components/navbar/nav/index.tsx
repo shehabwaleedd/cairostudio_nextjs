@@ -27,13 +27,17 @@ type SelectedLink = {
     index: number;
 };
 
-const Index: React.FC = () => {
+type navProps = {
+    navOpen: boolean;
+};
+
+const Index: React.FC<navProps> = ({ navOpen }) => {
     const [selectedLink, setSelectedLink] = useState<SelectedLink>({ isActive: false, index: 0 });
 
     return (
         <motion.div
             initial="initial"
-            animate="animate"
+            animate="enter"
             exit="exit"
             variants={height}
             className={styles.nav}>

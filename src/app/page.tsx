@@ -1,37 +1,32 @@
 'use client'
-import React from 'react';
-const Hero = dynamic(() => import('../components/hero/Hero'));
-const MainProjects = dynamic(() => import('../components/mainProjects/MainProjects'), {
-  loading: () => <div style={{ height: 100 }}>loading...</div>,
-  ssr: true
-});
-const TextMask = dynamic(() => import('../components/textMask/TextMask'), { ssr: true });
-const AboutUs = dynamic(() => import('../components/aboutUs/AboutUs'), { ssr: true });
-const Projects = dynamic(() => import('../components/Projects3D/Projects'), { ssr: false });
-const Perpective = dynamic(() => import('../components/perpective/Perpective'), { ssr: false });
-const Faqs = dynamic(() => import('../components/workedWith/WorkedWith'), { ssr: false });
-import FaqsData from '../components/workedWith/WorkedWithData';
-import dynamic from 'next/dynamic';
+import React, { useEffect, useState } from 'react';
 import Opening from '../components/animations/opening/Opening';
+import dynamic from 'next/dynamic';
+const lazyComponent = dynamic(() => import('./lazyComponent'), { ssr: false });
+import withLazyLoad from '../withLazyLoad';
+import Head from 'next/head';
 
 const HomePage: React.FC = () => {
-  const hasAnimationShown = sessionStorage.getItem('hasAnimationShown');
+  const [hasAnimationShown, setHasAnimationShown] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const animationShown = sessionStorage.getItem('hasAnimationShown') === 'true';
+      setHasAnimationShown(animationShown);
+    }
+  }, []);
+  const LazyComponentWithLazyLoad = withLazyLoad(lazyComponent);
 
   return (
-    <main>
-      {!hasAnimationShown ? (<Opening />) : (null)}
+    <>
+      <Head>
+        
+      </Head>
+      <main>
+        {!hasAnimationShown && (<Opening />)}
+        <LazyComponentWithLazyLoad />
+      </main>
 
-      <Hero />
-      <MainProjects />
-      <TextMask />
-      <AboutUs />
-      <Projects />
-      <Perpective />
-      <div style={{ padding: "0 2rem" }}>
-        <Faqs Data={FaqsData} />
-      </div>
-
-    </main>
+    </>
   );
 }
 

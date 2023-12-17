@@ -15,7 +15,7 @@
     "@studio-freight/react-lenis": "^0.0.38",
     "@types/three": "^0.159.0",
     "firebase": "^10.6.0",
-    "framer-motion": "^10.16.5",
+    "framer-motion": "^10.16.16",
     "framer-motion-3d": "^10.16.5",
     "gsap": "^3.12.2",
     "lodash.debounce": "^4.0.8",
@@ -30,6 +30,7 @@
     "three": "^0.158.0"
   },
   "devDependencies": {
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

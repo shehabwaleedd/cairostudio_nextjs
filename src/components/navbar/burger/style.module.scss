@@ -6,8 +6,8 @@
     .button {
         width: 9.375rem;
         height: 1.875rem;
-        background-color: var(--container-color);
         display: flex;
+        background-color: var(--container-color);
         flex-direction: column;
         justify-content: flex-end;
         position: fixed;
@@ -27,9 +27,7 @@
             letter-spacing: 0.0rem;
             font-size: 1.4rem;
         }
-
         .background {
-            background-color: var(--accent-color-second);
             width: 100%;
             position: absolute;
             left: 0;
@@ -37,20 +35,8 @@
             z-index: -1;
             height: 0;
             transition: height 0.3s;
-        }
+            background-color: var(--background-color);
 
-        &:hover {
-            p {
-                color: var(--nav-overlay-color);
-            }
-
-            .background {
-                height: 100%;
-
-                @media (max-width: 1120px) {
-                    display: none;
-                }
-            }
         }
     }
 

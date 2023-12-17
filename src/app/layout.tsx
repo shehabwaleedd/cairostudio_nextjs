@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-
 import Navbar from '../components/navbar/Nabvar'
 import './globals.css';
 const FooterWithNoSSR = dynamic(() => import('../components/footer/Footer'), {
@@ -14,8 +13,7 @@ import SmoothScrolling from '@/components/SmoothScrolling';
 export const metadata: Metadata = {
   title: 'Cairo Studio | Leading in UI/UX & Web Development',
   description: 'Elevating digital experiences with Cairo Studio. Specialized in innovative UI/UX design, responsive web development, and unique brand identity solutions. Visit us for cutting-edge, user-centric digital designs that blend functionality with visual appeal.',
-  metadataBaseURL: 'https://www.cairo.studio',
-
+  metadataBase: new URL('https://cairo-studio.com'),
   keywords: [
     'UI/UX Design',
     'Web Development',
@@ -37,7 +35,10 @@ export const metadata: Metadata = {
     'Cairo',
     'Egypt',
   ],
-
+  referrer: 'origin-when-cross-origin',
+  robots: 'index, follow',
+  googlebot: 'index, follow',
+  canonical: 'https://www.cairo.studio',
   openGraph: {
     title: 'Cairo Studio | UI/UX Design, Web Development & Brand Identity',
     description: 'Cairo Studio is a leading digital design agency specializing in UI/UX design, responsive web development, and unique brand identity solutions. We create user-centric, innovative digital experiences that blend functionality with visual appeal. Elevate your brand with Cairo Studio.',
@@ -60,15 +61,19 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@cairostudio',
     creator: '@cairostudio',
+    title: 'Cairo Studio | UI/UX Design, Web Development & Brand Identity',
+    description: 'Cairo Studio is a leading digital design agency specializing in UI/UX design, responsive web development, and unique brand identity solutions. We create user-centric, innovative digital experiences that blend functionality with visual appeal. Elevate your brand with Cairo Studio.',
+    image: 'https://www.cairo.studio/og-image.png',
+    url: 'https://www.cairo.studio',
+
   },
   icons: {
     favicon: '/favicon.ico',
     appleTouchIcon: '/apple-touch-icon.png',
     androidChrome: '/android-chrome-192x192.png',
     msTileImage: '/mstile-150x150.png',
-  }
+  },
 }
-
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

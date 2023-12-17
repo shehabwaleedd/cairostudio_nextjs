@@ -6,11 +6,12 @@ import './styles.module.scss';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { useSwipeable } from 'react-swipeable';
-import { debounce } from 'lodash.debounce';
+import debounce  from 'lodash.debounce';
 import Head from 'next/head';
 import gsap from 'gsap';
 import Image from 'next/image';
 import { Project } from '@/common/types';
+const CaseComponent = dynamic(() => import('./(component)'), { ssr: false });
 
 const useFetchProjects = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -102,27 +103,13 @@ const CaseStudy = () => {
     return (
         <>
             <Head>
-                {/* Head content */}
+                <title>Case Study | Cairo Studio</title>
+                <meta name='description' content='Case Study | Cairo Studio' />
+                <link rel='icon' href='/favicon.ico' />
             </Head>
             <main className='showCase'>
                 <div className='showCase__container' {...handlers}>
-                    {projects.map((item, index) => (
-                        <React.Fragment key={item.id}>
-                            <Link href={`/case-study/${item.title}`} passHref>
-                                <div ref={(el) => (sliderRefs.current[index] = el)}>
-                                    <Image src={item.cover} alt={item.title} layout='fill' objectFit='cover' className={`slider__item ${current === index ? 'slider__item--current' : ''}`} />
-                                </div>
-                            </Link>
-                            <div className='showCase__title'>
-                                {item.title !== 'Swag' && <h1 className='showCase__title__text'>{item.title}</h1>}
-                            </div>
-                            <Link href={`/case-study/${item.title}`} passHref>
-                                <div ref={(el) => (innerSmallRefs.current[index] = el)}>
-                                    <Image src={item.homePage} alt={item.title + ' homepage'} layout='fill' blurDataURL={item.homePage} quality={100} placeholder='blur' className={`slider__item-small ${current === index ? 'slider__item--current-small' : ''}`} />
-                                </div>
-                            </Link>
-                        </React.Fragment>
-                    ))}
+                    <CaseComponent  projects={projects}  current={current}  sliderRefs={sliderRefs}  innerSmallRefs={innerSmallRefs}/>
                     <div className='currentProject'>
                         <p className='currentProject__length'>
                             00-{current + 1} — 00-{projects.length}

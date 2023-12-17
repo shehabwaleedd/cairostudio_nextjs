@@ -76,3 +76,27 @@ export const translate = {
         transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1] }
     })
 }
+
+export const textVariants = {
+    open: {
+        color: "var(--container-color)",
+        transition: { duration: 0.2 }
+    },
+    closed: {
+        color: "var(--background-color)",
+        transition: { duration: 0.2 }
+    }
+};
+
+export const backgroundVariant = {
+    open: {
+        height: "100%",
+        backgroundColor: "var(--background-color)",
+        transition: { duration: 0.2}
+    },
+    closed: {
+        height: "0%",
+        backgroundColor: "var(--background-color)",
+        transition: { duration: 0.2}
+    }
+};

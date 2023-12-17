@@ -12,7 +12,6 @@ export interface ProjectsDetailsProps {
         title: string;
     };
 }
-
 export interface CollectiveItem {
     type: string;
     items: ProjectDetail[];
@@ -119,8 +118,12 @@ export interface RelatedWorkProps {
 export interface Metadata {
     title: string;
     description: string;
-    metadataBaseURL: string;
+    metadataBase: any;
     keywords: string[];
+    referrer: string;
+    canonical: string;
+    robots: string;
+    googlebot: string;
     openGraph: {
         title: string;
         description: string;
@@ -141,6 +144,10 @@ export interface Metadata {
         card: string;
         site: string;
         creator: string;
+        title: string;
+        description: string;
+        image: string;
+        url: string;
     };
     icons: {
         favicon: string;
@@ -148,7 +155,6 @@ export interface Metadata {
         msTileImage: string;
         androidChrome: string;
     };
-
 }
 
 export interface Dimension {
@@ -157,14 +163,6 @@ export interface Dimension {
 }
 
 export interface AnimatedTextProps {
-    data: {
-        title: string;
-        speed: number;
-    };
-}
-
-export interface ProjectsDetailsProps {
-    title: string;
     data: {
         title: string;
         speed: number;
@@ -220,4 +218,10 @@ export interface WorkedWith {
 
 export interface WorkedWithContent {
     // Define the structure for content used in WorkedWith component
+}
+
+export interface FetchProjectsResponse {
+    projects: Project[];
+    loading: boolean;
+    error: string | null;
 }

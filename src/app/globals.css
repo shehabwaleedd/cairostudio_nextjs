@@ -115,29 +115,12 @@ img {
   color: var(--nav-overlay-color);
 }
 
-@media (max-width: 550px) {
+
   ::-webkit-scrollbar {
     display: none;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--scrollbarThumb-color);
-    border-radius: 10px;
 
-  }
-
-  ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-  }
-
-  ::selection {
-    background-color: var(--accent-color);
-    color: var(--container-color);
-  }
-
-
-}
 
 
 .hiddenn {

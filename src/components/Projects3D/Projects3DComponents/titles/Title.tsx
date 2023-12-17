@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-
 import styles from './style.module.scss';
 
 interface TitleProps {

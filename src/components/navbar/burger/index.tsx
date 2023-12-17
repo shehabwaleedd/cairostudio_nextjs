@@ -1,29 +1,7 @@
 import { motion } from 'framer-motion';
 import styles from './style.module.scss';
 import Link from 'next/link';
-
-// Define your animation variants
-const buttonVariants = {
-    open: {
-        backgroundColor: "var(--accent-color)",
-        transition: { duration: 0.2 }
-    },
-    closed: {
-        backgroundColor: "var(--container-color)",
-        transition: { duration: 0.2 }
-    }
-};
-
-const textVariants = {
-    open: {
-        color: "var(--container-color)",
-        transition: { duration: 0.2 }
-    },
-    closed: {
-        color: "var(--background-color)",
-        transition: { duration: 0.2 }
-    }
-};
+import { backgroundVariant, textVariants } from '../anim';
 
 // Define the types for your props
 type Props = {
@@ -39,10 +17,11 @@ const SubMenu: React.FC<Props> = ({ openMenu, isContactPage, navOpen }) => {
             <motion.div
                 onClick={() => openMenu()}
                 className={styles.button}
-                variants={buttonVariants}
-                animate={navOpen ? "open" : "closed"}
             >
-                <div className={styles.background}></div>
+                <motion.div 
+                    variants={backgroundVariant}
+                    animate={navOpen ? "open" : "closed"}
+                className={styles.background}></motion.div>
                 <motion.p
                     variants={textVariants}
                     animate={navOpen ? "open" : "closed"}

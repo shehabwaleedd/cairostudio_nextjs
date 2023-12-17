@@ -24,18 +24,18 @@
     }
 
     li{
-        color: var(--accent-color);
+        color: var(--background-color);
         span{
             padding-left: 0.4rem;
-            color: var(--container-color);
-            font-family: 'Outfit-Thin', sans-serif;
+            color: var(--background-color);
+            font-family: 'Outfit-Regular', sans-serif;
         }
         a {
-            color: var(--accent-color);
+            color: var(--background-color);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             &:hover{
-                color: var(--accent-color-second);
+                color: var(--background-color);
             }
         }
     }

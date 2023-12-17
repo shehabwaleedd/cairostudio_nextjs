@@ -2,17 +2,17 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     top: 0;
     left: 0;
     padding: 2rem;
     height: 6.5vh;
     width: 100%;
     overflow: hidden;
-    background-color: var(--background-color);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 999;
-
+    z-index: 9999;
+    border-bottom: 1px solid var(--container-color);
+    background-color: var(--background-color);
     @media (max-width: 454px) {
         padding: 1rem;
         position: fixed;
@@ -21,33 +21,36 @@
     .nav__container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         width: 100%;
 
-        h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            font-family: 'Outfit-Black';
-            color: var(--container-color);
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-
-            @media (max-width: 454px) {
-                font-size: 1rem;
+        a {
+            width: 100%;
+            h1 {
+                font-size: 1.5vw;
+                font-weight: 600;
+                font-family: 'Outfit-Black';
+                color: var(--container-color);
+                letter-spacing: 0.2rem;
+                text-transform: uppercase;
+                width: 100%;
+                transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                @media (max-width: 454px) {
+                    font-size: 1rem;
+                }
+    
             }
-
         }
 
         .nav__corner {
             display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            padding-top: 0.5rem;
-
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+            width: 100%;
             h2 {
                 position: relative;
-                left: -10rem;
+                left: 0rem;
                 font-size: 1rem;
                 font-weight: 600;
                 font-family: 'Outfit-Regular';
@@ -55,14 +58,40 @@
                 text-transform: lowercase;
 
                 @media (max-width: 456px) {
-                    left: -6rem;
+                    left: 0rem;
                     font-size: 0.8rem;
                 }
 
                 @media (max-width: 306px) {
                     display: none;
                 }
+            }
 
+            .menuNav {
+                cursor: pointer;
+            }
+
+            .navLinks {
+                gap: 1rem;
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+                ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                    height: 100%;
+                    gap: 1rem;
+                    li {
+                        position: relative;
+                        font-size: 1.5vw;
+                        font-weight: 600;
+                        font-family: 'Outfit-Medium';
+                        color: var(--container-color);
+                        text-transform: uppercase;
+                    }
+                }
             }
         }
     }

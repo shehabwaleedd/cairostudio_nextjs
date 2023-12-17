@@ -1,26 +1,36 @@
-import React, { useRef } from 'react';
-import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AnimatedTextProps } from '@/common/types';
 
 import './AnimatedText.scss';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const AnimatedText: React.FC<AnimatedTextProps> = ({ data }) => {
-    const { title, speed } = data;
-    const container = useRef < HTMLDivElement > (null);
+    const { title } = data;
+    const container = useRef<HTMLDivElement>(null);
+    const text = useRef<HTMLParagraphElement>(null);
 
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ['start end', `${20 / speed}vw end`],
-    });
-
-    const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
-    const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
+    useEffect(() => {
+        gsap.fromTo(text.current, { clipPath: 'inset(0 100% 0 0)' }, { 
+            clipPath: 'inset(0 0% 0 0)', 
+            duration: 1,
+            scrollTrigger: {
+                trigger: container.current!,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+    }, []);
 
     return (
         <div ref={container} className="title">
             <div className="wrapper">
-                <motion.p style={{ clipPath: clip }}>
+                <p ref={text}>
                     {title}
-                </motion.p>
+                </p>
                 <p>
                     {title}
                 </p>

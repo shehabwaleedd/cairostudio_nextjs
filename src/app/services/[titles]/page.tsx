@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useMemo } from 'react'
 import Data from '../Data';
 import './ServicesSections.scss';
 import Link from 'next/link';
-import { Helmet } from 'react-helmet-async';
 import WorkedWith from '../../../components/workedWith/WorkedWith';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import RelatedWork from '../../../components/relatedWork/RelatedWork';

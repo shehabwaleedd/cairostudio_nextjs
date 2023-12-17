@@ -39,9 +39,7 @@ const Body: React.FC<BodyProps> = ({ links, selectedLink, setSelectedLink }) => 
                     return <Link key={`l_${index}`} href={href}>
                         <motion.p
                             onMouseOver={() => { setSelectedLink({ isActive: true, index }) }}
-                            onMouseLeave={() => { setSelectedLink({ isActive: false, index }) }}
-                            variants={blur}
-                            animate={selectedLink.isActive && selectedLink.index != index ? "open" : "closed"}>
+                            onMouseLeave={() => { setSelectedLink({ isActive: false, index }) }}>
                             {getChars(title)}
                         </motion.p>
                     </Link>
