@@ -4,18 +4,16 @@
     width: 100%;
     z-index: 9999;
     background-color: var(--accent-color);
+    top: 4rem;
     .wrapper {
         display: flex;
         gap: 50px;
         margin-bottom: 80px;
-
     }
-
     .container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
     }
 }
 

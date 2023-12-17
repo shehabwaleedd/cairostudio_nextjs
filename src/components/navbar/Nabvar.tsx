@@ -73,7 +73,9 @@ const Nabvar: React.FC = () => {
                                     {links.map((link, index) => {
                                         return (
                                             <li key={index}>
-                                                {link.title}
+                                                <Link href={link.href}>
+                                                    {link.title}
+                                                </Link>
                                             </li>
                                         )
                                     })}
@@ -85,10 +87,10 @@ const Nabvar: React.FC = () => {
                         </div>
                     </div>
                 </motion.nav>
+                <AnimatePresence mode='wait'>
+                    {navOpen && <Nav navOpen={navOpen} />}
+                </AnimatePresence>
             </header>
-            <AnimatePresence mode='wait'>
-                {navOpen && <Nav navOpen={navOpen}/>}
-            </AnimatePresence>
         </>
 
     );
