@@ -94,7 +94,24 @@ const ProjectsDetails = ({ params }) => {
     return (
         <>
             <Head>
-
+                <title>{project.title} | Cairo Studio</title>
+                <meta name="description" content={project.description} />
+                <meta property="og:title" content={project.title} />
+                <meta property="og:description" content={project.description} />
+                <meta property="og:image" content={project.cover} />
+                <meta property="og:url" content={`https://cairo.studio/case-study/${project.title}`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="en_US" />
+                <meta property="og:site_name" content="Cairo Studio" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@cairostudio" />
+                <meta name="twitter:creator" content="@cairostudio" />
+                <meta name="twitter:title" content={project.title} />
+                <meta name="twitter:description" content={project.description} />
+                <meta name="twitter:image" content={project.cover} />
+                <meta name="twitter:url" content={`https://cairo.studio/case-study/${project.title}`} />
+                <link rel="canonical" href={`https://cairo.studio/case-study/${project.title}`} />
+                
             </Head>
             <Stairs>
                 <motion.main className='projectsDetails' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 100 }} transition={{ duration: 0.4, damping: 12, stiffness: 100, ease: [0.42, 0, 0.58, 1] }}>
