@@ -8,7 +8,7 @@
         
     }
     a{
-        color: var(--background-color);
+        color: var(--nav-overlay-color);
         text-decoration: none;
         text-transform: uppercase;
     }
@@ -19,7 +19,6 @@
         padding-right: 30px;
         padding-top: 10px;
         font-family: 'Outfit-Regular', sans-serif;
-        color: var(--background-color);
         @media (max-width: 456px) {
             font-size: 3vh;
         }

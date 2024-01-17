@@ -3,19 +3,16 @@ import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../../../firebase.config';
-import { Project, ProjectsDetailsProps, Section, Item } from '@/common/types';
+import { Project, Section, Item } from '@/common/types';
 import "./Details.scss"
-import Loading from '@/utils/loading/Loading';
 import Stairs from "../../../components/transition/Stairs"
 import Head from 'next/head';
-
-const ProjectsDetails: React.FC<ProjectsDetailsProps> = ({ params }) => {
-
-    const ref = useRef<HTMLDivElement>(null);
-    const imgRef = useRef<HTMLDivElement>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
-    const [project, setProject] = useState<Project | null>(null);
+const ProjectsDetails = ({ params }) => {
+    const ref = useRef(null);
+    const imgRef = useRef(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [project, setProject] = useState(null);
 
     const fetchData = useCallback(async () => {
         setLoading(true);
@@ -24,11 +21,11 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = ({ params }) => {
             const projectsData = querySnapshot.docs.map((doc) => ({
                 ...doc.data(),
                 id: doc.id,
-            })) as Project[];
+            }));
             const project = projectsData.find((p) => p.title === params.title);
             if (!project) throw new Error('Project not found');
             setProject(project);
-        } catch (err: any) {
+        } catch (err) {
             setError(err.message);
         } finally {
             setLoading(false);
@@ -39,7 +36,7 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = ({ params }) => {
         fetchData();
     }, [fetchData]);
 
-    const renderDetails = (leftSection?: Section, rightSection?: Section) => {
+    const renderDetails = (leftSection, rightSection) => {
         if (!leftSection || !rightSection) return null;
         return (
             <motion.div className="prdeco__final" ref={ref}>
@@ -61,7 +58,7 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = ({ params }) => {
         );
     };
 
-    const renderImages = (items?: Item[]) => {
+    const renderImages = (items) => {
 
         return (
             <motion.div className="prdeco__collective1" >
@@ -89,7 +86,7 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = ({ params }) => {
     );
 
 
-    if (loading) return <Loading height={100} />;
+    if (loading) return <div>LOADING</div>;
     if (error) return <p style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", fontSize: "2rem", color: "var(--accent-color)" }}>Error: {error}</p>;
     if (!project) return <p>NOT FOUND</p>
 
@@ -97,8 +94,8 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = ({ params }) => {
     return (
         <>
             <Head>
-                
-            </Head> 
+
+            </Head>
             <Stairs>
                 <motion.main className='projectsDetails' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 100 }} transition={{ duration: 0.4, damping: 12, stiffness: 100, ease: [0.42, 0, 0.58, 1] }}>
                     <h1>{project.title}</h1>

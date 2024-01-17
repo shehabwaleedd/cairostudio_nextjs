@@ -3,7 +3,7 @@ import './Privacy.scss'
 import Data from './Data'
 import Stairs from "../../components/transition/Stairs"
 import Head from 'next/head'
-
+import getChars from '@/utils/getChars'
 const Privacy = () => {
     return (
         <>
@@ -23,7 +23,9 @@ const Privacy = () => {
             </Head>
             <Stairs>
                 <section className='privacy'>
-                    <h1>  Privacy Policy </h1>
+                    <div className="privacy__title">
+                        {getChars("Privacy Policy")}
+                    </div>
                     <div className="privacy__container">
                         {Data.map((item, index) => {
                             return (

@@ -1,12 +1,12 @@
+import React from 'react';
 import dynamic from 'next/dynamic';
 import Navbar from '../components/navbar/Nabvar'
 import './globals.css';
-const FooterWithNoSSR = dynamic(() => import('../components/footer/Footer'), {
-  ssr: false, // Disable server-side rendering
-});
+const FooterWithNoSSR = dynamic(() => import('../components/footer/Footer'), { ssr: false });
 import { Metadata } from '@/common/types';
 import SmoothScrolling from '@/components/SmoothScrolling';
-
+import { UserContextProvider } from '../components/authContext/AuthContext';
+import { AnimatePresence } from 'framer-motion';
 
 
 
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   robots: 'index, follow',
   googlebot: 'index, follow',
-  canonical: 'https://www.cairo.studio',
+  canonical: 'https://www.cairo-studio.com',
   openGraph: {
     title: 'Cairo Studio | UI/UX Design, Web Development & Brand Identity',
     description: 'Cairo Studio is a leading digital design agency specializing in UI/UX design, responsive web development, and unique brand identity solutions. We create user-centric, innovative digital experiences that blend functionality with visual appeal. Elevate your brand with Cairo Studio.',
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     site_name: 'Cairo Studio',
     type: 'website',
     locale: "en_US",
-    url: 'https://www.cairo.studio',
+    url: 'https://www.cairo-studio.com',
     images: [
       {
-        url: 'https://www.cairo.studio/og-image.png',
+        url: 'https://www.cairo-studio.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Cairo Studio | UI/UX Design, Web Development & Brand Identity',
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     creator: '@cairostudio',
     title: 'Cairo Studio | UI/UX Design, Web Development & Brand Identity',
     description: 'Cairo Studio is a leading digital design agency specializing in UI/UX design, responsive web development, and unique brand identity solutions. We create user-centric, innovative digital experiences that blend functionality with visual appeal. Elevate your brand with Cairo Studio.',
-    image: 'https://www.cairo.studio/og-image.png',
-    url: 'https://www.cairo.studio',
+    image: 'https://www.cairo-studio.com/og-image.png',
+    url: 'https://www.cairo-studio.com/',
 
   },
   icons: {
@@ -80,9 +80,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="noise" suppressHydrationWarning>
       <body>
         <Navbar />
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+        <UserContextProvider>
+          <SmoothScrolling>
+            {children}
+          </SmoothScrolling>
+        </UserContextProvider>
         <FooterWithNoSSR />
       </body>
     </html>

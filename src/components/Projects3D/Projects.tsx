@@ -1,7 +1,6 @@
 'use client'
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 import styles from './Projects.module.scss'; // Assuming CSS Modules
-import Loading from '../../utils/loading/Loading'; // Adjust path as needed
 import Image from 'next/image';
 
 const EarthComponent = lazy(() => import('./Projects3DComponents/earth'));
@@ -31,7 +30,7 @@ const Projectss: React.FC = () => {
                         <EarthComponent />
                     </Suspense>
                 )}
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<div>LOADING</div>}>
                     <Projects3D />
                 </Suspense>
             </div>

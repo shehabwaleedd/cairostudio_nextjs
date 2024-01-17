@@ -3,7 +3,6 @@
 import React from 'react';
 import './Footer.scss'
 import Link from 'next/link'; // Using Next.js Link
-import { PiArrowUpRight } from 'react-icons/pi'
 import { useRouter } from 'next/navigation';
 
 
@@ -60,7 +59,7 @@ const Footer: React.FC = () => {
             <div className="nextPage">
                 <h2>Next Page</h2>
                 <Link href={nextPage} className="next-page-link">
-                    {nextPageName} <PiArrowUpRight />
+                    {nextPageName}
                 </Link>
             </div>
         );

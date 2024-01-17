@@ -3,16 +3,13 @@ import React from 'react';
 import useFetchProjects from '../../components/useFetchProjects/useFetchProjects';
 import './ProjectsPage.scss';
 import RelatedWork from '../../components/relatedWork/RelatedWork';
-import Loading from '../../utils/loading/Loading';
 import { FetchProjectsResponse, Project } from '@/common/types';
 import Stairs from '../../components/transition/Stairs';
 
 const ProjectsPage: React.FC = () => {
     const { projects, loading, error }: FetchProjectsResponse = useFetchProjects();
-
     const allProjectsNames: string[] = projects.map((project: Project) => project.title);
-
-    if (loading) return <Loading height={100} />
+    if (loading) return <div>LOADING</div>;
 
     if (error) return <div>{error}</div>
 

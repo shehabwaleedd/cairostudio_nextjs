@@ -33,8 +33,6 @@ const useIntersectionObserver = (
         };
     }, [threshold, hasRendered, count]);
 
-    console.log({ isIntersecting, hasRendered });
-
     return [isIntersecting || hasRendered, ref];
 };
 

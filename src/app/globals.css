@@ -135,7 +135,7 @@ img {
 
 .noise::before {
   content: "";
-  background-image: url("../../public/assets/noise.png");
+  background-image: url("../../public/assets/noise.webp");
   height: 300%;
   left: -50%;
   opacity: .036;

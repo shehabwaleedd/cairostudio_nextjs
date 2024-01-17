@@ -1,9 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import Burger from './burger';
-import Body from './nav/Body';
 import { usePathname } from 'next/navigation';
 import './Navbar.scss';
 import dynamic from 'next/dynamic';

@@ -8,7 +8,6 @@ import thefwa from "../../../public/assets/fwa-logo-C34FEDAC2B-seeklogo.com.png"
 import Image from 'next/image';
 import Link from 'next/link';
 import useFetchProjects from '../../components/useFetchProjects/useFetchProjects';
-import Loading from '../../utils/loading/Loading';
 import { Project } from '@/common/types';
 import { useRouter } from 'next/navigation';
 import './Services.scss';
@@ -40,7 +39,7 @@ const Services: React.FC = () => {
     }
 
     if (loading) {
-        return <Loading height={100} />;
+        return <div>LOADING</div>;
     }
 
     if (error) {

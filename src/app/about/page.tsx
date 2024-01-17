@@ -18,7 +18,18 @@ const About: React.FC = () => {
     return (
         <>
             <Head>
-
+                <title>About | Cairo Studio</title>
+                <meta name="description" content="Cairo Studio is a digital design studio based in Cairo, Egypt. We are specialized in web development, brand identity, website UI – UX design, graphic design, marketing & illustration." />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://cairo-studio.com" />
+                <meta property="twitter:title" content="About" />
+                <meta property="twitter:description" content="Cairo Studio About Page" />
+                <meta property="twitter:image" content="https://cairo-studio.com/aboutlanding.webp" />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://cairo-studio.com" />
+                <meta property="og:title" content="About" />
+                <meta property="og:description" content="Cairo Studio About Page" />
+                <meta property="og:image" content="https://cairo-studio.com/aboutlanding.webp" />
             </Head>
             <Stairs>
                 <motion.main className='about'>

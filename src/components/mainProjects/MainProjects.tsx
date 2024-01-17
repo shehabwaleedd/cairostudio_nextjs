@@ -37,13 +37,8 @@ const MainProjects: React.FC = () => {
                         key={index}
                     >
                         <div className={styles.mainProjects__item__imgContainer}>
-                            <motion.div className={styles.mainProjectsCo__imgs}>
-                                <motion.div
-                                    initial={{ opacity: 0, y: 100 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 100 }}
-                                    className={styles.mainProjects__item__img}
-                                >
+                            <div className={styles.mainProjectsCo__imgs}>
+                                <motion.div className={styles.mainProjects__item__img}>
                                     <Image
                                         src={item.poster}
                                         alt={item.title}
@@ -52,9 +47,7 @@ const MainProjects: React.FC = () => {
                                         blurDataURL={item.poster}
                                         width={500}
                                         height={400}
-                                        loading="eager"
-                                        quality={100}
-                                        priority
+                                        loading="lazy"
                                         style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
 
                                     />
@@ -79,7 +72,7 @@ const MainProjects: React.FC = () => {
                                         )}
                                     </AnimatePresence>
                                 </motion.div>
-                            </motion.div>
+                            </div>
                         </div>
                         <div className={styles.mainProjects__item__desc}>
                             <p>{item.categories.join(' - ')}</p>

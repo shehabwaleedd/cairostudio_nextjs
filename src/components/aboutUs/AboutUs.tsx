@@ -1,9 +1,10 @@
+'use client'
 import React from 'react';
 import "./AboutUs.scss";
 import dynamic from 'next/dynamic';
 const AnimatedText = dynamic(() => import('../animatedText/AnimatedText'), { ssr: false });
 
-import { PiStarFourFill } from 'react-icons/pi';
+
 
 const AboutUs: React.FC = () => {
     return (
@@ -14,7 +15,6 @@ const AboutUs: React.FC = () => {
                 <AnimatedText data={{ title: 'websites and mobile applications that are', speed: 0.8 }} />
                 <AnimatedText data={{ title: 'modern, future-proof, and easy to use.', speed: 0.8 }} />
                 <div className="aboutus__lower">
-                    <PiStarFourFill style={{color: "var(--container-color)", fontSize: "1rem"}}/>
                     <h3> At Cairo Studio, we redefine the boundaries of digital creation <br /> through a team of highly skilled designers and developers. <br /></h3>
                 </div>
             </div>
