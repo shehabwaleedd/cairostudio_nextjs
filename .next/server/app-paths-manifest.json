@@ -1,3 +1,18 @@
 {
-  "/page": "app/page.js"
+  "/_not-found": "app/_not-found.js",
+  "/about/page": "app/about/page.js",
+  "/admin/[title]/page": "app/admin/[title]/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/case-study/[title]/page": "app/case-study/[title]/page.js",
+  "/case-study/page": "app/case-study/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/services/[titles]/page": "app/services/[titles]/page.js",
+  "/services/page": "app/services/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/work/page": "app/work/page.js",
+  "/admin/newItem/page": "app/admin/newItem/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
