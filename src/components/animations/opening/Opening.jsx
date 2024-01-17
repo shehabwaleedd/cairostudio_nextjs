@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
+import useFetchProjects from '../../../hooks/useFetchProjects';
 import './Opening.css';
 
 const Opening = () => {
     const [currentValue, setCurrentValue] = useState(0);
     const [animationComplete, setAnimationComplete] = useState(false);
     const openingRef = useRef(null);
+
+    useFetchProjects();
 
     useEffect(() => {
         let interval;

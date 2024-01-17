@@ -17,7 +17,7 @@ const LazyComponent = () => {
                 <h1 style={{ color: '#fff', textAlign: 'center', marginTop: '50vh' }}>Loading...</h1>
             </div>}>
             <Stairs>
-                <Hero /> 
+                <Hero />
                 <MainProjects />
                 <TextMask />
                 <AboutUs />

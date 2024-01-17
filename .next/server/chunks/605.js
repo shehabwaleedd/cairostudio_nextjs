@@ -1,0 +1,1 @@
+"use strict";exports.id=605,exports.ids=[605],exports.modules={14605:(e,o,t)=>{t.r(o),t.d(o,{$$typeof:()=>d,__esModule:()=>s,default:()=>a});let r=(0,t(86843).createProxy)(String.raw`/Users/shehabwaleed/Development/work/cairostudio/src/components/footer/Footer.tsx`),{__esModule:s,$$typeof:d}=r,a=r.default}};

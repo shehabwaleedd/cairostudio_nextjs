@@ -2,18 +2,11 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import Opening from '../components/animations/opening/Opening';
 import dynamic from 'next/dynamic';
-const LazyComponent = dynamic(() => import('./lazyComponent'), { ssr: false });
 import Head from 'next/head';
+import LazyComponent from './lazyComponent';
 
 const HomePage: React.FC = () => {
-  const [hasAnimationShown, setHasAnimationShown] = useState(false);
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const animationShown = sessionStorage.getItem('hasAnimationShown') === 'true';
-      setHasAnimationShown(animationShown);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sessionStorage.getItem('hasAnimationShown')]); // Add this line
+  
   return (
     <>
       <Head>
@@ -31,13 +24,7 @@ const HomePage: React.FC = () => {
         <meta property="og:image" content="https://cairo-studio.com/images/cairostudio.jpg" />
       </Head>
       <main>
-        {!hasAnimationShown && (<Opening />)}
-        <Suspense fallback={
-          <div>
-            <h1 style={{ color: '#fff', textAlign: 'center' }}>Loading...</h1>
-          </div>}>
-          <LazyComponent />
-        </Suspense >
+        <LazyComponent />
       </main >
     </>
   );

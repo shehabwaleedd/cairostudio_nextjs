@@ -262,8 +262,8 @@
             .coco__right {
                 display: flex;
                 flex-direction: column;
-                align-items: start;
-                justify-content: start;
+                align-items: flex-start;
+                justify-content: flex-start;
                 width: 100%;
                 height: 100%;
                 @media (min-width: 1200px) {

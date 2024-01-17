@@ -10,7 +10,7 @@ const getChars = (word: string) => {
             initial="initial"
             animate="enter"
             exit="exit"
-            key={char + i}
+            key={i}
         >
             {char === " " ? "\u00A0" : char}
         </motion.h1>
