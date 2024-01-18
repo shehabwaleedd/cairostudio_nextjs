@@ -1,4 +1,4 @@
-.opening{
+.opening {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,18 +10,19 @@
 .overlay {
     position: fixed;
     width: 100vw;
-    height: 100vh;  
+    height: 100vh;
     z-index: 999999;
     display: flex;
     top: 0;
-    
+
 }
 
 .bar {
-    width: 10vw;
+    width: 20vw;
     height: 115vh;
     background-color: var(--background-color);
 }
+
 .counter {
     position: fixed;
     bottom: 0;
@@ -65,9 +66,15 @@
     .counter {
         font-size: 15vw;
     }
+
     .logoname {
         font-size: 6vw;
         top: 40%;
         left: 0%;
+        letter-spacing: 0.1rem;
+    }
+
+    .cairostudio {
+        letter-spacing: 0.2rem;
     }
 }

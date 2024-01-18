@@ -7,13 +7,24 @@ import { Project, Section, Item } from '@/common/types';
 import "./Details.scss"
 import Stairs from "../../../components/transition/Stairs"
 import Head from 'next/head';
+
+import { useMetadata } from '@/hooks/useMetaData';
+import { Metadata } from 'next';
+
+
+
+
 const ProjectsDetails = ({ params }) => {
+
+    const { metadata } = useMetadata();
+
+    
+
     const ref = useRef(null);
     const imgRef = useRef(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [project, setProject] = useState(null);
-
     const fetchData = useCallback(async () => {
         setLoading(true);
         try {
@@ -111,7 +122,7 @@ const ProjectsDetails = ({ params }) => {
                 <meta name="twitter:image" content={project.cover} />
                 <meta name="twitter:url" content={`https://cairo.studio/case-study/${project.title}`} />
                 <link rel="canonical" href={`https://cairo.studio/case-study/${project.title}`} />
-                
+
             </Head>
             <Stairs>
                 <motion.main className='projectsDetails' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 100 }} transition={{ duration: 0.4, damping: 12, stiffness: 100, ease: [0.42, 0, 0.58, 1] }}>
