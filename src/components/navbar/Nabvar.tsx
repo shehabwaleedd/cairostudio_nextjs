@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import './Navbar.scss';
 import Nav from "./nav/index";
 import moment from 'moment-timezone';
@@ -19,11 +19,17 @@ const links: NavLink[] = [
 const Navbar: React.FC = () => {
     const [navOpen, setNavOpen] = useState<boolean>(false);
     const [currentTime, setCurrentTime] = useState<string>(moment().tz('Africa/Cairo').format('HH:mm'));
-    const router = useRouter();
+    const [isMounted, setIsMounted] = useState(false);
+    const router = usePathname();
     const [windowWidth, setWindowWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0);
 
     const toggleNavOpen = useCallback(() => {
         setNavOpen(prevNavOpen => !prevNavOpen);
+    }, []);
+
+
+    useEffect(() => {
+        setIsMounted(true);
     }, []);
 
     useEffect(() => {
@@ -35,9 +41,12 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // close navbar when navigating to a new page
+
+
     useEffect(() => {
-        setNavOpen(false);
-    }, [router.pathname]);
+        setNavOpen(false); // Close the navbar when the pathname changes
+    }, [router]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -50,10 +59,8 @@ const Navbar: React.FC = () => {
     return (
         <header style={{ position: "relative" }}>
             <nav className='nav'>
-                <Link href="/" passHref>
-                    <a className="nav__logo">
-                        <h1>CAIRO STUDIO</h1>
-                    </a>
+                <Link href="/" passHref className="nav__logo">
+                    <h1>CAIRO STUDIO</h1>
                 </Link>
                 <div className="nav__corner">
                     {windowWidth < 1200 && <span>Cairo: {currentTime}</span>}
@@ -62,7 +69,7 @@ const Navbar: React.FC = () => {
                             {links.map((link, index) => (
                                 <li key={index}>
                                     <Link href={link.href} passHref>
-                                        <a>{link.title}</a>
+                                        {link.title}
                                     </Link>
                                 </li>
                             ))}

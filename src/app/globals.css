@@ -1,39 +1,8 @@
 :root {
-  --header-height: 3rem;
-  --hue: 0;
-  --sat: 0%;
-  --title-color: hsl(var(--hue), var(--sat), 30%);
-  --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 40%);
-  --body-color: #fff7f3;
-  --container-color: #d5cdc4;
-  --accent-color-darker: #244224;
-  --border-color: hsl(var(--hue), var(--sat), 80%);
-  --nav-overlay-color: #1b1b1b;
-  --post-text-color: #fff;
-  --accent-color: #F0544F;
-  --accent-color-second: #F0544F;
-  --accent-color-third: #43AA8B;
-  --first-cursor-color: #F0544F;
-  --second-cursor-color: #806AEC;
-  --third-cursor-color: #806AEC;
-  --scrollbarThumb-color: #F0544F;
+  --container-color: #eae4d8;
+  --accent-color: #ff4b26;
   --background-color: #000000;
   --color-number: #999;
-  --color-text: #f0f0f0;
-  --color-bg: #0f0e0e;
-  --color-link: #aaa;
-  --color-link-hover: #fff;
-  --color-title: #cbc2b4;
-  --color-year: #b9b3af;
-  --img-ratio: 1.5;
-  --s: 1;
-  --backgroundColor: #FEF852;
-  --backgroundColorSecondary: #FFFC94;
-  --textPrimaryColor: #1A1A1A;
-
-  --headlineBig: clamp(3rem, 10vw, 15rem);
-  --headlineSmall: clamp(1rem, 1.2vw, 6rem);
 }
 
 * {
@@ -116,9 +85,9 @@ img {
 }
 
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
+::-webkit-scrollbar {
+  display: none;
+}
 
 
 
@@ -146,7 +115,9 @@ img {
 }
 
 @keyframes grain {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0);
   }
 

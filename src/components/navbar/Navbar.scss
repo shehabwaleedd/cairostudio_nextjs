@@ -95,7 +95,9 @@
 
         .menuNav {
             cursor: pointer;
-
+            background-color: transparent;
+            color: var(--container-color);
+            font-family: "Outfit-Medium";
             @media (min-width: 1103px) {
                 display: none;
             }
