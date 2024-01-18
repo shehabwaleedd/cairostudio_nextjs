@@ -3,7 +3,7 @@ import React, { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import useFetchProjects from '../useFetchProjects/useFetchProjects'
 import Image from 'next/image'
-import { Project,  ProjectState, RelatedWorkProps } from '@/common/types'
+import { Project, ProjectState, RelatedWorkProps } from '@/common/types'
 
 import '../../app/work/ProjectsPage.scss'
 
@@ -117,11 +117,11 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames, heading }) => {
                                                 <div className="projectsPageCo__details__container__item" key={index}>
                                                     {detail.isImg ? (
                                                         <div className="projectsPageCo__details__container__item__img">
-                                                            <Image src={detail.image} alt={`Project Img ${index}`} loading="lazy" placeholder='blur' width={500} height={300} blurDataURL={detail.image}/>
+                                                            <Image src={detail.image} alt={`Project Img ${index}`} loading="lazy" placeholder='blur' width={500} height={300} blurDataURL={detail.image} />
                                                         </div>
                                                     ) : (
                                                         <div className="projectsPageCo__details__container__item__video">
-                                                            <video src={detail.image} loop muted autoPlay playsInline title={`Project Video ${index}`}  />
+                                                            <video src={detail.image} loop muted autoPlay playsInline title={`Project Video ${index}`} />
                                                         </div>
                                                     )}
                                                 </div>

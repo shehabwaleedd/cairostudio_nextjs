@@ -5,7 +5,7 @@ import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../../../firebase.config';
 import { Project, Section, Item } from '@/common/types';
 import "./Details.scss"
-import Stairs from "../../../components/transition/Stairs"
+import Stairs from "../../../components/animations/transition/Stairs"
 import Head from 'next/head';
 
 import { useMetadata } from '@/hooks/useMetaData';

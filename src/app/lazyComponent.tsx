@@ -8,7 +8,7 @@ import Projectss from '@/components/Projects3D/Projects';
 import Perpective from '../components/perpective/Perpective';
 import Faqs from '../components/workedWith/WorkedWith';
 import FaqsData from '../components/workedWith/WorkedWithData';
-import Stairs from '../components/transition/Stairs';
+import Stairs from '../components/animations/transition/Stairs';
 
 const LazyComponent = () => {
     return (

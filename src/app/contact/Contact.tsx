@@ -4,7 +4,7 @@ import "./Contact.scss"
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion'
-import Stairs from '../../components/transition/Stairs';
+import Stairs from '../../components/animations/transition/Stairs';
 
 interface FormData {
     name: string;
