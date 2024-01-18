@@ -4,12 +4,38 @@
     width: 100%;
     z-index: 9999;
     background-color: var(--accent-color);
-    top: 4rem;
+    top: 0rem;
+    left: 0;
+
+    .hamburger {
+        display: flex;
+        justify-content: flex-end;
+        color: var(--background-color);
+        font-size: 3rem;
+        z-index: 9999;
+        position: absolute;
+        right: 3rem;
+        top: 2rem;
+        font-family: "Outfit-Bold";
+        cursor: pointer;
+
+        @media (max-width: 468px) {
+            right: 2rem;
+        }
+
+    }
+
     .wrapper {
         display: flex;
         gap: 50px;
-        margin-bottom: 80px;
+        margin-bottom: 5rem;
+        @media (max-width: 668px) {
+            margin-bottom: 111rem;  
+            gap: 1rem;
+        }
+
     }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -17,11 +43,3 @@
     }
 }
 
-@media only screen and (min-width: 900px) {
-    .nav {
-        .wrapper {
-            margin-bottom: 0px;
-            justify-content: space-between;
-        }
-    }
-}

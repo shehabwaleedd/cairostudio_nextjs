@@ -6,6 +6,11 @@ export interface ProjectDetail {
     image: string;
 }
 
+export type NavLink = {
+    title: string;
+    href: string;
+}
+
 export interface ProjectsDetailsProps {
     title: string;
     params: {

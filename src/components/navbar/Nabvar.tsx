@@ -1,97 +1,85 @@
 'use client';
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
 import './Navbar.scss';
-import dynamic from 'next/dynamic';
-const Nav = dynamic(() => import('./nav'), { ssr: false });
+import Nav from "./nav/index";
+import moment from 'moment-timezone';
+import { NavLink } from "@/common/types";
 
-type Link = {
-    title: string;
-    href: string;
-};
-
-// Define the links array with the Link type
-const links: Link[] = [
+const links: NavLink[] = [
     { title: "Services", href: "/services" },
     { title: "Work", href: "/work" },
     { title: "Case Studies", href: "/case-study" },
     { title: "Studio", href: "/about" },
-    { title: "Get A Qoute", href: "/contact" },
+    { title: "Get A Quote", href: "/contact" },
 ];
 
-type SelectedLink = {
-    isActive: boolean;
-    index: number;
-};
-
-
-
-const Nabvar: React.FC = () => {
+const Navbar: React.FC = () => {
     const [navOpen, setNavOpen] = useState<boolean>(false);
-    const [currentTime, setCurrentTime] = useState<Date>(new Date());
-    const isContactPage: boolean = usePathname() === '/contact';
-    const pathname: string = usePathname();
-    const [selectedLink, setSelectedLink] = useState<SelectedLink>({ isActive: false, index: 0 });
+    const [currentTime, setCurrentTime] = useState<string>(moment().tz('Africa/Cairo').format('HH:mm'));
+    const router = useRouter();
+    const [windowWidth, setWindowWidth] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+    const toggleNavOpen = useCallback(() => {
+        setNavOpen(prevNavOpen => !prevNavOpen);
+    }, []);
 
     useEffect(() => {
-        setNavOpen(false); // Close the navbar when the location changes
-    }, [pathname]);
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
 
-    const formatTime = (date: Date): string => {
-        const hours: string = date.getHours().toString().padStart(2, '0');
-        const minutes: string = date.getMinutes().toString().padStart(2, '0');
-        return `${hours}:${minutes}`;
-    };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
-        const interval: NodeJS.Timeout = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 60000); // Update every minute
+        setNavOpen(false);
+    }, [router.pathname]);
 
-        return () => clearInterval(interval); // Cleanup interval on unmount
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTime(moment().tz('Africa/Cairo').format('HH:mm'));
+        }, 60000);
+
+        return () => clearInterval(interval);
     }, []);
 
     return (
-
-        <>
-            <header >
-                <motion.nav className='nav'>
-                    <div className="nav__container">
-                        <Link href="/">
-                            <motion.h1>
-                                Cairo Studio
-                            </motion.h1>
-                        </Link>
-                        <div className="nav__corner">
-                            <time> <motion.h2>Cairo: {formatTime(currentTime)}</motion.h2></time>
-                            <div className='navLinks'>
-                                <ul>
-                                    {links.map((link, index) => {
-                                        return (
-                                            <li key={index}>
-                                                <Link href={link.href}>
-                                                    {link.title}
-                                                </Link>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                            <h2 onClick={() => setNavOpen(!navOpen)} className='menuNav'>
-                                Menu
-                            </h2>
-                        </div>
+        <header style={{ position: "relative" }}>
+            <nav className='nav'>
+                <Link href="/" passHref>
+                    <a className="nav__logo">
+                        <h1>CAIRO STUDIO</h1>
+                    </a>
+                </Link>
+                <div className="nav__corner">
+                    {windowWidth < 1200 && <span>Cairo: {currentTime}</span>}
+                    <div className='navLinks'>
+                        <ul>
+                            {links.map((link, index) => (
+                                <li key={index}>
+                                    <Link href={link.href} passHref>
+                                        <a>{link.title}</a>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                </motion.nav>
+                    {windowWidth < 1200 && (
+                        <button onClick={toggleNavOpen} className='menuNav'>
+                            Menu
+                        </button>
+                    )}
+                </div>
                 <AnimatePresence mode='wait'>
-                    {navOpen && <Nav navOpen={navOpen} />}
+                    {navOpen && <Nav setNavOpen={setNavOpen} />}
                 </AnimatePresence>
-            </header>
-        </>
-
-    );
+            </nav>
+        </header>
+    )
 };
 
-export default Nabvar;
+export default Navbar;

@@ -584,7 +584,7 @@ img {
   justify-content: space-between;
   top: 0;
   left: 0;
-  padding: 2rem;
+  padding: 2rem 1rem;
   height: 6.5vh;
   width: 100%;
   overflow: hidden;
@@ -592,98 +592,288 @@ img {
   z-index: 9999;
   border-bottom: 1px solid var(--container-color);
   background-color: var(--background-color);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-@media (max-width: 454px) {
+@media (max-width: 1154px) {
   .nav {
     padding: 1rem;
-    position: fixed;
+    padding-top: 1rem;
   }
 }
-.nav .nav__container {
+.nav .nav__logo {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
   width: 100%;
 }
-.nav .nav__container a {
-  width: 100%;
-}
-.nav .nav__container a h1 {
+.nav .nav__logo h1 {
+  position: relative;
+  left: 0rem;
   font-size: 1.5vw;
   font-weight: 600;
-  font-family: "Outfit-Black";
+  font-family: "Outfit-Bold";
   color: var(--container-color);
-  letter-spacing: 0.2rem;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
   width: 100%;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-@media (max-width: 454px) {
-  .nav .nav__container a h1 {
-    font-size: 0.9rem;
+@media (max-width: 1356px) {
+  .nav .nav__logo h1 {
+    left: 0rem;
+    font-size: 1.5rem;
   }
 }
-.nav .nav__container .nav__corner {
+@media (max-width: 416px) {
+  .nav .nav__logo h1 {
+    font-size: 1.3rem;
+  }
+}
+.nav .nav__corner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  right: 0;
+  width: 100%;
+}
+.nav .nav__corner h2 {
+  position: relative;
+  right: 0rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Outfit-Bold";
+  color: var(--container-color);
+  text-transform: lowercase;
+}
+@media (max-width: 456px) {
+  .nav .nav__corner h2 {
+    left: 0rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 306px) {
+  .nav .nav__corner h2 {
+    display: none;
+  }
+}
+.nav .nav__corner span {
+  position: relative;
+  right: 0rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Outfit-Bold";
+  color: var(--container-color);
+  text-transform: lowercase;
+}
+@media (max-width: 456px) {
+  .nav .nav__corner span {
+    left: 0rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 306px) {
+  .nav .nav__corner span {
+    display: none;
+  }
+}
+.nav .nav__corner .menuNav {
+  cursor: pointer;
+}
+@media (min-width: 1103px) {
+  .nav .nav__corner .menuNav {
+    display: none;
+  }
+}
+.nav .nav__corner .navLinks {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .nav .nav__corner .navLinks {
+    display: none;
+  }
+}
+.nav .nav__corner .navLinks ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
   width: 100%;
 }
-.nav .nav__container .nav__corner h2 {
+.nav .nav__corner .navLinks ul li {
   position: relative;
-  left: 0rem;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: "Outfit-Regular";
-  color: var(--container-color);
-  text-transform: lowercase;
-}
-@media (max-width: 456px) {
-  .nav .nav__container .nav__corner h2 {
-    left: 0rem;
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 306px) {
-  .nav .nav__container .nav__corner h2 {
-    display: none;
-  }
-}
-.nav .nav__container .nav__corner .menuNav {
-  cursor: pointer;
-}
-@media (min-width: 1103px) {
-  .nav .nav__container .nav__corner .menuNav {
-    display: none;
-  }
-}
-.nav .nav__container .nav__corner .navLinks {
-  gap: 1rem;
-}
-@media (max-width: 1100px) {
-  .nav .nav__container .nav__corner .navLinks {
-    display: none;
-  }
-}
-.nav .nav__container .nav__corner .navLinks ul {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  gap: 1rem;
-}
-.nav .nav__container .nav__corner .navLinks ul li {
-  position: relative;
-  font-size: 1.5vw;
+  font-size: 1vw;
   font-weight: 600;
   font-family: "Outfit-Medium";
   color: var(--container-color);
   text-transform: uppercase;
 }
-.nav .nav__container .nav__corner .navLinks ul li a {
+.nav .nav__corner .navLinks ul li a {
+  width: 100%;
   text-decoration: none;
   color: var(--container-color);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/Body/style.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_body__A0_vQ {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  grid-gap: 2rem;
+  margin-top: 40px;
+  padding: 2rem;
+}
+@media (max-width: 456px) {
+  .style_body__A0_vQ {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+.style_body__A0_vQ a {
+  color: var(--background-color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.style_body__A0_vQ p {
+  margin: 0px;
+  display: flex;
+  overflow: hidden;
+  padding-right: 30px;
+  padding-top: 10px;
+  font-family: "Outfit-Medium", sans-serif;
+  font-size: 2rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .style_body__A0_vQ {
+    max-width: 1200px;
+    margin-top: 80px;
+  }
+  .style_body__A0_vQ p {
+    font-size: 5vw;
+    padding-right: 2vw;
+  }
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/Footer/style.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_footer__D5CRU {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  padding: 1rem;
+}
+@media (max-width: 456px) {
+  .style_footer__D5CRU {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+.style_footer__D5CRU ul {
+  width: 50%;
+  margin-top: 10px;
+  overflow: hidden;
+  list-style-type: none;
+  padding: 0;
+  font-family: "Outfit-Regular", sans-serif;
+}
+@media (max-width: 456px) {
+  .style_footer__D5CRU ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+  }
+}
+.style_footer__D5CRU li {
+  color: var(--background-color);
+}
+@media (max-width: 456px) {
+  .style_footer__D5CRU li {
+    text-align: left;
+    padding-top: 0.4rem;
+  }
+}
+.style_footer__D5CRU li span {
+  color: var(--background-color);
+  font-family: "Outfit-Thin", sans-serif;
+}
+.style_footer__D5CRU li a {
+  color: var(--background-color);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.style_footer__D5CRU li a:hover {
+  color: var(--accent-color);
+}
+
+@media only screen and (min-width: 1000px) {
+  .style_footer__D5CRU {
+    justify-content: space-between;
+  }
+  .style_footer__D5CRU ul {
+    width: auto;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/style.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_nav__x5A0v {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--accent-color);
+  top: 0rem;
+  left: 0;
+}
+.style_nav__x5A0v .style_hamburger__V1uAm {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--background-color);
+  font-size: 3rem;
+  z-index: 9999;
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+  font-family: "Outfit-Bold";
+  cursor: pointer;
+}
+@media (max-width: 468px) {
+  .style_nav__x5A0v .style_hamburger__V1uAm {
+    right: 2rem;
+  }
+}
+.style_nav__x5A0v .style_wrapper__N48Gh {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 5rem;
+}
+@media (max-width: 668px) {
+  .style_nav__x5A0v .style_wrapper__N48Gh {
+    margin-bottom: 111rem;
+    gap: 1rem;
+  }
+}
+.style_nav__x5A0v .style_container__xU1Ia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

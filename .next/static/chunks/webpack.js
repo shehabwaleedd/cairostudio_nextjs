@@ -192,7 +192,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-/******/ 		__webpack_require__.h = function() { return "eed5a3e93c76398a"; }
+/******/ 		__webpack_require__.h = function() { return "53c1b93cae647c56"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -792,7 +792,7 @@
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = function(chunkId, promises) {
-/******/ 			var cssChunks = {"_app-pages-browser_src_components_animatedText_AnimatedText_tsx":1,"_app-pages-browser_src_components_Projects3D_Projects3DComponents_Projects3D_tsx":1,"_app-pages-browser_src_components_navbar_nav_index_tsx":1};
+/******/ 			var cssChunks = {"_app-pages-browser_src_components_Projects3D_Projects3DComponents_Projects3D_tsx":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(function() {

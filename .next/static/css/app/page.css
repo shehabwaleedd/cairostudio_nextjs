@@ -130,10 +130,10 @@
     font-size: 3.5vh;
   }
 }
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/mainProjects/MainProjects.module.scss ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.MainProjects_mainProjects__SBMhF {
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[13].use[5]!./src/components/mainProjects/MainProjects.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.mainProjects {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -144,7 +144,7 @@
   width: 100%;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V {
+.mainProjects .mainProjects__container {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -156,14 +156,14 @@
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (max-width: 1156px) {
-  .MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V {
+  .mainProjects .mainProjects__container {
     grid-template-columns: repeat(1, 1fr);
     padding: 0.5rem;
     height: 100%;
     margin-bottom: 0;
   }
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf {
+.mainProjects .mainProjects__container .mainProjects__item {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -173,9 +173,8 @@
   position: relative;
   top: 0;
   left: 0;
-  cursor: pointer;
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -184,7 +183,7 @@
   width: 100%;
   position: relative;
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img {
   min-height: 80vh;
   display: flex;
   align-items: flex-start;
@@ -195,22 +194,22 @@
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (max-width: 1460px) {
-  .MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i {
+  .mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img {
     min-height: 70vh;
   }
 }
 @media (max-width: 1100px) {
-  .MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i {
+  .mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img {
     min-height: 60vh;
   }
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i img {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i video {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img video {
   height: 100%;
   position: absolute;
   top: 0;
@@ -219,11 +218,11 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (max-width: 1020px) {
-  .MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i video {
+  .mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img video {
     display: none;
   }
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjectsCo__imgs__6mpUy .MainProjects_mainProjects__item__img__yhL8i p {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjectsCo__imgs .mainProjects__item__img p {
   font-size: 1rem;
   font-family: "Outfit-Regular";
   color: #fff7f3;
@@ -234,7 +233,7 @@
   right: 0rem;
   top: 0.5rem;
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjects__item__desc__29r77 {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjects__item__desc {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -248,7 +247,7 @@
   padding-top: 1rem;
   border-top: 1px solid var(--container-color);
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjects__item__desc__29r77 h2 {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjects__item__desc h2 {
   font-size: 2rem;
   font-family: "Outfit-Thin";
   color: var(--container-color);
@@ -256,7 +255,7 @@
   text-transform: uppercase;
   margin-bottom: 3rem;
 }
-.MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjects__item__desc__29r77 p {
+.mainProjects .mainProjects__container .mainProjects__item .mainProjects__item__desc p {
   font-size: 1rem;
   font-family: "Outfit-Regular";
   color: var(--container-color);
@@ -265,7 +264,7 @@
   margin-bottom: 1rem;
 }
 @media (max-width: 456px) {
-  .MainProjects_mainProjects__SBMhF .MainProjects_mainProjects__container__4fZ_V .MainProjects_mainProjects__item__GLeMf .MainProjects_mainProjects__item__desc__29r77 p {
+  .mainProjects .mainProjects__container .mainProjects__item .mainProjects__item__desc p {
     font-size: 0.8rem;
   }
 }
@@ -313,19 +312,21 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 @media (max-width: 1256px) {
   .aboutus {
     height: 100%;
-    margin-bottom: 5rem;
+    min-height: auto;
+    margin-top: 4vh;
+    margin-bottom: 10vh;
   }
 }
 .aboutus span {
   font-size: 1.25vw;
   font-weight: bold;
-  color: var(--accent-color-second);
+  color: var(--accent-color);
   font-family: "Outfit-Medium";
   padding-left: 2rem;
 }
@@ -333,6 +334,7 @@
   .aboutus span {
     font-size: 1rem;
     text-align: left;
+    padding-left: 1rem;
   }
 }
 .aboutus .aboutus__container {
@@ -356,6 +358,11 @@
   position: relative;
   z-index: 2;
 }
+@media (max-width: 1256px) {
+  .aboutus .aboutus__container .title {
+    padding-left: 1rem;
+  }
+}
 .aboutus .aboutus__container .title .wrapper {
   display: flex;
   width: 100%;
@@ -368,7 +375,6 @@
   font-family: "Outfit-Bold", sans-serif;
   font-weight: 700;
   font-size: 3.3vw;
-  margin: 0px 0;
   position: relative;
   z-index: 2;
 }
@@ -380,7 +386,7 @@
 }
 @media (max-width: 956px) {
   .aboutus .aboutus__container .title .wrapper p {
-    font-size: 7vw;
+    font-size: 4.5vw;
     margin: 0.6rem 0;
   }
 }
@@ -434,12 +440,12 @@
   width: 100%;
   padding: 2rem;
 }
-@media (max-width: 456px) {
+@media (max-width: 1256px) {
   .aboutus .aboutus__container .aboutus__lower {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 0;
+    padding: 0rem;
   }
 }
 .aboutus .aboutus__container .aboutus__lower h3 {
@@ -464,6 +470,32 @@
     letter-spacing: normal;
     text-align: left;
   }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/utils/loading/Loading.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
+.loader {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+
+.sweet-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sweet__loading-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/Projects3D/Projects.module.scss ***!
