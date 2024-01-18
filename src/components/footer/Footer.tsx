@@ -2,11 +2,8 @@
 'use client';
 import React from 'react';
 import './Footer.scss'
-import Link from 'next/link'; // Using Next.js Link
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-
-
-
 
 const Footer: React.FC = () => {
 
@@ -66,43 +63,39 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className='footer'>
-            <div className="footer__con">
-                <div className="footer__upper">
-                    <NextPageLink />
-                    <h2>We would love to hear from you. <br /> let's work — together.</h2>
-                    <Link href="/contact">
-                        <p> Get In Touch</p>
-                    </Link>
-                </div>
-                <div className="footer__container">
-                    <div className="footer__address">
-                        <h2>Address</h2>
-                        <address>
-                            <p>Bahgat Ali, Zamalek <br /> Cairo, Egypt</p>
-                        </address>
+        <>
+            <footer className='footer'>
+                <div className="footer__bottom">
+                    <div className="footer__con">
+                        <div className="footer__upper">
+                            <NextPageLink />
+                        </div>
+                        <div className="footer__container">
+                            <div className="footer__address">
+                                <h2>Cairo</h2>
+                                <address>
+                                    <p>Ahmed Heshmat, Zamalek <br /> Cairo, Egypt</p>
+                                </address>
+                            </div>
+                            <div className="footer__address">
+                                <h2>Business Inquires</h2>
+                                <ul className="focon__content">
+                                    <li>
+                                        <address>
+                                            <a href="mailto:hello@cairo-studio.com" target='_blank' rel="noreferrer">
+                                                hello@cairo-studio.com
+                                            </a>
+                                        </address>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div className="footer__contact">
-                        <h2>Business Inquires</h2>
-                        <ul className="focon__content">
-                            <li>
-                                <address>
-                                    <Link href="mailto:hello@cairo-studio.com" target='_blank' rel="noreferrer">
-                                        hello@cairo-studio.com
-                                    </Link>
-                                </address>
-                            </li>
-                            <li>
-                                <address>
-                                    <Link href="tel:+201023288200" target='_blank' rel="noreferrer">
-                                        +201023288200
-                                    </Link>
-                                </address>
-                            </li>
-                        </ul>
+                    <div className="footer__top">
+                        <h3>CAIRO STUDIO <span>©</span></h3>
                     </div>
                 </div>
-            </div>
+            </footer>
             <div className="footer__footer">
                 <div className="footer__footer_container">
                     <div className="footer__logo">
@@ -111,20 +104,26 @@ const Footer: React.FC = () => {
                     <div className="footer__rest">
                         <ul className="foso__content">
                             <li>
-                                <Link href="https://www.instagram.com/cairostudioo/" target='_blank' rel="noreferrer">
+                                <a href="https://www.instagram.com/cairostudioo/" target='_blank' rel="noreferrer">
                                     Instagram
-                                </Link>
+                                    <span>
+                                        Instagram
+                                    </span>
+                                </a>
                             </li>
                             <li>
-                                <Link href="https://www.linkedin.com/company/cairostudio/" target='_blank' rel="noreferrer">
+                                <a href="https://www.linkedin.com/company/cairostudio/" target='_blank' rel="noreferrer">
                                     Linkedin
-                                </Link>
+                                    <span>
+                                        Linkedin
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </footer>
+        </>
     )
 }
 
