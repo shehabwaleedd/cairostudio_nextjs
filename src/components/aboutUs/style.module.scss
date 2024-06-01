@@ -1,0 +1,39 @@
+.aboutus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 7.5vh;
+
+    p {
+        font-size: 9.25vw;
+        max-width: 65vw;
+        color: var(--title-color);
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media (max-width: 1356px) {
+            font-size: 12.25vw;
+        }
+    }
+
+    a {
+        border: 1px solid var(--title-color);
+        padding: 0.4rem;
+        margin-top: 10vh;
+        color: var(--title-color);
+        transition: var(--animation-primary);
+        text-transform: lowercase;
+
+        &:hover {
+            transition: var(--animation-primary);
+            background-color: var(--title-color);
+            color: var(--background-color);
+        }
+
+    }
+
+}

@@ -8,7 +8,7 @@ import { motion, useTransform, useScroll } from 'framer-motion';
 import RelatedWork from '../../../components/relatedWork/RelatedWork';
 import { Service } from '@/common/types';
 import Image from 'next/image';
-import Stairs from "../../../components/animations/transition/Stairs"
+import Stairs from "../../../animations/transition/Stairs"
 import Head from 'next/head';
 
 

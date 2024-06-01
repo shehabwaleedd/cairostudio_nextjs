@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import AboutBelievers from './aboutComponents/AboutBelievers'
 import AboutServices from './aboutComponents/aboutServices/AboutServices'
 import Head from 'next/head'
-import Stairs from "../../components/animations/transition/Stairs"
+import Stairs from "../../animations/transition/Stairs"
 
 const About: React.FC = () => {
     useEffect(() => {

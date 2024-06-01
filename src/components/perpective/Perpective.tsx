@@ -45,7 +45,6 @@ const Perpective: React.FC = () => {
                 <Column data={[Data[4], Data[5], Data[8]]} y={y} />
                 <Column data={[Data[0], Data[7], Data[9]]} y={y2} />
                 <Column data={[Data[10], Data[9], Data[10]]} y={y3} />
-                <Column data={[Data[3], Data[12], Data[8]]} y={y4} />
             </div>
             <div className={styles.spacer}></div>
         </section>

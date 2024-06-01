@@ -3,11 +3,10 @@
     border-top: 1px solid rgba(183, 171, 152, 0.25);
     display: flex;
     flex-direction: column;
-    user-select: none;
-    cursor: pointer;
+
     .title {
         border-bottom: 1px solid rgba(183, 171, 152, 0.25);
-        
+        cursor: default;
         position: relative;
         z-index: 2;
 
@@ -16,6 +15,9 @@
             padding-left: 7.35%;
             width: 100%;
             justify-content: space-between;
+            @media (max-width: 1256px) {
+                padding-left: 1rem;
+            }
 
             p {
                 display: inline-block;
@@ -23,48 +25,26 @@
                 text-transform: uppercase;
                 font-family: 'Outfit-Bold', sans-serif;
                 font-weight: 700;
-                font-size: 8vw;
+                font-size: 8.5vw;
                 line-height: 7.5vw;
                 margin: 0px 0; 
                 position: relative;
                 z-index: 2;
 
-                @media (max-width: 956px) {
-                    margin: 0.6rem 0;
+                @media (max-width: 1256px) {
+                    margin: 1rem 0;
                 }
                 &:nth-of-type(2) {
                     display: block;
                     position: absolute;
-                    color: #1c1c1c;
+                    color: var(--border-color);
                     top: 0;
                     z-index: 1;
                 }
             }
         }
 
-        span {
-            font-size: 0.9vw;
-            display: inline-block;
-            color: var(--container-color);
-            text-transform: uppercase;
-            font-family: 'Outfit-Bold', sans-serif;
-            font-weight: 700;
-            line-height: 7.5vw;
-            margin: 0px;
-            position: relative;
-            letter-spacing: 0.1rem;
-            z-index: 2;
-            padding-right: 2rem;
-            @media (max-width: 1156px) {
-                font-family: 'Outfit-Regular', sans-serif;
-                font-weight: 500;
-                padding-right: 0.3rem;
-                font-size: 0.75rem;
-                letter-spacing: normal;
-                line-height: 1;
-                top: 1.5rem;
-            }
-        }
+
     }
 
 }

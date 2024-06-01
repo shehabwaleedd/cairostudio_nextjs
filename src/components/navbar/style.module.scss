@@ -1,0 +1,120 @@
+.nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding: 2rem 1rem;
+    height: 6.5vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 9999;
+    user-select: none;
+    mix-blend-mode: difference;
+
+    @media (max-width: 1154px) {
+        padding: 1rem;
+        padding-top: 1rem;
+    }
+
+    .nav__logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        width: 100%;
+
+        h1 {
+            position: relative;
+            left: 0rem;
+            font-size: 1.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            width: 100%;
+
+            @media (max-width: 1356px) {
+                left: 0rem;
+                font-size: 1.5rem;
+            }
+
+            @media (max-width: 416px) {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .nav__corner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        width: 100%;
+        position: relative;
+        right: 0;
+        width: 100%;
+
+        span {
+            position: relative;
+            right: 0rem;
+            font-size: 1rem;
+            color: #fff;
+            text-transform: lowercase;
+
+            @media (max-width: 456px) {
+                left: 0rem;
+                font-size: 0.8rem;
+            }
+
+            @media (max-width: 306px) {
+                display: none;
+            }
+        }
+
+        .menuNav {
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+
+            @media (min-width: 1103px) {
+                display: none;
+            }
+        }
+
+        .navLinks {
+            gap: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 1200px) {
+                display: none;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 1rem;
+                width: 100%;
+
+                li {
+                    position: relative;
+                    font-size: 1vw;
+                    text-transform: uppercase;
+
+                    a {
+                        width: 100%;
+                        text-decoration: none;
+                        color: #fff;
+                        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,21 +1,18 @@
 import React, { Suspense } from 'react'
-import dynamic from 'next/dynamic';
-import Hero from '../components/hero/Hero';
-import MainProjects from '../components/mainProjects/MainProjects';
-import TextMask from '../components/textMask/TextMask';
-import AboutUs from '../components/aboutUs/AboutUs';
+import Hero from '../components/hero';
+import MainProjects from '../components/mainProjects';
+import TextMask from '../components/textMask';
+import AboutUs from '../components/aboutUs';
 import Projectss from '@/components/Projects3D/Projects';
 import Perpective from '../components/perpective/Perpective';
 import Faqs from '../components/workedWith/WorkedWith';
 import FaqsData from '../components/workedWith/WorkedWithData';
-import Stairs from '../components/animations/transition/Stairs';
+import Stairs from '../animations/transition/Stairs';
+import Loading from '@/utils/loading/Loading';
 
 const LazyComponent = () => {
     return (
-        <Suspense fallback={
-            <div>
-                <h1 style={{ color: '#fff', textAlign: 'center', marginTop: '50vh' }}>Loading...</h1>
-            </div>}>
+        <Suspense fallback={<Loading height={100} />}>
             <Stairs>
                 <Hero />
                 <MainProjects />
@@ -23,7 +20,7 @@ const LazyComponent = () => {
                 <AboutUs />
                 <Projectss />
                 <Perpective />
-                <div style={{ padding: "0 2rem" }}>
+                <div className='faqs__padding'>
                     <Faqs Data={FaqsData} />
                 </div>
             </Stairs>

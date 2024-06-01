@@ -1,11 +1,27 @@
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/globals.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/app/globals.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************/
 :root {
-  --container-color: #eae4d8;
+  /* --container-color: #eae4d8; */
+  --container-color: #000000;
   --accent-color: #ff4b26;
-  --background-color: #000000;
+  --background-color: #f3eee5;
   --color-number: #999;
+  --border-color: #eae4d8;
+  --title-color: #242322;
+
+  --font-family: 'Outfit', sans-serif;
+  
+  --body-font-weight: 400; /* Regular */
+  --subtitle-font-weight: 100; /* Thin */
+  --medium-font-weight: 500; /* Medium */
+  --title-font-weight: 700; /* Bold */
+  --heavy-font-weight: 900; /* Black */
+  --semi-bold-font-weight: 600; /* SemiBold */
+
+
+  --animation-primary: 0.4s cubic-bezier(0.5, 0.75, 0, 1);
+
 }
 
 * {
@@ -162,95 +178,53 @@ img {
 }
 
 
-.container {
-  max-width: 968px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 1850px) {
-  .container {
-    max-width: 1600px;
-  }
-}
-
-
-
 @font-face {
-  font-family: 'Outfit-Thin';
-  src: url(/_next/static/media/Outfit-Thin.573728a8.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-Thin.76e023c6.woff) format('woff'),
-    url(/_next/static/media/Outfit-Thin.bd0ecd03.ttf) format('truetype');
-  font-weight: 100;
+  font-family: 'Outfit';
+  src: url(/_next/static/media/Outfit-Variable.58540184.woff2) format('woff2');
+  font-weight: 100 900;
   font-display: swap;
   font-style: normal;
 }
 
 
-@font-face {
-  font-family: 'Outfit-ExtraLight';
-  src: url(/_next/static/media/Outfit-ExtraLight.ddbe4887.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-ExtraLight.5152a637.woff) format('woff'),
-    url(/_next/static/media/Outfit-ExtraLight.babfeed6.ttf) format('truetype');
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
+
+body, button, input, textarea {
+  font-family: var(--font-family);
+  font-weight: var(--body-font-weight);
 }
 
-
-@font-face {
-  font-family: 'Outfit-Light';
-  src: url(/_next/static/media/Outfit-Light.cc9454f0.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-Light.cb55ade6.woff) format('woff'),
-    url(/_next/static/media/Outfit-Light.e112ad89.ttf) format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
+h1, .title  {
+  font-family: var(--font-family);
+  font-weight: var(--title-font-weight); /* Use the defined variable for title font weight */
 }
 
-
-@font-face {
-  font-family: 'Outfit-Regular';
-  src: url(/_next/static/media/Outfit-Regular.1ffcf6a8.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-Regular.4a2c23d6.woff) format('woff'),
-    url(/_next/static/media/Outfit-Regular.825251bc.ttf) format('truetype');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
+h2  {
+  font-family: var(--font-family);
+  font-weight: var(--title-font-weight); /* Use the defined variable for title font weight */
 }
 
-
-@font-face {
-  font-family: 'Outfit-Medium';
-  src: url(/_next/static/media/Outfit-Medium.5e978ef7.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-Medium.a27aea44.woff) format('woff'),
-    url(/_next/static/media/Outfit-Medium.c027815a.ttf) format('truetype');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
+h3, .medium {
+  font-family: var(--font-family);
+  font-weight: var(--medium-font-weight); /* Use the defined variable for medium font weight */
 }
 
-@font-face {
-  font-family: 'Outfit-Bold';
-  src: url(/_next/static/media/Outfit-Bold.b6075c83.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-Bold.58be3488.woff) format('woff'),
-    url(/_next/static/media/Outfit-Bold.c3664680.ttf) format('truetype');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
+h4, .heavy {
+  font-family: var(--font-family);
+  font-weight: var(--heavy-font-weight); /* Use the defined variable for heavy font weight */
 }
 
-@font-face {
-  font-family: 'Outfit-Black';
-  src: url(/_next/static/media/Outfit-Black.aca2f274.woff2) format('woff2'),
-    url(/_next/static/media/Outfit-Black.23b29024.woff) format('woff'),
-    url(/_next/static/media/Outfit-Black.52cc8a6c.ttf) format('truetype');
-  font-weight: 900;
-  font-display: swap;
-  font-style: normal;
+h5, .semi-bold {
+  font-family: var(--font-family);
+  font-weight: var(--semi-bold-font-weight); /* Use the defined variable for semi-bold font weight */
 }
+
+p, span {
+  font-family: var(--font-family);
+  font-weight: var(--body-font-weight); /* Use the defined variable for body font weight */
+}
+
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[13].use[5]!./src/components/footer/Footer.scss ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[13].use[5]!./src/components/footer/Footer.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .footer {
   position: relative;
@@ -646,10 +620,10 @@ img {
     padding-top: 1rem;
   }
 }
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[13].use[5]!./src/components/navbar/Navbar.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.nav {
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/navbar/style.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_nav__NrPgx {
   position: fixed;
   display: flex;
   align-items: center;
@@ -662,48 +636,45 @@ img {
   overflow: hidden;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 9999;
-  border-bottom: 1px solid var(--container-color);
-  background-color: var(--background-color);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  mix-blend-mode: difference;
 }
 @media (max-width: 1154px) {
-  .nav {
+  .style_nav__NrPgx {
     padding: 1rem;
     padding-top: 1rem;
   }
 }
-.nav .nav__logo {
+.style_nav__NrPgx .style_nav__logo__pwzZC {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
   width: 100%;
 }
-.nav .nav__logo h1 {
+.style_nav__NrPgx .style_nav__logo__pwzZC h1 {
   position: relative;
   left: 0rem;
-  font-size: 1.5vw;
-  font-weight: 600;
-  font-family: "Outfit-Bold";
-  color: var(--container-color);
+  font-size: 1.5rem;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   width: 100%;
 }
 @media (max-width: 1356px) {
-  .nav .nav__logo h1 {
+  .style_nav__NrPgx .style_nav__logo__pwzZC h1 {
     left: 0rem;
     font-size: 1.5rem;
   }
 }
 @media (max-width: 416px) {
-  .nav .nav__logo h1 {
+  .style_nav__NrPgx .style_nav__logo__pwzZC h1 {
     font-size: 1.3rem;
   }
 }
-.nav .nav__corner {
+.style_nav__NrPgx .style_nav__corner__cSgLp {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -713,58 +684,35 @@ img {
   right: 0;
   width: 100%;
 }
-.nav .nav__corner h2 {
+.style_nav__NrPgx .style_nav__corner__cSgLp span {
   position: relative;
   right: 0rem;
   font-size: 1rem;
-  font-weight: 600;
-  font-family: "Outfit-Bold";
-  color: var(--container-color);
+  color: #fff;
   text-transform: lowercase;
 }
 @media (max-width: 456px) {
-  .nav .nav__corner h2 {
+  .style_nav__NrPgx .style_nav__corner__cSgLp span {
     left: 0rem;
     font-size: 0.8rem;
   }
 }
 @media (max-width: 306px) {
-  .nav .nav__corner h2 {
+  .style_nav__NrPgx .style_nav__corner__cSgLp span {
     display: none;
   }
 }
-.nav .nav__corner span {
-  position: relative;
-  right: 0rem;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: "Outfit-Bold";
-  color: var(--container-color);
-  text-transform: lowercase;
-}
-@media (max-width: 456px) {
-  .nav .nav__corner span {
-    left: 0rem;
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 306px) {
-  .nav .nav__corner span {
-    display: none;
-  }
-}
-.nav .nav__corner .menuNav {
+.style_nav__NrPgx .style_nav__corner__cSgLp .style_menuNav__7T8Lo {
   cursor: pointer;
   background-color: transparent;
-  color: var(--container-color);
-  font-family: "Outfit-Medium";
+  color: #fff;
 }
 @media (min-width: 1103px) {
-  .nav .nav__corner .menuNav {
+  .style_nav__NrPgx .style_nav__corner__cSgLp .style_menuNav__7T8Lo {
     display: none;
   }
 }
-.nav .nav__corner .navLinks {
+.style_nav__NrPgx .style_nav__corner__cSgLp .style_navLinks__LfUr4 {
   gap: 1rem;
   width: 100%;
   display: flex;
@@ -772,33 +720,75 @@ img {
   align-items: center;
 }
 @media (max-width: 1200px) {
-  .nav .nav__corner .navLinks {
+  .style_nav__NrPgx .style_nav__corner__cSgLp .style_navLinks__LfUr4 {
     display: none;
   }
 }
-.nav .nav__corner .navLinks ul {
+.style_nav__NrPgx .style_nav__corner__cSgLp .style_navLinks__LfUr4 ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
   width: 100%;
 }
-.nav .nav__corner .navLinks ul li {
+.style_nav__NrPgx .style_nav__corner__cSgLp .style_navLinks__LfUr4 ul li {
   position: relative;
   font-size: 1vw;
-  font-weight: 600;
-  font-family: "Outfit-Medium";
-  color: var(--container-color);
   text-transform: uppercase;
 }
-.nav .nav__corner .navLinks ul li a {
+.style_nav__NrPgx .style_nav__corner__cSgLp .style_navLinks__LfUr4 ul li a {
   width: 100%;
   text-decoration: none;
-  color: var(--container-color);
+  color: #fff;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/navbar/nav/style.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_nav__x5A0v {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background-color: var(--accent-color);
+  top: 0rem;
+  left: 0;
+}
+.style_nav__x5A0v .style_hamburger__V1uAm {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--container-color);
+  font-size: 3rem;
+  z-index: 9999;
+  position: absolute;
+  right: 3rem;
+  top: 2rem;
+  font-family: "Outfit-Bold";
+  cursor: pointer;
+}
+@media (max-width: 468px) {
+  .style_nav__x5A0v .style_hamburger__V1uAm {
+    right: 2rem;
+  }
+}
+.style_nav__x5A0v .style_wrapper__N48Gh {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 5rem;
+}
+@media (max-width: 668px) {
+  .style_nav__x5A0v .style_wrapper__N48Gh {
+    margin-bottom: 111rem;
+    gap: 1rem;
+  }
+}
+.style_nav__x5A0v .style_container__xU1Ia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/Body/style.module.scss ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/navbar/nav/Body/style.module.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .style_body__A0_vQ {
   display: grid;
@@ -816,7 +806,7 @@ img {
   }
 }
 .style_body__A0_vQ a {
-  color: var(--background-color);
+  color: var(--container-color);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -841,7 +831,7 @@ img {
   }
 }
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/Footer/style.module.scss ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/navbar/nav/Footer/style.module.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .style_footer__D5CRU {
   display: flex;
@@ -878,7 +868,7 @@ img {
   }
 }
 .style_footer__D5CRU li {
-  color: var(--background-color);
+  color: var(--container-color);
 }
 @media (max-width: 456px) {
   .style_footer__D5CRU li {
@@ -887,11 +877,11 @@ img {
   }
 }
 .style_footer__D5CRU li span {
-  color: var(--background-color);
+  color: var(--container-color);
   font-family: "Outfit-Thin", sans-serif;
 }
 .style_footer__D5CRU li a {
-  color: var(--background-color);
+  color: var(--container-color);
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -906,49 +896,4 @@ img {
   .style_footer__D5CRU ul {
     width: auto;
   }
-}
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/style.module.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.style_nav__x5A0v {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
-  background-color: var(--accent-color);
-  top: 0rem;
-  left: 0;
-}
-.style_nav__x5A0v .style_hamburger__V1uAm {
-  display: flex;
-  justify-content: flex-end;
-  color: var(--background-color);
-  font-size: 3rem;
-  z-index: 9999;
-  position: absolute;
-  right: 3rem;
-  top: 2rem;
-  font-family: "Outfit-Bold";
-  cursor: pointer;
-}
-@media (max-width: 468px) {
-  .style_nav__x5A0v .style_hamburger__V1uAm {
-    right: 2rem;
-  }
-}
-.style_nav__x5A0v .style_wrapper__N48Gh {
-  display: flex;
-  gap: 50px;
-  margin-bottom: 5rem;
-}
-@media (max-width: 668px) {
-  .style_nav__x5A0v .style_wrapper__N48Gh {
-    margin-bottom: 111rem;
-    gap: 1rem;
-  }
-}
-.style_nav__x5A0v .style_container__xU1Ia {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }

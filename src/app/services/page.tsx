@@ -11,7 +11,7 @@ import useFetchProjects from '../../components/useFetchProjects/useFetchProjects
 import { Project } from '@/common/types';
 import { useRouter } from 'next/navigation';
 import './Services.scss';
-import Stairs from "../../components/animations/transition/Stairs"
+import Stairs from "../../animations/transition/Stairs"
 import Head from "next/head"
 
 

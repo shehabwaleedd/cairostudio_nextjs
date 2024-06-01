@@ -1,18 +1,15 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/Projects3D/Projects3DComponents/titles/style.module.scss ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/Projects3D/Projects3DComponents/titles/style.module.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .style_titles__oTe9G {
   width: 100%;
   border-top: 1px solid rgba(183, 171, 152, 0.25);
   display: flex;
   flex-direction: column;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  cursor: pointer;
 }
 .style_titles__oTe9G .style_title__Saodr {
   border-bottom: 1px solid rgba(183, 171, 152, 0.25);
+  cursor: default;
   position: relative;
   z-index: 2;
 }
@@ -22,57 +19,37 @@
   width: 100%;
   justify-content: space-between;
 }
+@media (max-width: 1256px) {
+  .style_titles__oTe9G .style_title__Saodr .style_wrapper__taWEa {
+    padding-left: 1rem;
+  }
+}
 .style_titles__oTe9G .style_title__Saodr .style_wrapper__taWEa p {
   display: inline-block;
   color: var(--container-color);
   text-transform: uppercase;
   font-family: "Outfit-Bold", sans-serif;
   font-weight: 700;
-  font-size: 8vw;
+  font-size: 8.5vw;
   line-height: 7.5vw;
   margin: 0px 0;
   position: relative;
   z-index: 2;
 }
-@media (max-width: 956px) {
+@media (max-width: 1256px) {
   .style_titles__oTe9G .style_title__Saodr .style_wrapper__taWEa p {
-    margin: 0.6rem 0;
+    margin: 1rem 0;
   }
 }
 .style_titles__oTe9G .style_title__Saodr .style_wrapper__taWEa p:nth-of-type(2) {
   display: block;
   position: absolute;
-  color: #1c1c1c;
+  color: var(--border-color);
   top: 0;
   z-index: 1;
 }
-.style_titles__oTe9G .style_title__Saodr span {
-  font-size: 0.9vw;
-  display: inline-block;
-  color: var(--container-color);
-  text-transform: uppercase;
-  font-family: "Outfit-Bold", sans-serif;
-  font-weight: 700;
-  line-height: 7.5vw;
-  margin: 0px;
-  position: relative;
-  letter-spacing: 0.1rem;
-  z-index: 2;
-  padding-right: 2rem;
-}
-@media (max-width: 1156px) {
-  .style_titles__oTe9G .style_title__Saodr span {
-    font-family: "Outfit-Regular", sans-serif;
-    font-weight: 500;
-    padding-right: 0.3rem;
-    font-size: 0.75rem;
-    letter-spacing: normal;
-    line-height: 1;
-    top: 1.5rem;
-  }
-}
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/Projects3D/Projects3DComponents/descriptions/style.module.scss ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/Projects3D/Projects3DComponents/descriptions/style.module.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .style_descriptions__H19Io {
   position: absolute;
@@ -83,7 +60,7 @@
   pointer-events: none;
 }
 .style_descriptions__H19Io .style_description__K6IDM {
-  background-color: var(--accent-color-second);
+  background-color: var(--accent-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,29 +100,32 @@
     display: none;
   }
 }
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/Projects3D/Projects3DComponents/Projects3D.module.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.Projects3D_projects3D__1OZNu {
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/Projects3D/Projects3DComponents/style.module.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_projects3D__Na9mC {
   position: absolute;
   z-index: 1;
   width: 100%;
 }
-.Projects3D_projects3D__1OZNu h2 {
+.style_projects3D__Na9mC h2 {
   position: absolute;
   font-size: 1vw;
   text-align: left;
   margin-bottom: 0;
-  text-transform: uppercase;
-  font-family: "Outfit-Bold", sans-serif;
-  color: var(--accent-color-second);
-  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  font-family: "Outfit-Medium", sans-serif;
+  color: var(--accent-color);
+  letter-spacing: 0;
   padding-left: 8%;
   top: -4rem;
 }
-@media (max-width: 456px) {
-  .Projects3D_projects3D__1OZNu h2 {
-    font-size: 5vw;
-    margin-bottom: 4rem;
+@media (max-width: 1356px) {
+  .style_projects3D__Na9mC h2 {
+    position: relative;
+    font-size: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+    top: -1rem;
   }
 }

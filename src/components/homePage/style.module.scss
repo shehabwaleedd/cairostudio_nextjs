@@ -1,0 +1,11 @@
+.homePage {
+    @media (max-width: 456px) {
+        min-height: 100vh;
+        .faqs__padding {
+            @media (max-width: 456px) {
+                padding: 0 4rem;
+            }
+        }
+    }
+
+}

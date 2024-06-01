@@ -1,0 +1,49 @@
+.textMask {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    overflow: hidden;
+    .textMask__container {
+        width: 100%;
+        padding-top: 56.25%; // Aspect ratio for 16:9 video
+        position: relative;
+        @media (max-width: 456px) {
+            padding-top: 0;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @media (max-width: 456px) {
+                position: relative;
+            }
+        }
+        .absText {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            mix-blend-mode: difference;
+            h3 {
+                font-size: 3rem;
+                font-family: 'Outfit-Bold';
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                width: 100%;
+                text-align: center;
+                @media (max-width: 456px) {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+}

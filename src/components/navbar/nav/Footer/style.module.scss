@@ -36,19 +36,19 @@
 
     li {
         
-        color: var(--background-color);
+        color: var(--container-color);
         @media (max-width: 456px) {
             text-align: left;
             padding-top: 0.4rem;
         }
 
         span {
-            color: var(--background-color);
+            color: var(--container-color);
             font-family: 'Outfit-Thin', sans-serif;
         }
 
         a {
-            color: var(--background-color);
+            color: var(--container-color);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 

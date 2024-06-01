@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation';
-import { useUserAuth } from "../../components/authContext/AuthContext";
+import { useUserAuth } from "../../context/authContext/AuthContext";
 import Link from 'next/link';
 import "./login.scss"
 

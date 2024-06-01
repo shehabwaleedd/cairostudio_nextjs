@@ -1,11 +1,11 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Navbar from '../components/navbar/Nabvar'
+import Navbar from '../components/navbar'
 import './globals.css';
 const FooterWithNoSSR = dynamic(() => import('../components/footer/Footer'), { ssr: false });
 import { Metadata } from 'next';
 import SmoothScrolling from '@/components/SmoothScrolling';
-import { UserContextProvider } from '../components/authContext/AuthContext';
+import { UserContextProvider } from '../context/authContext/AuthContext';
 import { AnimatePresence } from 'framer-motion';
 
 

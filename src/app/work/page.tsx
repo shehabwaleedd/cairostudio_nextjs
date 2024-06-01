@@ -4,7 +4,7 @@ import useFetchProjects from '../../components/useFetchProjects/useFetchProjects
 import './ProjectsPage.scss';
 import RelatedWork from '../../components/relatedWork/RelatedWork';
 import { FetchProjectsResponse, Project } from '@/common/types';
-import Stairs from '../../components/animations/transition/Stairs';
+import Stairs from '../../animations/transition/Stairs';
 
 const ProjectsPage: React.FC = () => {
     const { projects, loading, error }: FetchProjectsResponse = useFetchProjects();
