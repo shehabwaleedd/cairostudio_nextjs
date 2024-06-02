@@ -11,13 +11,21 @@
   --title-color: #242322;
 
   --font-family: 'Outfit', sans-serif;
-  
-  --body-font-weight: 400; /* Regular */
-  --subtitle-font-weight: 100; /* Thin */
-  --medium-font-weight: 500; /* Medium */
-  --title-font-weight: 700; /* Bold */
-  --heavy-font-weight: 900; /* Black */
-  --semi-bold-font-weight: 600; /* SemiBold */
+
+  --body-font-weight: 400;
+  /* Regular */
+  --subtitle-font-weight: 100;
+  /* Thin */
+  --medium-font-weight: 500;
+  /* Medium */
+  --title-font-weight: 700;
+  /* Bold */
+  --heavy-font-weight: 900;
+  /* Black */
+  --semi-bold-font-weight: 600;
+  /* SemiBold */
+
+  --gfs: 14.4;
 
 
   --animation-primary: 0.4s cubic-bezier(0.5, 0.75, 0, 1);
@@ -188,41 +196,54 @@ img {
 
 
 
-body, button, input, textarea {
+body,
+button,
+input,
+textarea {
   font-family: var(--font-family);
   font-weight: var(--body-font-weight);
 }
 
-h1, .title  {
+h1,
+.title {
   font-family: var(--font-family);
-  font-weight: var(--title-font-weight); /* Use the defined variable for title font weight */
+  font-weight: var(--title-font-weight);
+  /* Use the defined variable for title font weight */
 }
 
-h2  {
+h2 {
   font-family: var(--font-family);
-  font-weight: var(--title-font-weight); /* Use the defined variable for title font weight */
+  font-weight: var(--title-font-weight);
+  /* Use the defined variable for title font weight */
 }
 
-h3, .medium {
+h3,
+.medium {
   font-family: var(--font-family);
-  font-weight: var(--medium-font-weight); /* Use the defined variable for medium font weight */
+  font-weight: var(--medium-font-weight);
+  /* Use the defined variable for medium font weight */
 }
 
-h4, .heavy {
+h4,
+.heavy {
   font-family: var(--font-family);
-  font-weight: var(--heavy-font-weight); /* Use the defined variable for heavy font weight */
+  font-weight: var(--heavy-font-weight);
+  /* Use the defined variable for heavy font weight */
 }
 
-h5, .semi-bold {
+h5,
+.semi-bold {
   font-family: var(--font-family);
-  font-weight: var(--semi-bold-font-weight); /* Use the defined variable for semi-bold font weight */
+  font-weight: var(--semi-bold-font-weight);
+  /* Use the defined variable for semi-bold font weight */
 }
 
-p, span {
+p,
+span {
   font-family: var(--font-family);
-  font-weight: var(--body-font-weight); /* Use the defined variable for body font weight */
+  font-weight: var(--body-font-weight);
+  /* Use the defined variable for body font weight */
 }
-
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[13].use[5]!./src/components/footer/Footer.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -263,7 +284,7 @@ p, span {
 }
 .footer .footer__top h3 {
   font-size: 11.1vw;
-  font-family: "Outfit-Bold";
+  font-weight: 700;
   color: var(--container-color);
   letter-spacing: 1rem;
   text-transform: uppercase;
@@ -286,7 +307,7 @@ p, span {
 }
 .footer h2 {
   font-size: 1.5rem;
-  font-family: "Outfit-Bold";
+  font-weight: 400;
   color: var(--container-color);
   letter-spacing: 0.06rem;
   text-transform: uppercase;
@@ -315,7 +336,7 @@ p, span {
   color: var(--container-color);
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: "Outfit-Medium";
+  font-weight: 500;
   text-transform: uppercase;
   padding: 1rem;
 }
@@ -366,7 +387,7 @@ p, span {
 }
 .footer .footer__con .footer__upper .nextPage a {
   font-size: 6vh;
-  font-family: "Outfit-Bold";
+  font-weight: 500;
   color: var(--container-color);
   letter-spacing: 0.06rem;
   text-transform: uppercase;
@@ -430,7 +451,7 @@ p, span {
 }
 .footer .footer__con .footer__container h2 {
   font-size: 1rem;
-  font-family: "Outfit-Medium";
+  font-weight: 300;
   color: var(--container-color);
 }
 .footer .footer__con .footer__container ul {
@@ -442,7 +463,7 @@ p, span {
 }
 .footer .footer__con .footer__container ul li a {
   font-size: 1rem;
-  font-family: "Outfit-Thin";
+  font-weight: 200;
   color: var(--container-color);
 }
 .footer .footer__con .footer__container address {
@@ -450,7 +471,7 @@ p, span {
 }
 .footer .footer__con .footer__container address p {
   font-size: 1rem;
-  font-family: "Outfit-Thin";
+  font-weight: 200;
   color: var(--container-color);
 }
 .footer .footer__con .footer__container .footer__address {
@@ -577,12 +598,12 @@ p, span {
   color: var(--container-color);
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: "Outfit-Medium";
+  font-weight: 400;
   text-transform: uppercase;
 }
 @media (max-width: 400px) {
   .footer__footer .footer__footer_container .footer__rest a {
-    font-family: "Outfit-Regular";
+    font-weight: 300;
     font-size: 0.75rem;
   }
 }
@@ -601,21 +622,21 @@ p, span {
 .footer__logo h2 {
   font-size: 1rem;
   margin-top: 0;
-  font-family: "Outfit-Bold";
+  font-weight: 400;
   color: var(--container-color);
   letter-spacing: 0.06rem;
   text-transform: uppercase;
 }
 @media (max-width: 1250px) {
   .footer__logo h2 {
-    font-family: "Outfit-Regular";
+    font-weight: 300;
     font-size: 0.85rem;
     padding: 1rem;
   }
 }
 @media (max-width: 450px) {
   .footer__logo h2 {
-    font-family: "Outfit-Regular";
+    font-weight: 300;
     font-size: 0.85rem;
     padding-top: 1rem;
   }

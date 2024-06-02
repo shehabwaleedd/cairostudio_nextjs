@@ -8,13 +8,21 @@
   --title-color: #242322;
 
   --font-family: 'Outfit', sans-serif;
-  
-  --body-font-weight: 400; /* Regular */
-  --subtitle-font-weight: 100; /* Thin */
-  --medium-font-weight: 500; /* Medium */
-  --title-font-weight: 700; /* Bold */
-  --heavy-font-weight: 900; /* Black */
-  --semi-bold-font-weight: 600; /* SemiBold */
+
+  --body-font-weight: 400;
+  /* Regular */
+  --subtitle-font-weight: 100;
+  /* Thin */
+  --medium-font-weight: 500;
+  /* Medium */
+  --title-font-weight: 700;
+  /* Bold */
+  --heavy-font-weight: 900;
+  /* Black */
+  --semi-bold-font-weight: 600;
+  /* SemiBold */
+
+  --gfs: 14.4;
 
 
   --animation-primary: 0.4s cubic-bezier(0.5, 0.75, 0, 1);
@@ -185,37 +193,51 @@ img {
 
 
 
-body, button, input, textarea {
+body,
+button,
+input,
+textarea {
   font-family: var(--font-family);
   font-weight: var(--body-font-weight);
 }
 
-h1, .title  {
+h1,
+.title {
   font-family: var(--font-family);
-  font-weight: var(--title-font-weight); /* Use the defined variable for title font weight */
+  font-weight: var(--title-font-weight);
+  /* Use the defined variable for title font weight */
 }
 
-h2  {
+h2 {
   font-family: var(--font-family);
-  font-weight: var(--title-font-weight); /* Use the defined variable for title font weight */
+  font-weight: var(--title-font-weight);
+  /* Use the defined variable for title font weight */
 }
 
-h3, .medium {
+h3,
+.medium {
   font-family: var(--font-family);
-  font-weight: var(--medium-font-weight); /* Use the defined variable for medium font weight */
+  font-weight: var(--medium-font-weight);
+  /* Use the defined variable for medium font weight */
 }
 
-h4, .heavy {
+h4,
+.heavy {
   font-family: var(--font-family);
-  font-weight: var(--heavy-font-weight); /* Use the defined variable for heavy font weight */
+  font-weight: var(--heavy-font-weight);
+  /* Use the defined variable for heavy font weight */
 }
 
-h5, .semi-bold {
+h5,
+.semi-bold {
   font-family: var(--font-family);
-  font-weight: var(--semi-bold-font-weight); /* Use the defined variable for semi-bold font weight */
+  font-weight: var(--semi-bold-font-weight);
+  /* Use the defined variable for semi-bold font weight */
 }
 
-p, span {
+p,
+span {
   font-family: var(--font-family);
-  font-weight: var(--body-font-weight); /* Use the defined variable for body font weight */
+  font-weight: var(--body-font-weight);
+  /* Use the defined variable for body font weight */
 }

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useMemo } from 'react'
 import Data from '../Data';
 import './ServicesSections.scss';
 import Link from 'next/link';
-import WorkedWith from '../../../components/workedWith/WorkedWith';
+import WorkedWith from '../../../components/workedWith';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import RelatedWork from '../../../components/relatedWork/RelatedWork';
 import { Service } from '@/common/types';

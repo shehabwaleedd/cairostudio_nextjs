@@ -12,17 +12,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/services/page": [
+    "/case-study/[title]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/services/page.css",
-      "static/chunks/app/services/page.js"
-    ],
-    "/work/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/work/page.css",
-      "static/chunks/app/work/page.js"
+      "static/css/app/case-study/[title]/page.css",
+      "static/chunks/app/case-study/[title]/page.js"
     ]
   }
 }

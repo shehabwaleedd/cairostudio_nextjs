@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import useFetchProjects from '@/hooks/useFetchProjects';
 import Link from 'next/link';
 import Image from 'next/image';
+import Upper from '../upper';
 
 
 interface Project {
@@ -48,13 +49,18 @@ const MainProjects = () => {
 
     const displayedProjects = React.useMemo(() =>
         projects.filter((project: Project) =>
-            ['Lemkus', 'Aldar', 'Innovest'].includes(project.title)
+            ['Lemkus', 'Aldar', 'Innovest', 'Tiger', 'Swag'].includes(project.title)
         ),
         [projects]
     );
 
+    const numberOfProjects = projects.length || 0;
+
     return (
         <div className={styles.mainProjects}>
+
+            <Upper p1="Latest Work" p2="01" p3="All Work" h2="Latest" secondRow={true} span={numberOfProjects} />
+
             <div className={styles.mainProjects__container}>
                 {displayedProjects.map((item: Project, index: number) => (
                     <ProjectItem item={item} key={index} />

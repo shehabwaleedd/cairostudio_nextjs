@@ -160,18 +160,17 @@
   text-align: left;
   height: 100%;
   width: 100%;
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--animation-primary);
 }
 .style_mainProjects__container__p531m {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 10vh;
-  grid-gap: 1rem;
+  grid-template-rows: auto;
   width: 100%;
-  height: 100vh;
-  padding: 2rem;
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  padding: 2rem 0;
+  transition: var(--animation-primary);
 }
 @media (max-width: 1156px) {
   .style_mainProjects__container__p531m {
@@ -191,16 +190,15 @@
   position: relative;
 }
 .style_mainProjects__container__imgs_img__3qCcF {
-  height: 80vh;
+  height: 40vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  height: 100%;
   position: relative;
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--animation-primary);
 }
-@media (max-width: 1460px) {
+@media (max-width: 1360px) {
   .style_mainProjects__container__imgs_img__3qCcF {
     min-height: 70vh;
   }
@@ -211,12 +209,12 @@
   }
 }
 .style_mainProjects__container__imgs_img__3qCcF img {
-  height: 80vh;
+  height: 40vh;
   width: 100%;
   object-fit: cover;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--animation-primary);
 }
-@media (max-width: 1460px) {
+@media (max-width: 1360px) {
   .style_mainProjects__container__imgs_img__3qCcF img {
     min-height: 70vh;
   }
@@ -248,6 +246,12 @@
   top: 0;
   left: 0;
 }
+.style_mainProjects__item__rP18A:nth-child(4) {
+  grid-column: span 2;
+}
+.style_mainProjects__item__rP18A:nth-child(5) {
+  grid-column: span 1;
+}
 .style_mainProjects__item__desc__f_0AN {
   display: flex;
   align-items: flex-start;
@@ -257,10 +261,11 @@
   position: relative;
   height: 100%;
   opacity: 1;
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--animation-primary);
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--container-color);
+  padding-left: 0.4rem;
 }
 .style_mainProjects__item__desc__f_0AN h2 {
   font-size: 2rem;
@@ -283,52 +288,98 @@
     font-size: 0.8rem;
   }
 }
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/upper/style.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_upper__Tk73E {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+@media (max-width: 555px) {
+  .style_upper__Tk73E {
+    padding: 1rem;
+  }
+}
+.style_upper_top___Eucp, .style_upper_bottom__MsI6G {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.style_upper_top___Eucp h2, .style_upper_bottom__MsI6G h2 {
+  font-size: calc(140 / var(--gfs) * 1rem);
+  font-weight: 500;
+  color: var(--container-color);
+  letter-spacing: 0.16rem;
+  text-transform: uppercase;
+  line-height: 0.8;
+}
+.style_upper_top_left__ZnZmB, .style_upper_bottom_left__fWF6t {
+  display: flex;
+  align-items: flex-start;
+}
+.style_upper_top_left__ZnZmB span, .style_upper_bottom_left__fWF6t span {
+  font-style: calc(40 / var(--gfs) * 1rem);
+}
+@media (max-width: 480px) {
+  .style_upper_top_left__ZnZmB span, .style_upper_bottom_left__fWF6t span {
+    font-size: calc(24 / var(--gfs) * 1rem);
+  }
+}
+.style_upper_bottom__MsI6G p {
+  font-size: calc(50 / var(--gfs) * 1rem);
+  font-weight: 300;
+  color: var(--container-color);
+  letter-spacing: -0.05rem;
+  text-transform: uppercase;
+}
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/textMask/style.module.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .style_textMask__dJ_Qe {
   display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  position: relative;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  position: relative;
+  height: 100vh;
   z-index: 9;
-  width: 100%;
-  overflow: hidden;
+  margin: 20vh 0;
 }
-.style_textMask__dJ_Qe .style_textMask__container__X_fxR {
-  width: 100%;
-  padding-top: 56.25%;
-  position: relative;
-}
-@media (max-width: 456px) {
-  .style_textMask__dJ_Qe .style_textMask__container__X_fxR {
-    padding-top: 0;
-  }
-}
-.style_textMask__dJ_Qe .style_textMask__container__X_fxR video {
-  position: absolute;
-  top: 0;
+.style_textMask__dJ_Qe .style_video__KMCk_ {
+  position: fixed;
   left: 0;
+  width: 100%;
+  top: -10vh;
+  height: 120vh;
+  z-index: 1;
+}
+.style_textMask__dJ_Qe .style_video_cont__JF6Sl {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.style_textMask__dJ_Qe .style_video_cont__JF6Sl video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 @media (max-width: 456px) {
-  .style_textMask__dJ_Qe .style_textMask__container__X_fxR video {
+  .style_textMask__dJ_Qe .style_video_cont__JF6Sl video {
     position: relative;
   }
 }
-.style_textMask__dJ_Qe .style_textMask__container__X_fxR .style_absText__mP_Jf {
+.style_textMask__dJ_Qe .style_absText__mP_Jf {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
   mix-blend-mode: difference;
+  z-index: 6;
 }
-.style_textMask__dJ_Qe .style_textMask__container__X_fxR .style_absText__mP_Jf h3 {
+.style_textMask__dJ_Qe .style_absText__mP_Jf h3 {
   font-size: 3rem;
-  font-family: "Outfit-Bold";
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -336,7 +387,7 @@
   text-align: center;
 }
 @media (max-width: 456px) {
-  .style_textMask__dJ_Qe .style_textMask__container__X_fxR .style_absText__mP_Jf h3 {
+  .style_textMask__dJ_Qe .style_absText__mP_Jf h3 {
     font-size: 2rem;
   }
 }
@@ -501,9 +552,9 @@
   color: var(--container-color);
   padding-left: 0.5rem;
   font-size: 1.5rem;
-  font-family: "Outfit-Medium";
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: -0.05rem;
   padding-bottom: 1rem;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -524,10 +575,10 @@
   width: 100%;
 }
 .faqs .faqs__container .item-1 .accordion .accCategory h3 {
+  font-weight: 300;
   width: 100%;
   color: var(--container-color);
   font-size: 1rem;
-  font-family: "Outfit-Medium";
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   padding-bottom: 1rem;
@@ -546,7 +597,7 @@
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   font-size: 1.5rem;
   padding-right: 1rem;
-  font-family: "Outfit-Thin";
+  font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -568,7 +619,7 @@
 }
 .faqs .faqs__container .item-1 .panel p {
   color: var(--container-color);
-  font-family: "Outfit-Thin";
+  font-weight: 300;
   width: 95%;
   letter-spacing: 0.05rem;
   padding-left: 0.5rem;

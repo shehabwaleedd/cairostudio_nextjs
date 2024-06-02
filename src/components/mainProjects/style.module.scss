@@ -6,19 +6,19 @@
     text-align: left;
     height: 100%;
     width: 100%;
-    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: var(--animation-primary);
 
 
     &__container {
         position: relative;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 10vh;
-        grid-gap: 1rem;
+        grid-template-rows: auto;
+
         width: 100%;
-        height: 100vh;
-        padding: 2rem;
-        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        height: 100%;
+        padding: 2rem 0;
+        transition: var(--animation-primary);
 
         @media (max-width: 1156px) {
             grid-template-columns: repeat(1, 1fr);
@@ -37,16 +37,15 @@
             position: relative;
 
             &_img {
-                height: 80vh;
+                height: 40vh;
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
                 width: 100%;
-                height: 100%;
                 position: relative;
-                transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+                transition: var(--animation-primary);
 
-                @media (max-width: 1460px) {
+                @media (max-width: 1360px) {
                     min-height: 70vh;
                 }
 
@@ -55,18 +54,19 @@
                 }
 
                 img {
-                    height: 80vh;
+                    height: 40vh;
                     width: 100%;
                     object-fit: cover;
-                    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-                    @media (max-width: 1460px) {
+                    transition: var(--animation-primary);
+
+                    @media (max-width: 1360px) {
                         min-height: 70vh;
                     }
-    
+
                     @media (max-width: 1100px) {
                         min-height: 60vh;
                     }
-    
+
                 }
 
                 p {
@@ -95,7 +95,12 @@
         position: relative;
         top: 0;
         left: 0;
-
+&:nth-child(4) {
+            grid-column: span 2;
+        }
+        &:nth-child(5) {
+            grid-column: span 1;
+        }
 
 
         &__desc {
@@ -107,10 +112,11 @@
             position: relative;
             height: 100%;
             opacity: 1;
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: var(--animation-primary);
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid var(--container-color);
+            padding-left: 0.4rem;
 
             h2 {
                 font-size: 2rem;
@@ -135,4 +141,5 @@
             }
         }
     }
+
 }

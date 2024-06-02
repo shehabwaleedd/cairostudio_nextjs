@@ -33,7 +33,6 @@ const Home = () => {
                     <div className={styles.lower__callToActionsBtns}>
                         <Link className={styles.schedule} href="/about"> Schedule A brief </Link>
                         <Link className={styles.contact} href="/contact"> Contact Us </Link>
-
                     </div>
                 </div>
             </div>
