@@ -10,8 +10,9 @@ import FaqsData from '../workedWith/WorkedWithData';
 import Stairs from '../../animations/transition/Stairs';
 import styles from "./style.module.scss"
 import ZoomParallax from "../zoomParallax";
+import ServicesList from '../ServicesList';
 import dynamic from 'next/dynamic'
-const Projectss = dynamic(() => import('@/components/Projects3D/Projects'), { ssr: false })
+
 
 
 const HomeComponents = () => {
@@ -22,12 +23,10 @@ const HomeComponents = () => {
                 <MainProjects />
                 <AboutUs />
                 <TextMask />
-                <Projectss />
+                <ServicesList />
+                <Faqs Data={FaqsData} />
                 <Perpective />
                 <ZoomParallax />
-                <div className='faqs__padding'>
-                    <Faqs Data={FaqsData} />
-                </div>
             </div>
         </Stairs>
     )

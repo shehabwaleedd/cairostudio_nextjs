@@ -1,53 +1,88 @@
 const FaqsData = [
     {
-        name: 'Lelu Store',
-        Categories: ["Research - ", "Strategy - ", "Design - ", "Development"],
+        name: "Pyramids Egypt Tours",
+        categories: ["Identity", "Branding", "Design", "Development"],
         desc: [
-            "Looking through our perspective, the transformation of Lelu Store was a result of a collaborative effort. We worked closely to reshape their online presence, incorporating thorough research and strategic planning. In the realm of design, we crafted visuals that capture the essence of Lelu's unique style – a blend of youthful retro fashion and contemporary urban trends. Leveraging our web development skills, we turned concepts into a seamless online experience, inviting fashion enthusiasts to explore a curated collection of styles. The story of Lelu Store is more than a project; it's a reflection of our commitment to creating digital spaces where creativity flourishes, and individuality shines."
+            "Pyramids Egypt Tours, a leading travel agency in Cairo, approached us to craft a brand that would stand out in a saturated market. Our team conducted extensive market research and competitor analysis to understand the landscape. Collaborating closely with the client, we developed a bold and memorable brand identity, incorporating modern design elements that resonate with their target audience. The new branding was complemented by a fully responsive website, featuring intuitive navigation and compelling visuals, ensuring an engaging user experience."
         ]
     },
     {
-        name: 'Barkar Tours Egypt',
-        Categories: ["Research - ", "Strategy - ", "Design - ", "Development"],
+        name: "F365 Global",
+        categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
-            "Barkar Tours, a distinguished travel agency in Egypt, sought our expertise for a unique website that breaks away from the ordinary. They wanted a platform to showcase their tours and packages, enabling users to effortlessly book and pay online. To meet their distinct needs, we crafted a custom solution using ReactJS, empowering the client to manage content seamlessly. Additionally, we integrated a booking system, allowing users to conveniently reserve and pay for tours directly through the website."
+            "F365 Global, an empowerment movement for women in the UAE, sought our expertise to create a website that effectively showcases their services and events. We initiated the project with in-depth research to understand their mission and audience. Our strategic approach involved developing a comprehensive digital strategy that highlighted their core values. The resulting website was designed with a modern aesthetic, ensuring it was both user-friendly and reflective of the brand's empowering identity. The site features seamless navigation, dynamic content, and interactive elements to engage visitors."
         ]
     },
     {
-        name: 'BCHICK',
-        Categories: ["Design, ", "Branding", "Strategy", "Research"],
+        name: "RAÏNA",
+        categories: ["Design", "Development"],
         desc: [
-            "BCHICK is a Cairo based company that produces premium, organic chicken products. The client approached us to create a brand that would stand out in a highly competitive market. We worked closely with the client to develop a brand that is bold, modern and memorable."
+            "RAÏNA, an Egyptian band renowned for performing North African traditional music, needed a platform to promote their art and events. We began by understanding their unique style and audience preferences. Our design team crafted a visually stunning website that mirrors the band's cultural essence, incorporating traditional motifs with modern design principles. The development phase focused on creating a user-friendly interface with features such as event schedules, music samples, and an easy-to-navigate layout, ensuring fans can easily access the band's content and stay updated with their performances."
         ]
     },
     {
-        name: 'Il Reve',
-        Categories: ["Research - ", "Strategy - ", "Design - ", "Development"],
+        name: "Tag Media",
+        categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
-            "Il Rêve is a sophisticated hotel and restaurant reservation web application that redefines the way users book rooms or tables. This name was built with a fusion of innovation, leveraging React.js and the reliability of Firebase. Let's dive into the story of how we brought this dream to life."
+            "Tag Media, a digital marketing agency based in Cairo, engaged us to build a website that would showcase their extensive range of services and impressive portfolio. We commenced with thorough market research and strategic planning to ensure the website aligned with their business goals. The design phase involved creating a sleek, modern interface that highlights their expertise and past successes. The development process included implementing advanced functionalities, such as a portfolio gallery and client testimonials, to provide a comprehensive view of their capabilities and achievements."
         ]
     },
     {
-        name: 'Spicers',
-        Categories: ["Branding - ", "Strategy", "Research", "Design"],
+        name: "Pyramids Inn Hotel",
+        categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
-            "At Spicers, where every bite is a journey into Tikka Delights, we embarked on a branding and design mission with a Saudi Arabian touch. Specializing in premium, organic chicken products, Spicers sought our expertise to carve a niche in a fiercely competitive market. Collaborating closely, we crafted a bold, modern, and unforgettable brand that captures the essence of Tikka Delights between every flavorful bite."
+            "Pyramids Inn Hotel, situated in Cairo, needed a digital makeover to better represent their luxurious offerings. Our team conducted detailed research to understand their market position and customer preferences. We developed a strategic plan to revamp their online presence, focusing on enhancing user engagement. The website design incorporated high-quality visuals and an elegant layout that reflects the hotel's sophisticated ambiance. Development included integrating booking functionalities and detailed room descriptions, providing potential guests with a seamless and informative browsing experience."
         ]
     },
     {
-        name: 'Eagle Lake',
-        Categories: ["Research - ", "Design", "Development"],
+        name: "Lelu Store",
+        categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
-            "Viewing it from our standpoint, the journey of Eagle Lake, a coffee shop brand in Sri Lanka, was a collaborative venture. Tasked with the goal to revitalize their brand, our team worked diligently to transform Eagle Lake from a traditional coffee shop into a contemporary and inviting space, well-suited for the digital age. We conducted in-depth research, focusing on design elements that reflect the essence of Eagle Lake. From a refreshed brand identity to user-friendly website interfaces, our efforts aimed to create a seamless and engaging experience for coffee enthusiasts. The story of Eagle Lake is not just a project; it's a testament to our dedication to helping businesses evolve and thrive in the digital landscape."
+            "Lelu Store, a fashion retailer, sought to revitalize their online presence. We collaborated closely with the client to reshape their digital strategy, starting with comprehensive market research and competitive analysis. Our design team crafted visuals that capture Lelu's unique blend of retro and contemporary styles. The development process focused on creating an intuitive and engaging e-commerce platform, featuring a curated collection of styles. The website offers seamless navigation, dynamic content, and an immersive shopping experience, reflecting Lelu's vibrant brand identity."
         ]
     },
     {
-        name: '&Tomorrow',
-        Categories: ["Strategy - ", "Design - ", "Development"],
+        name: "Barkar Tours Egypt",
+        categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
-            "& Tomorrow is a Cape Town based production agency that creates inspiring global content - predominantly focussed on sport. The client has been doing sports production for a number of years, and wanted to reposition and refresh their business to showcase the work they were producing. We were brought in from the very start - conceptualising the brand name all the way through to web design that reflects a bold, impactful and modern brand."
+            "Barkar Tours, a premier travel agency in Egypt, required a website that could showcase their exclusive tours and packages while enabling seamless online bookings. We began with thorough research to understand their unique needs and customer expectations. Our strategy involved creating a bespoke solution using ReactJS, ensuring flexibility and ease of content management for the client. The design phase focused on an attractive and functional interface, while the development integrated a robust booking system, allowing users to easily reserve and pay for tours online."
         ]
     },
+    {
+        name: "BCHICK",
+        categories: ["Research", "Strategy", "Design", "Branding"],
+        desc: [
+            "BCHICK, a Cairo-based premium organic chicken producer, aimed to establish a distinctive brand in a competitive market. We conducted extensive market research to understand consumer preferences and market trends. Our strategy focused on creating a bold and modern brand identity that stands out. The design process involved developing compelling visual elements and packaging that reflect the quality and organic nature of their products. The branding efforts ensured a cohesive and memorable brand presence that resonates with health-conscious consumers."
+        ]
+    },
+    {
+        name: "Il Reve",
+        categories: ["Research", "Strategy", "Design", "Development"],
+        desc: [
+            "Il Rêve, a sophisticated hotel and restaurant reservation platform, sought an innovative digital solution. Our project began with detailed research to understand user needs and market demands. We developed a strategic plan leveraging React.js and Firebase for a reliable and scalable solution. The design phase focused on creating a sleek and intuitive interface that simplifies the booking process. The development ensured robust functionality, allowing users to effortlessly book rooms and tables, enhancing their overall experience."
+        ]
+    },
+    {
+        name: "Spicers",
+        categories: ["Research", "Strategy", "Design", "Branding"],
+        desc: [
+            "Spicers, specializing in premium organic chicken products, aimed to carve out a niche in a competitive market. Our team conducted in-depth research to understand market dynamics and consumer behavior. The strategy involved developing a bold and modern brand that emphasizes their unique Tikka Delights. The design phase included creating visually appealing packaging and marketing materials that highlight the product's premium quality. The branding efforts ensured a strong market presence, helping Spicers attract health-conscious consumers."
+        ]
+    },
+    {
+        name: "Eagle Lake",
+        categories: ["Research", "Design", "Development"],
+        desc: [
+            "Eagle Lake, a coffee shop in Sri Lanka, wanted to rejuvenate its brand for the digital era. We started with comprehensive research to understand their brand essence and customer expectations. The design phase focused on creating a contemporary and inviting visual identity that reflects the coffee shop's warm and welcoming atmosphere. Development involved building a user-friendly website with features like an interactive menu and online ordering system, enhancing customer engagement and convenience."
+        ]
+    },
+    {
+        name: "& Tomorrow",
+        categories: ["Strategy", "Design", "Development"],
+        desc: [
+            "& Tomorrow, a Cape Town-based sports production agency, needed a fresh brand identity and digital presence. We were involved from the conceptualization stage, helping to define the brand name and positioning. Our strategy focused on creating a bold and impactful brand that stands out in the sports production industry. The design phase included developing a dynamic and modern website that showcases their inspiring global content. Development ensured the site was highly functional, with easy navigation and interactive elements that engage visitors."
+        ]
+    }
 ];
 
 export default FaqsData;

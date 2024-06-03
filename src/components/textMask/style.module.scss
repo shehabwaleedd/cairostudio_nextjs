@@ -36,9 +36,14 @@
 
     .absText {
         position: absolute;
-        bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+        top: 1rem;
         left: 1rem;
         mix-blend-mode: difference;
+        width: 100%;
         z-index: 6;
 
         h3 {
@@ -47,12 +52,45 @@
             text-transform: uppercase;
             letter-spacing: 0.1rem;
             width: 100%;
-            text-align: center;
+            text-align: left;
 
             @media (max-width: 456px) {
                 font-size: 2rem;
             }
         }
     }
+
+}
+
+.upper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+    gap: 2rem;
+    position: relative;
+    z-index: 99;
+    mix-blend-mode: difference;
+
+    @media (max-width: 555px) {
+        padding: 1rem;
+    }
+
+    &_top {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        p {
+            font-weight: 300;
+            color: #fff;
+            letter-spacing: 0.16rem;
+            text-transform: uppercase;
+            line-height: 0.8;
+        }
+
+
+    }
+
 
 }

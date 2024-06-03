@@ -17,6 +17,12 @@ const TextMask: React.FC = () => {
     return (
         <section className={styles.textMask} ref={container} style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
             <div className={styles.absText}>
+                <div className={styles.upper}>
+                    <div className={styles.upper_top}>
+                        <p>BRIEF</p>
+                        <p>[S: 03]</p>
+                    </div>
+                </div>
                 <h3>
                     CAIRO STUDIO
                 </h3>

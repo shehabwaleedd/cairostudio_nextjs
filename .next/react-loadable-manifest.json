@@ -1,16 +1,1 @@
-{
-  "components/Projects3D/Projects.tsx -> ./Projects3DComponents/Projects3D": {
-    "id": "components/Projects3D/Projects.tsx -> ./Projects3DComponents/Projects3D",
-    "files": [
-      "static/css/_app-pages-browser_src_components_Projects3D_Projects3DComponents_Projects3D_tsx.css",
-      "static/chunks/_app-pages-browser_src_components_Projects3D_Projects3DComponents_Projects3D_tsx.js"
-    ]
-  },
-  "components/homePage/index.tsx -> @/components/Projects3D/Projects": {
-    "id": "components/homePage/index.tsx -> @/components/Projects3D/Projects",
-    "files": [
-      "static/css/_app-pages-browser_src_components_Projects3D_Projects_tsx.css",
-      "static/chunks/_app-pages-browser_src_components_Projects3D_Projects_tsx.js"
-    ]
-  }
-}
+{}

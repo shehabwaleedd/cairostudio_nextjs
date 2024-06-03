@@ -37,12 +37,12 @@ const WorkedWith = ({ Data }) => {
             exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
         >
             <div className="faqs__container containered">
-                {Data.map(({ id, name, desc, Categories }, index) => (
+                {Data.map(({ id, name, desc, categories }, index) => (
                     <div className={`item-1 ${activeAccordion === id ? 'open' : ''}`} key={index}>
                         <div className="accordion" onClick={() => toggleAccordion(index)}>
                             <div className="title"><h2>{name}</h2></div>
                             <div className="accCategory" key={index}>
-                                {Categories && Categories.map((category, index) => (
+                                {categories && categories.map((category, index) => (
                                     <h3 key={index}>{category.replace("-", "")}</h3>
                                 ))}
                                 <div className="icon">{activeAccordion === 0 ? 'Less -' : 'More +'}</div>

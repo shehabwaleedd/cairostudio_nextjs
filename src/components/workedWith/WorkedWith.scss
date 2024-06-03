@@ -8,8 +8,9 @@
     width: 100%;
     position: relative;
     gap: 5rem;
+    padding: 1rem 2rem;
     @media (max-width: 1025px) {
-        padding: 0rem;
+        padding: 1rem;
     }
     .faqs__container {
         display: flex;
