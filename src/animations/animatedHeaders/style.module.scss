@@ -7,15 +7,14 @@
         margin-top: 1.5rem;
         font-size: clamp(4.5vh, 5vw, 6vw);
         color: var(--container-color);
-        letter-spacing: 0.1rem;
+        letter-spacing: normal;
         padding-left: 0.1rem;
         text-transform: uppercase;
         position: relative;
-        line-height: 1;
+        line-height: 0.78;
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         @media (max-width: 456px) {
-            line-height: 0.88;
-            letter-spacing: normal;
+            line-height: 0.78;
         }
     }
 }

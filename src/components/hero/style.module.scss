@@ -1,6 +1,5 @@
 .home {
-    height: 100%;
-    margin-top: 5vh;
+    height: 90vh;
     position: relative;
     display: flex;
     left: 0;
@@ -9,18 +8,11 @@
     align-items: center;
     transition: var(--animation-primary);
     z-index: 8;
+    gap: 2rem;
+
     @media(max-width: 978px) {
         height: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-
-    }
-
-    @media(max-width: 448px) {
-        height: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
+        padding-top: 5vh;
     }
 
     &__container {
@@ -28,26 +20,9 @@
         align-content: center;
         justify-content: center;
         flex-direction: column;
-        height: 100%;
+        height: fit-content;
         width: 100%;
         transition: var(--animation-primary);
-
-        &__content {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            transition: var(--animation-primary);
-            overflow: hidden;
-
-
-            @media (max-width: 678px) {
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-        }
 
     }
 
@@ -55,7 +30,12 @@
         display: flex;
         overflow: hidden;
         width: 100%;
-        line-height: 1;
+        align-content: center;
+        justify-content: center;
+
+        h2 {
+            line-height: 0.4;
+        }
 
         &_group {
             padding-left: 1rem;
@@ -64,6 +44,10 @@
     }
 
     &__subheader {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
 
         span {
             font-size: 1rem;
@@ -71,7 +55,7 @@
             letter-spacing: 0rem;
             text-transform: lowercase;
             line-height: 1;
-            width: 100%;
+            max-width: 70%;
             text-align: left;
 
             @media (max-width: 456px) {
@@ -94,15 +78,22 @@
 .lower {
     padding-left: 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 1rem;
+    width: 100%;
+    max-width: 70%;
 
     @media (max-width: 1256px) {
+        flex-direction: column-reverse;
         padding-left: 1rem;
+        max-width: 95%;
     }
 
     &__callToActionsBtns {
         display: flex;
+        align-content: center;
+        justify-content: center;
         gap: 1rem;
 
         a {
@@ -110,6 +101,8 @@
             padding: 0.4rem;
             transition: var(--animation-primary);
             text-transform: lowercase;
+            text-align: left;
+
             &:hover {
                 transition: var(--animation-primary);
                 background-color: var(--title-color);
@@ -117,6 +110,30 @@
             }
         }
     }
+
+    &_left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    &_right {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+    }
+
 }
 
 .schedule {

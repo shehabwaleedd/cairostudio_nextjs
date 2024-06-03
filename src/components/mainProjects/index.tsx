@@ -15,28 +15,24 @@ interface Project {
 
 interface ProjectItemProps {
     item: Project;
+    index: number
 }
 
-const ProjectItem = memo(({ item }: ProjectItemProps) => (
+const ProjectItem = memo(({ item, index }: ProjectItemProps) => (
     <Link href={{ pathname: `/case-study/${item.title}` }} className={styles.mainProjects__item}>
         <div className={styles.mainProjects__container__imgs}>
-            <div className={styles.mainProjects__container__imgs_img}>
-                <Image src={item.poster} alt={item.title}
-                    title={item.title}
-                    width={500}
-                    height={500}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={true}
-                    placeholder='blur'
-                    blurDataURL={item.poster}
-                />
-                <p>
-                    <span>-{item.date}-</span>
-                </p>
-            </div>
+            <Image src={item.poster} alt={item.title}
+                title={item.title}
+                width={500}
+                height={500}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={true}
+                placeholder='blur'
+                blurDataURL={item.poster}
+            />
         </div>
-        <div className={styles.mainProjects__item__desc}>
-            <p>{item.categories.join(' - ')}</p>
+        <div className={styles.desc}>
+            <p>({index + 1})</p>
             <h2 className='title'>{item.title}</h2>
         </div>
     </Link>
@@ -63,7 +59,7 @@ const MainProjects = () => {
 
             <div className={styles.mainProjects__container}>
                 {displayedProjects.map((item: Project, index: number) => (
-                    <ProjectItem item={item} key={index} />
+                    <ProjectItem item={item} key={index} index={index} />
                 ))}
             </div>
         </div>
