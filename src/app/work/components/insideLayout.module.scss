@@ -1,0 +1,117 @@
+.projectsPageCo__details {
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    width: 100%;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: #000;
+    z-index: 5;
+    height: 50vh;
+    padding: 2rem;
+    border-top: 1px solid var(--container-color);
+    overflow: hidden;
+
+
+    .projectsPageCo__details__container__close {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        top: -1rem;
+        right: 0;
+        padding: 2rem;
+        cursor: pointer;
+        z-index: 9999;
+        align-items: center;
+
+
+        h3 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #eae4d8;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            margin: 0px;
+
+            @media (max-width: 456px) {
+                font-size: 0.8rem;
+                letter-spacing: normal;
+            }
+        }
+
+        span {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #eae4d8;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+
+            @media (max-width: 456px) {
+                font-size: 0.8rem;
+                letter-spacing: normal;
+            }
+        }
+    }
+
+    .projectsPageCo__deCo {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        gap: 2rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        top: -2rem;
+
+        .projectsPageCo__details__container {
+            gap: 2rem;
+            cursor: grabbing;
+
+        }
+    }
+    img {
+        width: 25vw;
+        height: 25vh;
+        object-fit: cover;
+
+    }
+    video {
+
+        width: 25vw;
+        height: 25vh;
+        object-fit: cover;
+    }
+}
+
+.keen-slider__slide {
+    cursor: grabbing;
+}
+
+.fullscreen_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Dark background for overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to ensure it appears on top */
+
+    img {
+        object-fit: contain;
+        max-width: 70%;
+        max-height: 70%;
+    }
+
+    video {
+        object-fit: contain;
+        max-width: 70%;
+        max-height: 70%;
+    }
+}
+
+

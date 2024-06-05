@@ -10,6 +10,7 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { NavLink } from "@/common/types";
 import useWindowSize from '@/hooks/useWindowWidth';
+import { TransitionLink } from '../transitionLink';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -87,9 +88,10 @@ const Navbar: React.FC = () => {
                         <ul>
                             {links.map((link, index) => (
                                 <li key={index}>
-                                    <Link href={link.href} passHref>
+                                    {/* <Link href={link.href} passHref>
                                         {link.title}
-                                    </Link>
+                                    </Link> */}
+                                    <TransitionLink href={link.href} label={link.title} />
                                 </li>
                             ))}
                         </ul>

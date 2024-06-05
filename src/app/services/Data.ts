@@ -1,6 +1,34 @@
 import BrandingImage from "../../../public/assets/branding/HIM BRAND GUIIEDLINE V02.webp";
+import { StaticImageData } from "next/image";
 
-const Data = [ 
+interface DataType {
+    serviceTitle: string;
+    underTitle: string[];
+    image: {
+        isImg: boolean;
+        src: StaticImageData;
+    };
+    upperDescription: string;
+    serviceDescription: string[];
+    relatedNames: string[];
+    services: {
+        description: string;
+        content: {
+            title: string;
+            options: string[];
+        }[]
+    }[];
+    process: {
+        description: string;
+        content: {
+            name: string;
+            desc: string[];
+        }[]
+    }[];
+}
+
+
+const Data: DataType[] = [ 
     {
         serviceTitle: "websites",
         underTitle: [

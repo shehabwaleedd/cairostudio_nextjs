@@ -29,7 +29,7 @@
 
         h1 {
             font-size: 10vh;
-            font-family: 'Outfit-Black';
+            font-weight: 600;
             color: var(--container-color);
             letter-spacing: 0.2rem;
             text-transform: uppercase;
@@ -76,7 +76,7 @@
         h3 {
             font-size: 1.5vh;
             padding-right: 6rem;
-            font-family: 'Outfit-Regular';
+            font-weight: 300;
             color: var(--container-color);
             letter-spacing: 0.26rem;
             text-transform: uppercase;
@@ -85,7 +85,7 @@
             width: 50%;
 
             @media (max-width: 1256px) {
-                font-family: 'Outfit-Thin';
+                font-weight: 200;
                 text-transform: capitalize;
                 font-size: 2vh;
                 letter-spacing: 0.1rem;
@@ -119,7 +119,7 @@
             h2 {
                 font-size: 1.5vh;
                 width: 100%;
-                font-family: 'Outfit-Regular';
+                font-weight: 300;
                 color: var(--container-color);
                 letter-spacing: 0.26rem;
                 text-transform: uppercase;
@@ -129,7 +129,7 @@
                 @media (max-width: 1256px) {
                     font-size: 2vh;
                     letter-spacing: 0.1rem;
-                    font-family: 'Outfit-Thin';
+                    font-weight: 200;
                 }
 
                 @media (max-width: 756px) {

@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect, useCallback } from 'react';
 import { Project } from '@/common/types';
 import fetchData from './fetchData';

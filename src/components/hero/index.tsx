@@ -3,6 +3,7 @@ import styles from "./style.module.scss"
 import getChars from '../../animations/animatedHeaders/getChars'
 import Link from 'next/link'
 import data from "@/components/workedWith/WorkedWithData"
+import { TransitionLink } from '../transitionLink'
 const Home = () => {
 
     return (
@@ -31,7 +32,8 @@ const Home = () => {
                     </div>
                     <div className={styles.lower__callToActionsBtns}>
                         <Link className={styles.schedule} href="/about"> Schedule A brief </Link>
-                        <Link className={styles.contact} href="/contact"> Contact Us </Link>
+                        {/* <Link className={styles.contact} href="/contact"> Contact Us </Link> */}
+                        <TransitionLink href="/contact" label="Contact Us" />
                     </div>
                 </div>
                 <div className={styles.lower_right}>

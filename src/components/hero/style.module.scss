@@ -84,6 +84,24 @@
     width: 100%;
     max-width: 70%;
 
+    button,
+    a {
+        border: 1px solid var(--title-color);
+        padding: 0.4rem;
+        transition: var(--animation-primary);
+        text-transform: lowercase;
+        text-align: left;
+
+        &:hover {
+            transition: var(--animation-primary);
+            background-color: var(--title-color);
+            color: var(--background-color);
+        }
+    }
+    button {
+        background-color: transparent;
+    }
+
     @media (max-width: 1256px) {
         flex-direction: column-reverse;
         padding-left: 1rem;
@@ -96,19 +114,7 @@
         justify-content: center;
         gap: 1rem;
 
-        a {
-            border: 1px solid var(--title-color);
-            padding: 0.4rem;
-            transition: var(--animation-primary);
-            text-transform: lowercase;
-            text-align: left;
 
-            &:hover {
-                transition: var(--animation-primary);
-                background-color: var(--title-color);
-                color: var(--background-color);
-            }
-        }
     }
 
     &_left {

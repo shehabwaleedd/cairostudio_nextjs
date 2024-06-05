@@ -1,139 +1,152 @@
 'use client'
-import React, { useState, useCallback } from 'react'
-import { motion, AnimatePresence } from "framer-motion"
-import useFetchProjects from '../useFetchProjects/useFetchProjects'
-import Image from 'next/image'
-import { Project, ProjectState, RelatedWorkProps } from '@/common/types'
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import useFetchProjects from '@/hooks/useFetchProjects';
+import getChars from '@/animations/animatedHeaders/getChars';
+import { usePathname } from 'next/navigation';
+import styles from '@/app/work/page.module.scss';
+import Layout from '@/app/work/components/Layout';
+import InsideLayout from '@/app/work/components/InsideLayout';
+import List from '@/app/work/components/list/List';
+import { Project, ProjectState, RelatedWorkProps } from '@/common/types';
 
-import '../../app/work/ProjectsPage.scss'
-
-
-const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames, heading }) => {
+const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading }) => {
     const { projects } = useFetchProjects();
     const [project, setProject] = useState<Project | null>(null);
+    const [menuOpened, setMenuOpened] = useState<boolean>(false);
+    const router = usePathname();
+
     const [projectState, setProjectState] = useState<ProjectState>({
         detailsOpened: false,
         selectedProjectIndex: null,
         hoveredProjectIndex: null,
     });
 
+    const [selectedView, setSelectedView] = useState<string>('grid');
+    const isWorkRoute = router === '/work';
 
-    const relatedProjects = projects.filter((project: Project) => relatedNames.includes(project.title));
+    const relatedProjects = useMemo(() => {
+        return projects.filter((project: Project) => relatedNames.includes(project.title));
+    }, [projects, relatedNames]);
+
+    const [filteredProjects, setFilteredProjects] = useState<Project[]>(relatedProjects);
+
+    const categories = useMemo(() => {
+        return ['All Work+', ...relatedProjects.flatMap((project: Project) => project.categories)];
+    }, [relatedProjects]);
+
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+    const handleCategoryClick = useCallback((category: string) => {
+        if (category === 'All Work+') {
+            setFilteredProjects(relatedProjects);
+        } else {
+            const projectsByCategory = relatedProjects.filter((project: Project) =>
+                project.categories.includes(category)
+            );
+            setFilteredProjects(projectsByCategory);
+        }
+        setSelectedCategory(category);
+        setMenuOpened(false);
+    }, [relatedProjects]);
+
+    const handleMenuClick = useCallback(() => {
+        setMenuOpened(!menuOpened);
+    }, [menuOpened]);
 
     const handleProjectClick = useCallback((index: number) => {
-        const selectedProject = projects[index];
+        const selectedProject = filteredProjects[index];
+        console.log(selectedProject, "selected project")
         if (selectedProject) {
             setProject(selectedProject);
-            setProjectState({
-                ...projectState,
+            setProjectState((prevState) => ({
+                ...prevState,
                 detailsOpened: true,
-                selectedProjectIndex: index
-            });
+                selectedProjectIndex: index,
+            }));
         }
-    }, [projects, projectState]);
-
+    }, [filteredProjects]);
 
     const handleDetailsClose = useCallback(() => {
-        setProjectState({
-            ...projectState,
+        setProjectState((prevState) => ({
+            ...prevState,
             selectedProjectIndex: null,
             detailsOpened: false,
-        });
-    }, [projectState]);
+        }));
+    }, []);
 
-
+    useEffect(() => {
+        if (isWorkRoute) {
+            setFilteredProjects(projects);
+        } else {
+            const projectsFilteredByNames = projects.filter((project: Project) => relatedNames.includes(project.title));
+            setFilteredProjects(projectsFilteredByNames);
+        }
+    }, [isWorkRoute, projects, relatedNames]);
 
     return (
-        <section className="projectsPage">
-            <motion.h2 initial={{ opacity: 0, y: 110, skewY: 10 }}>{heading}</motion.h2>
-            <div className="projectsPage__container">
-                <AnimatePresence mode='wait'>
-                    {projectState.detailsOpened && project ? (<div className='projectsPageCo__content'></div>
-                    ) : (
-                        <motion.div className="projectsPageCo__content" initial={{ opacity: 0, y: 100 }} transition={{ duration: 0.4, type: "spring", damping: 12, stiffness: 100, ease: [0.42, 0, 0.58, 1] }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 100 }}>
-                            {relatedProjects.map((project: Project, index: number) => {
-                                return (
-                                    <div className="projectsPageCo__items" onClick={() => handleProjectClick(index)}
-                                        onMouseEnter={() => setProjectState({ ...projectState, hoveredProjectIndex: index })}
-                                        onMouseLeave={() => setProjectState({ ...projectState, hoveredProjectIndex: null })}
-                                        key={index}>
-                                        <div className="projectsPageCo__item">
-                                            <div className="projectsPageCo__item__img" style={{
-                                                backgroundImage: `url(${project.homePage})`,
-                                                backgroundSize: 'cover',
-                                                backgroundPosition: 'center',
-                                                backgroundRepeat: 'no-repeat',
-                                            }}>
-                                                <AnimatePresence mode='wait'>
-                                                    {projectState.hoveredProjectIndex === index && (
-                                                        <motion.video
-                                                            initial={{ opacity: 0 }}
-                                                            animate={{ opacity: 1 }}
-                                                            exit={{ opacity: 0 }}
-                                                            src={project.mainVideo}
-                                                            style={{
-                                                                width: project.title === 'Lemkus' || project.title === 'Block Lords' ? '70%' : '100%',
-                                                                left: project.title === 'Lemkus' || project.title === 'Block Lords' ? '15%' : '',
-                                                                objectFit: project.title === 'Lemkus' || project.title === 'Block Lords' ? 'contain' : 'cover',
-                                                            }}
-                                                            loop
-                                                            muted
-                                                            autoPlay
-                                                            playsInline
-                                                            height="100%"
-                                                            width="100%"
-                                                            title={project.title}
-                                                        />
-                                                    )}
-                                                </AnimatePresence>
-                                            </div>
-                                            <div className="projectsPageCo__item__desc">
-                                                <div className="projects__item_desc-combined">
-                                                    <p>{project.categories.join(" - ")}</p>
-                                                    <p>{project.date}</p>
-                                                </div>
-                                                <h3>{project.title}</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-                <AnimatePresence mode='wait'>
-                    {projectState.detailsOpened && projectState.selectedProjectIndex !== null && relatedProjects[projectState.selectedProjectIndex] && (
-                        <motion.div className="projectsPageCo__details" initial={{ opacity: 0, y: 200 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 100 }}>
-                            <div className="projectsPageCo__details__container__close" onClick={handleDetailsClose}>
-                                <span>{(relatedProjects[projectState.selectedProjectIndex] as Project).index}</span>
-                                <h3>{(relatedProjects[projectState.selectedProjectIndex] as Project).title}</h3>
-                                <span>Close</span>
+        <>
+            <section className={styles.projectsPage}>
+                <div className={styles.projectsPage_top}>
+                    <div className={styles.projectsPage__heading}>
+                        {getChars(heading)}
+                    </div>
+                    {isWorkRoute && (
+                        <div className={styles.projectPage__categories}>
+                            <div className={styles.proectPage__categories_container}>
+                                <div onClick={handleMenuClick}>
+                                    <h3>Filter: {selectedCategory ? selectedCategory : "All Work+"}</h3>
+                                    <AnimatePresence mode='wait'>
+                                        {menuOpened && (
+                                            <motion.div className={styles.projectPage__categories__menu__container__content}
+                                                initial={{ height: "0vh" }}
+                                                animate={{ height: "50vh" }}
+                                                exit={{ height: "0vh" }}
+                                                transition={{ duration: 0.4, ease: [0.42, 0, 0.58, 1] }}
+                                            >
+                                                <ul>
+                                                    {categories.map((category, index) => (
+                                                        <li key={index} onClick={() => handleCategoryClick(category)}>
+                                                            <motion.h3 initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] } }} exit={{ opacity: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } }}>{category}</motion.h3>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
                             </div>
-                            <div className="projectsPageCo__deCo">
-                                <motion.div className="projectsPageCo__details__container">
-                                    {relatedProjects[projectState.selectedProjectIndex] && (relatedProjects[projectState.selectedProjectIndex] as Project).collectiveItems &&
-                                        (relatedProjects[projectState.selectedProjectIndex] as Project)?.collectiveItems
-                                            ?.filter(item => item.type === 'projectImages')[0]?.items.map((detail, index) => (
-                                                <div className="projectsPageCo__details__container__item" key={index}>
-                                                    {detail.isImg ? (
-                                                        <div className="projectsPageCo__details__container__item__img">
-                                                            <Image src={detail.image} alt={`Project Img ${index}`} loading="lazy" placeholder='blur' width={500} height={300} blurDataURL={detail.image} />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="projectsPageCo__details__container__item__video">
-                                                            <video src={detail.image} loop muted autoPlay playsInline title={`Project Video ${index}`} />
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            ))}
-                                </motion.div>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </div>
-        </section >
-    )
-}
+                            <div className={styles.projectPage__viewSelect}>
+                                <div className={styles.pv__container}>
+                                    <motion.button
+                                        style={{ backgroundColor: selectedView === 'grid' ? '#000' : '', color: selectedView === 'grid' ? 'var(--background-color)' : 'var(--container-color)' }}
+                                        onClick={() => setSelectedView('grid')}
+                                    >
+                                        Grid
+                                    </motion.button>
+                                    <motion.button
+                                        style={{ backgroundColor: selectedView === 'list' ? '#000' : '', color: selectedView === 'list' ? 'var(--background-color)' : 'var(--container-color)' }}
+                                        onClick={() => setSelectedView('list')}
 
-export default RelatedWork
+                                    >
+                                        List
+                                    </motion.button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+                {selectedView === 'grid' ? (
+                    <div className={styles.projectsPage__container}>
+                        <Layout projectState={projectState} setProjectState={setProjectState} filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} />
+                    </div>
+                ) : (
+                    <List filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} projectState={projectState} relatedProjects={relatedProjects} handleDetailsClose={handleDetailsClose} />
+                )}
+            </section>
+            <InsideLayout projectState={projectState} relatedProjects={relatedProjects} handleDetailsClose={handleDetailsClose} />
+        </>
+    );
+};
+
+export default RelatedWork;

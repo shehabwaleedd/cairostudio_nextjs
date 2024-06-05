@@ -6,7 +6,7 @@ const FooterWithNoSSR = dynamic(() => import('../components/footer'), { ssr: fal
 import { Metadata } from 'next';
 import { UserContextProvider } from '../context/authContext/AuthContext';
 import SmoothScrolling from '@/animations/SmoothScrolling';
-
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: 'Cairo Studio | Leading in UI/UX & Web Development',
@@ -37,11 +37,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="noise" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <Navbar />
         <UserContextProvider>
           <SmoothScrolling>
+            <Toaster />
             {children}
           </SmoothScrolling>
         </UserContextProvider>

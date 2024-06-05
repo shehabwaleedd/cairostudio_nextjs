@@ -1,4 +1,13 @@
-const Data = [
+interface DataType {
+    id: number;
+    title: string;
+    elements: {
+        text: string;
+    }[]
+}
+
+
+const Data: DataType[] = [
     {
         id: 1,
         title: "Research",

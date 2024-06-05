@@ -105,12 +105,12 @@ export interface ScopeOfWork {
 
 
 export interface CachedData {
-    projects: Project[];
+    projects: Project[] ;
     timestamp: number;
 }
 
 export interface ProjectState {
-    detailsOpened: boolean;
+    detailsOpened: boolean | null;
     selectedProjectIndex: number | null;
     hoveredProjectIndex: number | null;
 }
