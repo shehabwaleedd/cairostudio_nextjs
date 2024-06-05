@@ -32,7 +32,8 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
     const [filteredProjects, setFilteredProjects] = useState<Project[]>(relatedProjects);
 
     const categories = useMemo(() => {
-        return ['All Work+', ...relatedProjects.flatMap((project: Project) => project.categories)];
+        const allCategories = ['All Work+', ...relatedProjects.flatMap((project: Project) => project.categories)];
+        return Array.from(new Set(allCategories.slice(0, 10)));
     }, [relatedProjects]);
 
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

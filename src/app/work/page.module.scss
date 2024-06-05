@@ -118,24 +118,17 @@
         .projectPage__categories__menu__container__content {
             position: absolute;
             left: 0rem;
-            background-color: var(--accent-color);
+            background-color: var(--title-color);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             padding: 0rem;
-            top: 12rem;
+            top: 6rem;
             height: 100%;
             z-index: 99999;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
-            @media (max-width: 456px) {
-                top: 5rem;
-                left: 0rem;
-                width: 100%;
-                height: 100%;
-                padding: 0rem;
-            }
 
             h3 {
                 font-size: 1rem;

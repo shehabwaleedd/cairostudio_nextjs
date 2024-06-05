@@ -19,9 +19,9 @@ const List: React.FC<ListProps> = ({ filteredProjects }) => {
     };
 
     const panelVariants = {
-        hidden: { height: 0 },
-        visible: { height: '30vh' },
-        exit: { height: 0 }
+        hidden: { height: 0, opacity: 0, padding: 0 },
+        visible: { height: '30vh', opacity: 1, padding: '20px' },
+        exit: { height: 0, opacity: 0, padding: 0 }
     };
 
     const handleMediaClick = (type: string, src: string) => {
