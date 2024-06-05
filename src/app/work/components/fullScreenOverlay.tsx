@@ -5,20 +5,28 @@ import styles from './insideLayout.module.scss';
 
 interface FullScreenOverlayProps {
     selectedMedia: { type: string | null, src: string };
-    setSelectedMedia: (value: { type: string | null , src: string } | null) => void;
+    setSelectedMedia: (value: { type: string | null, src: string } | null) => void;
 }
 
 const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({ selectedMedia, setSelectedMedia }) => {
+    const handleOverlayClick = () => {
+        setSelectedMedia(null);
+    };
+
+    const stopPropagation = (e: React.MouseEvent) => {
+        e.stopPropagation();
+    };
+
     return (
         <motion.div
             className={styles.fullscreen_overlay}
-            onClick={() => setSelectedMedia(null)}
+            onClick={handleOverlayClick}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            {selectedMedia.type === 'image' && (
-                <div className={styles.fullscreen_image_wrapper}>
+            <div className={styles.fullscreen_image_wrapper} onClick={stopPropagation}>
+                {selectedMedia.type !== 'video' && (
                     <Image
                         src={selectedMedia.src}
                         alt="Full Screen"
@@ -26,17 +34,19 @@ const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({ selectedMedia, se
                         objectFit="contain"
                         className={styles.fullscreen_image}
                     />
-                </div>
-            )}
-            {selectedMedia.type === 'video' && (
-                <video
-                    className={styles.fullscreen_video}
-                    src={selectedMedia.src}
-                    controls
-                    autoPlay
-                    loop
-                />
-            )}
+                )}
+                {selectedMedia.type === 'video' && (
+                    <video
+                        className={styles.fullscreen_video}
+                        src={selectedMedia.src}
+                        controls
+                        autoPlay
+                        loop
+                        onClick={stopPropagation}
+                    />
+                )}
+            </div>
+
         </motion.div>
     );
 };

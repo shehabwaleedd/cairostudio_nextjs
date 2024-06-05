@@ -15,7 +15,7 @@ const InsideSlider: React.FC<InsideSliderProps> = ({ selectedProject, handleMedi
         drag: true,
         rubberband: false,
         breakpoints: {
-            "(min-width: 440px)": {
+            "(min-width: 380px)": {
                 slides: { perView: 2, spacing: 10 },
             },
             "(min-width: 768px)": {
@@ -30,29 +30,46 @@ const InsideSlider: React.FC<InsideSliderProps> = ({ selectedProject, handleMedi
         },
     });
 
+    const handleImageClick = (e: React.MouseEvent, type: "image" | "video", media: string) => {
+        e.stopPropagation();  // Prevents the event from bubbling up
+        handleMediaClick(type, media);
+    };
+
     return (
         <div ref={sliderRef} className={`keen-slider ${styles.keenSlider}`}>
             {selectedProject.collectiveItems?.find((item: any) => item.type === 'projectImages')?.items.map((detail: any, index: number) => (
-                <div className={`keen-slider__slide ${styles.projectsPageCo__details__container__item}`} key={index}>
+                <div
+                    className={`keen-slider__slide ${styles.projectsPageCo__details__container__item}`}
+                    key={index}
+                    onClick={(e) => handleImageClick(e, detail.isImg ? 'image' : 'video', detail.image)}
+                >
                     {detail.isImg ? (
-                        <div
-                            className={styles.projectsPageCo__details__container__item__img}
-                            onClick={() => handleMediaClick('image', detail.image)}
-                        >
+                        <div className={styles.projectsPageCo__details__container__item__img}>
                             <Image
                                 src={detail.image}
                                 alt={`Project Img ${index}`}
                                 loading="lazy"
                                 layout="fill"
                                 objectFit="cover"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleImageClick(e, 'image', detail.image);
+                                }}
                             />
                         </div>
                     ) : (
-                        <div
-                            className={styles.projectsPageCo__details__container__item__video}
-                            onClick={() => handleMediaClick('video', detail.image)}
-                        >
-                            <video src={detail.image} loop muted autoPlay playsInline />
+                        <div className={styles.projectsPageCo__details__container__item__video}>
+                            <video
+                                src={detail.image}
+                                loop
+                                muted
+                                autoPlay
+                                playsInline
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleImageClick(e, 'video', detail.image);
+                                }}
+                            />
                         </div>
                     )}
                 </div>

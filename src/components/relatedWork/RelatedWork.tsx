@@ -141,7 +141,7 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                         <Layout projectState={projectState} setProjectState={setProjectState} filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} />
                     </div>
                 ) : (
-                    <List filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} projectState={projectState} relatedProjects={relatedProjects} handleDetailsClose={handleDetailsClose} />
+                    <List filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} />
                 )}
             </section>
             <InsideLayout projectState={projectState} relatedProjects={relatedProjects} handleDetailsClose={handleDetailsClose} />
