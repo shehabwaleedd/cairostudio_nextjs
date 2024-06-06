@@ -25,3 +25,24 @@
 .banner4 {
     left: 75%;
 }
+
+
+.textAnimation {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+
+    div {
+        display: flex;
+        overflow: hidden;
+        h2 {
+            color: var(--accent-color);
+            text-transform: lowercase;
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+    }
+}

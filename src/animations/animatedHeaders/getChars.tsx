@@ -5,7 +5,7 @@ import styles from "./style.module.scss"
 
 const getChars = (word: string) => {
     return word.split("").map((char, i) => (
-        <div className={styles.getChars} key={char + i}>
+        <div className={`${styles.getChars} letter`} key={char + i}>
             <motion.h2
                 custom={[i * 0.02, (word.length - i) * 0.01]}
                 variants={translate}

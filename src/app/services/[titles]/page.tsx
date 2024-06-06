@@ -1,97 +1,105 @@
-'use client'
-import React, { useEffect, useRef, useMemo } from 'react'
+import React from 'react';
 import Data from '../Data';
-import './ServicesSections.scss';
+import styles from "./page.module.scss";
 import Link from 'next/link';
-import WorkedWith from '../../../components/workedWith';
-import { motion, useTransform, useScroll } from 'framer-motion';
-import RelatedWork from '../../../components/relatedWork/RelatedWork';
+import WorkedWith from '@/components/workedWith';
+import RelatedWork from '@/components/relatedWork/RelatedWork';
 import { Service } from '@/common/types';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 interface ServicesSectionsProps {
     params: { titles: string }
 }
 
-const ServicesSections: React.FC<ServicesSectionsProps> = ({ params }) => {
+async function fetchService(title: string): Promise<Service | null> {
+    const service = Data.find((service) => service.serviceTitle.toLowerCase() === title.toLowerCase()) || null;
+    return service;
+}
 
-    const foundService: Service | undefined = useMemo(() => {
-        return Data.find((service) => service.serviceTitle.toLowerCase() === params.titles.toLowerCase());
-    }, [params.titles]);
+export async function generateMetadata({ params }: { params: { titles: string } }): Promise<Metadata> {
+    const title = params.titles.toLowerCase();
+    const service = await fetchService(title);
 
-
-    const imgRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: imgRef,
-        offset: ["start end", "end end"]
-    });
-    const heading = "Related Work"
-    const translateY = useTransform(
-        scrollYProgress,
-        [0, 1],
-        ["20%", "-20%"]
-    );
-
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
-
-    if (!foundService) {
-        return null;
+    if (!service) {
+        return {
+            title: 'Service Not Found - Cairo Studio',
+            description: 'The service you are looking for does not exist.',
+            openGraph: {
+                title: 'Service Not Found - Cairo Studio',
+                description: 'The service you are looking for does not exist.',
+                url: `https://www.cairo-studio.com/services/${title}`,
+                type: 'website',
+                images: [
+                    {
+                        url: 'https://www.cairo-studio.com/default-image.jpg',
+                        width: 800,
+                        height: 600,
+                        alt: 'My Company Default Image',
+                    },
+                ],
+            },
+        };
     }
+
+    return {
+        title: `${service.serviceTitle.toUpperCase()} - Cairo Studio`,
+        description: service.upperDescription,
+        openGraph: {
+            title: `${service.serviceTitle} - Cairo Studio`,
+            description: service.upperDescription,
+            url: `https://www.cairo-studio.com/services/${title}`,
+            type: 'website',
+        },
+    };
+}
+
+const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => {
+    const service = await fetchService(params.titles);
+
+    const heading = "Related Work";
+
+    if (!service) {
+        return <p>Service not found.</p>;
+    }
+
     return (
         <>
-            {/* <Head>
-                <title>{foundService.serviceTitle} | Cairo Studio</title>
-                <meta name="description" content={foundService.upperDescription} />
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://cairo-studio.com" />
-                <meta property="twitter:title" content={foundService.serviceTitle} />
-                <meta property="twitter:description" content={foundService.upperDescription} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://cairo-studio.com" />
-                <meta property="og:title" content={foundService.serviceTitle} />
-                <meta property="og:description" content={foundService.upperDescription} />
-            </Head> */}
-            <main className='servicesSections'>
-                <h1>{foundService.serviceTitle}</h1>
-                <section className='services__container_upper'>
-                    <p>{foundService.underTitle[0]} <br /> {foundService.underTitle[1]}</p>
-                    <div className="servicesSpans">
-                        <h2>{foundService.upperDescription}</h2>
-                        {foundService.serviceDescription.map((service, index) => {
-                            return (
-                                <p key={index}>{service}</p>
-                            )
-                        })}
+            <main className={styles.servicesSections}>
+                <header>
+                    <h1>{service.serviceTitle}</h1>
+                </header>
+                <section className={styles.services__container_upper}>
+                    <p>{service.underTitle[0]} <br /> {service.underTitle[1]}</p>
+                    <div className={styles.servicesSpans}>
+                        <h2>{service.upperDescription}</h2>
+                        {service.serviceDescription.map((desc, index) => (
+                            <p key={index}>{desc}</p>
+                        ))}
                     </div>
                 </section>
-                <div className="servicesMedia">
-                    <motion.div className="servicesMedia__left" style={{ translateY }}>
-                        <Image src={foundService.image.src} alt={`${foundService.serviceTitle}`} />
-                    </motion.div>
-                </div>
-                <div className="services__bottom">
-                    <div className="services__bottom_container">
-                        <div className="seboco__left">
-                            <div className="services__bottom_container_left">
-                                <h2>Services </h2>
-                                <p>{foundService.services[0].description}</p>
-                            </div>
+                <section className={styles.servicesMedia}>
+                    <Image src={service.image.src} alt={service.serviceTitle} width={800} height={600} />
+                </section>
+                <section className={styles.services__bottom}>
+                    <div className={styles.services__bottom_container}>
+                        <div className={styles.seboco__left}>
+                            <h2>Services</h2>
+                            <p>{service.services[0].description}</p>
                             <Link href="/contact">
                                 <h3>Get Quote</h3>
                             </Link>
                         </div>
-                        <div className="seboco__right">
-                            <div className="services__bottom_container_right">
-                                {foundService.services[0]?.content.map(({ title, options }, index) => (
-                                    <div key={index} className="services__bottom_container_right_section">
-                                        <div className="upper">
+                        <div className={styles.seboco__right}>
+                            <div className={styles.services__bottom_container_right}>
+                                {service.services[0]?.content.map(({ title, options }, index) => (
+                                    <div key={index} className={styles.services__bottom_container_right_section}>
+                                        <div className={styles.upper}>
                                             <h2>{title}</h2>
                                         </div>
-                                        <div className="lower">
-                                            {options.map((option, index) => (
-                                                <p key={index}>{option}</p>
+                                        <div className={styles.lower}>
+                                            {options.map((option, optIndex) => (
+                                                <p key={optIndex}>{option}</p>
                                             ))}
                                         </div>
                                     </div>
@@ -99,29 +107,24 @@ const ServicesSections: React.FC<ServicesSectionsProps> = ({ params }) => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="services__bottom">
-                    <div className="services__bottom_container">
-                        <div className="seboco__left">
-                            <div className="services__bottom_container_left">
-                                <h2>Process </h2>
-                                <p>{foundService.process[0].description}</p>
-                            </div>
+                </section>
+                <section className={styles.services__bottom}>
+                    <div className={styles.services__bottom_container}>
+                        <div className={styles.seboco__left}>
+                            <h2>Process</h2>
+                            <p>{service.process[0].description}</p>
                         </div>
-                        <div className="seboco__right">
-                            <WorkedWith Data={foundService.process[0].content} />
+                        <div className={styles.seboco__right}>
+                            <WorkedWith Data={service.process[0].content} />
                         </div>
                     </div>
-                </div>
+                </section>
+                <section className={styles.services__related}>
+                    <RelatedWork relatedNames={service.relatedNames} heading={heading} />
+                </section>
             </main>
-            <div className="services__related">
-                <h2>Related Services</h2>
-                <div className="services__related_container">
-                    <RelatedWork relatedNames={foundService.relatedNames} heading={heading} />
-                </div>
-            </div>
         </>
-    )
-}
+    );
+};
 
-export default ServicesSections
+export default ServicesSections;

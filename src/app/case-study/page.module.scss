@@ -78,7 +78,7 @@
         height: 100vh;
 
         &__item,
-        &__item-small {
+        &__item_small {
             position: absolute;
             top: 0;
             left: 0;
@@ -96,8 +96,8 @@
                 z-index: 50;
             }
 
-            &-inner,
-            &-inner-small {
+            &_inner,
+            &_inner_small {
                 position: relative;
                 width: 120%;
                 height: 120%;
@@ -109,11 +109,11 @@
             }
         }
 
-        &--bg {
+        &__bg {
             z-index: 1;
         }
 
-        &--fg {
+        &__fg {
             position: absolute; // Changed from fixed to absolute
             left: 50%;
             top: 50%;
@@ -182,8 +182,8 @@
     bottom: 1rem;
     right: 2rem;
 
-    .prev-button,
-    .next-button {
+    .prev_button,
+    .next_button {
         display: flex;
         place-items: center;
         justify-content: center;

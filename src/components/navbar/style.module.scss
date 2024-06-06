@@ -19,32 +19,26 @@
         padding-top: 1rem;
     }
 
-    .nav__logo {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+
+    h1 {
         position: relative;
+        left: 0rem;
+        font-size: 1.5rem;
+        color: #fff;
+        text-transform: capitalize;
+        letter-spacing: 0.1rem;
         width: 100%;
 
-        h1 {
-            position: relative;
+        @media (max-width: 1356px) {
             left: 0rem;
             font-size: 1.5rem;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            width: 100%;
+        }
 
-            @media (max-width: 1356px) {
-                left: 0rem;
-                font-size: 1.5rem;
-            }
-
-            @media (max-width: 416px) {
-                font-size: 1.3rem;
-            }
+        @media (max-width: 416px) {
+            font-size: 1.3rem;
         }
     }
+
 
     .nav__corner {
         display: flex;

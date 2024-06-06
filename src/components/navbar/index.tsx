@@ -10,7 +10,7 @@ import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { NavLink } from "@/common/types";
 import useWindowSize from '@/hooks/useWindowWidth';
-import { TransitionLink } from '../transitionLink';
+import { TransitionLink, TransitionLogo } from '../transitionLink';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -79,18 +79,13 @@ const Navbar: React.FC = () => {
                 animate={controls}
                 initial={{ opacity: '1' }}
                 transition={{ ease: [0.33, 1, 0.68, 1], duration: 0.65 }}>
-                <Link href="/" passHref className={styles.nav__logo}>
-                    <h1>CAIRO STUDIO</h1>
-                </Link>
+                <TransitionLogo href="/" label="Cairo Studio" />
                 <div className={styles.nav__corner}>
                     {!isDesktop && <span>Cairo: {currentTime}</span>}
                     <div className={styles.navLinks}>
                         <ul>
                             {links.map((link, index) => (
                                 <li key={index}>
-                                    {/* <Link href={link.href} passHref>
-                                        {link.title}
-                                    </Link> */}
                                     <TransitionLink href={link.href} label={link.title} />
                                 </li>
                             ))}
