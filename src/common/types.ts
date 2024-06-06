@@ -17,9 +17,12 @@ export interface ProjectsDetailsProps {
         title: string;
     };
 }
-export interface CollectiveItem {
+interface CollectiveItem {
     type: string;
-    items: ProjectDetail[];
+    items: {
+        isImg: boolean;
+        image: string;
+    }[];
 }
 
 export interface Project {
@@ -54,7 +57,6 @@ export interface Project {
         sections: Section[];
         scopeOfWork: ScopeOfWork[];
         navigationLeft?: NavigationType; // Assuming it's optional
-
     };
     introduction2?: string;
     introduction3?: string;
@@ -80,10 +82,11 @@ export interface NavigationType {
     options: Option[];
 }
 
-export interface Section {
+interface Section {
     name: string;
-    options: Option[];
-    items?: Item[];
+    options?: {
+        text: string;
+    }[];
 }
 
 export interface Item {
@@ -98,14 +101,15 @@ export interface Option {
     name?: string;
 }
 
-export interface ScopeOfWork {
+interface ScopeOfWork {
     title: string;
-    options: Option[];
+    options?: {
+        name: string;
+    }[];
 }
 
-
 export interface CachedData {
-    projects: Project[] ;
+    projects: Project[];
     timestamp: number;
 }
 

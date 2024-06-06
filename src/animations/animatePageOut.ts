@@ -10,11 +10,8 @@ export const animatePageIn = () => {
     const textAnimation = document.getElementById("text-animation");
 
     if (bannerOne && bannerTwo && bannerThree && bannerFour && textAnimation) {
-        // Wrap each character in a span
-
-        const letters = document.querySelectorAll('.letter');
-
         const tl = gsap.timeline();
+
 
         tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: 0,
@@ -50,19 +47,19 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
                 duration: 1,
                 ease: "power2.inOut",
             })
-            .set(textAnimation, { display: 'block', })
+            tl.set(textAnimation, { display: 'block', })
             .set('.letter', { opacity: 0 })
             .to('.letter', {
                 opacity: 1,
                 duration: 0.5,
                 ease: "power2.inOut",
-                stagger: 0.05,  
+                stagger: 0.05,
             })
             .to('.letter', {
                 opacity: 0,
                 duration: 0.5,
                 ease: "power2.inOut",
-                stagger: 0.05, 
+                stagger: 0.05,
             });
 
     }

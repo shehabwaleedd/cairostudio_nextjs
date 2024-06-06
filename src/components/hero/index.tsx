@@ -12,6 +12,9 @@ const Home = () => {
                 <div className={styles.home__container__content}>
                     <div className={styles.home__title_group}>
                         <div className={styles.home__title}>
+                            {getChars("Cairo Studio Is")}
+                        </div>
+                        <div className={styles.home__title}>
                             {getChars("A DIGITAL DESIGN STUDIO")}
                         </div>
                         <div className={styles.home__title}>

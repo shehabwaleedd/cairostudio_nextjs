@@ -35,6 +35,8 @@
 
         h2 {
             line-height: 0.4;
+            font-weight: 800;
+            font-size: clamp(10px, 7.2vw, 160px);
         }
 
         &_group {
