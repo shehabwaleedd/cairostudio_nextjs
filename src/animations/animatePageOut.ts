@@ -1,7 +1,5 @@
-import { delay } from "framer-motion"
 import gsap from "gsap"
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
-import anime from 'animejs';
 
 
 export const animatePageIn = () => {
@@ -53,15 +51,18 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
                 ease: "power2.inOut",
             })
             .set(textAnimation, { display: 'block', })
-            .set('.letter', { opacity: 0, })
-            .from('.letter', {
+            .set('.letter', { opacity: 0 })
+            .to('.letter', {
                 opacity: 1,
                 duration: 0.5,
                 ease: "power2.inOut",
-            }).to('.letter', {
+                stagger: 0.05,  
+            })
+            .to('.letter', {
                 opacity: 0,
                 duration: 0.5,
                 ease: "power2.inOut",
+                stagger: 0.05, 
             });
 
     }
