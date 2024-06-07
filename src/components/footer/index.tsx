@@ -1,9 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import React from 'react';
-import './Footer.scss'
+import styles from "./style.module.scss"
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import getChars from '@/animations/animatedHeaders/getChars';
+import AniamtedH3 from '@/animations/animatedH3';
+import AnimatedH3 from '@/animations/animatedH3';
 
 const Footer: React.FC = () => {
 
@@ -53,9 +56,9 @@ const Footer: React.FC = () => {
         }
 
         return (
-            <div className="nextPage">
+            <div className={styles.nextPage}>
                 <h2>Next Page</h2>
-                <Link href={nextPage} className="next-page-link">
+                <Link href={nextPage}>
                     {nextPageName}
                 </Link>
             </div>
@@ -64,22 +67,22 @@ const Footer: React.FC = () => {
 
     return (
         <>
-            <footer className='footer'>
-                <div className="footer__bottom">
-                    <div className="footer__con">
-                        <div className="footer__upper">
+            <footer className={styles.footer}>
+                <div className={styles.footer__bottom}>
+                    <div className={styles.footer__con}>
+                        <div className={styles.footer__upper}>
                             <NextPageLink />
                         </div>
-                        <div className="footer__container">
-                            <div className="footer__address">
+                        <div className={styles.footer__container}>
+                            <div className={styles.footer__address}>
                                 <h2>Cairo</h2>
                                 <address>
                                     <p>Ahmed Heshmat, Zamalek <br /> Cairo, Egypt</p>
                                 </address>
                             </div>
-                            <div className="footer__address">
+                            <div className={styles.footer__address}>
                                 <h2>Business Inquires</h2>
-                                <ul className="focon__content">
+                                <ul className={styles.focon__content}>
                                     <li>
                                         <address>
                                             <a href="mailto:hello@cairo-studio.com" target='_blank' rel="noreferrer">
@@ -91,18 +94,20 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="footer__top">
-                        <h3>CAIRO STUDIO <span>©</span></h3>
+                    <div className={styles.footer__top}>
+                        {/* <h3>CAIRO STUDIO <span>©</span></h3> */}
+                        {/* {getChars('CAIRO STUDIO ©')} */}
+                        <AnimatedH3 word='CAIRO STUDIO ©' />
                     </div>
                 </div>
             </footer>
-            <div className="footer__footer">
-                <div className="footer__footer_container">
-                    <div className="footer__logo">
+            <div className={styles.footer__footer}>
+                <div className={styles.footer__footer_container}>
+                    <div className={styles.footer__logo}>
                         <h2>Cairo Studio © 2023 all rights reserved</h2>
                     </div>
-                    <div className="footer__rest">
-                        <ul className="foso__content">
+                    <div className={styles.footer__rest}>
+                        <ul className={styles.foso__content}>
                             <li>
                                 <a href="https://www.instagram.com/cairostudioo/" target='_blank' rel="noreferrer">
                                     Instagram

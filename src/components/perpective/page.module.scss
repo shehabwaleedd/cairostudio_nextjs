@@ -8,6 +8,12 @@
     box-sizing: border-box;
     overflow: hidden;
     transition: var(--animation-primary);
+
+    @media (max-width: 555px) {
+        flex-direction: column;
+        height: auto;
+    }
+
     .column {
         position: relative;
         height: 100%;
@@ -16,12 +22,27 @@
         display: flex;
         flex-direction: column;
         gap: 2vw;
+
+        @media (max-width: 555px) {
+            flex-direction: row;
+            height: auto;
+            width: 100%;
+            min-width: 100%;
+        }
+
         .imageContainer {
             height: 100%;
             width: 100%;
             position: relative;
             border-radius: 1vw;
             overflow: hidden;
+
+            @media (max-width: 555px) {
+                height: auto;
+                width: auto;
+                flex: 1;
+            }
+
             img {
                 height: 100%;
                 width: 100%;
@@ -49,7 +70,8 @@
 
 .spacer {
     height: 30vh;
-    @media (max-width: 1156px){
+
+    @media (max-width: 1156px) {
         display: none;
         height: 0vh;
     }
