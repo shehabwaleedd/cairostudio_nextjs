@@ -7,9 +7,7 @@
     padding: 1vw;
     box-sizing: border-box;
     overflow: hidden;
-    // @media (max-width: 456px){
-    //     display: none;
-    // }
+    transition: var(--animation-primary);
     .column {
         position: relative;
         height: 100%;

@@ -1,6 +1,7 @@
 .container{
     height: 300vh;
     position: relative;
+    transition: var(--animation-primary);
     @media (max-width: 456px) {
         min-height: 200vh;
     }

@@ -20,20 +20,11 @@ export default function Index() {
 
     const pictures = [
         {
-            src: "/assets/images/folio.mp4",
+            src: "https://res.cloudinary.com/ds20vy7zo/video/upload/v1717735525/folio_lxledq.mp4",
             scale: scale4,
             isImg: false
         },
-        // {
-        //     src: "/assets/images/mainVideo.mp4",
-        //     scale: scale5,
-        //     isImg: false
-        // },
-        // {
-        //     src: "/assets/images/mainVideo22.mp4",
-        //     scale: scale5,
-        //     isImg: false
-        // },
+
     ]
 
     return (

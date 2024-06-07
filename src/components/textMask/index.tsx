@@ -29,7 +29,7 @@ const TextMask: React.FC = () => {
             </div>
             <div className={styles.video}>
                 <motion.div className={styles.video_cont} style={{ y }} >
-                    <video loop autoPlay muted playsInline src="/mainVideo2.mp4" poster={mainVideoPlaceholder.src} security='restricted' preload="metadata" />
+                    <video loop autoPlay muted playsInline src="https://res.cloudinary.com/ds20vy7zo/video/upload/v1717735417/mainVideo2_crsbvz.mp4" poster={mainVideoPlaceholder.src} security='restricted' preload="metadata" />
                 </motion.div>
             </div>
 

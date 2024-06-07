@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from "../page.module.scss"
 import { Project } from '@/common/types'
+import { TransitionLink } from '@/components/transitionLink'
 import Link from 'next/link'
 const Upper = ({ project }: { project: Project }) => {
     return (
         <section className={styles.details_upper}>
             <div className={styles.upper}>
-                <Link href='/case-study'>Back</Link>
+                <TransitionLink href='/case-study' label='Back' />
                 <h1>{project.title}</h1>
             </div>
             <div className={styles.container}>

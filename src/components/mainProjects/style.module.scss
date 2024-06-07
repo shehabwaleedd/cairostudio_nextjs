@@ -53,6 +53,11 @@
             padding-top: 0.5rem;
         }
 
+        @media (max-width: 565px) {
+            flex-direction: column-reverse;
+            padding: 0.5rem;
+        }
+
         @media (min-width: 1350px) {
             &:nth-child(1) {
                 padding-left: 0;
@@ -89,6 +94,13 @@
     position: relative;
     transition: var(--animation-primary);
     padding-left: 0.4rem;
+
+    @media (max-width: 565px) {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0.5rem;
+    }
+
 
     h2 {
         font-size: 2rem;

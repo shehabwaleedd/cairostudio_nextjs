@@ -11,11 +11,12 @@
 
     p {
         font-size: 9.25vw;
-        max-width: 65vw;
+        max-width: 75vw;
         color: var(--title-color);
         line-height: 1;
         text-align: center;
         text-transform: uppercase;
+        font-weight: 700;
 
         @media (max-width: 1356px) {
             font-size: 12.25vw;

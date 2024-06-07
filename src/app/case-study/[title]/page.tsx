@@ -1,26 +1,86 @@
-'use client';
-import React  from 'react';
-import styles from "./page.module.scss";
+// app/projects/[title]/page.tsx
+import React from 'react';
+import { Metadata } from 'next';
+import styles from './page.module.scss';
 import RenderImages from './RenderImages';
 import Upper from './components/Upper';
-import useFetchProjects from '@/hooks/useFetchProjects';
+import { Project } from '@/common/types';
+import serverFetchData from '@/lib/serverFetchData';
 
-const ProjectsDetails = ({ params }: { params: { title: string; } }) => {
-    const { projects, loading, error } = useFetchProjects();
+interface ProjectsDetailsProps {
+    params: { title: string };
+}
 
-    const project = projects.find((p) => p.title === params.title);
+export async function generateMetadata({ params }: ProjectsDetailsProps): Promise<Metadata> {
+    const projects = await serverFetchData();
+    const project = projects.find(p => p.title === params.title);
+
+    if (!project) {
+        return {
+            title: 'Project Not Found - Cairo Studio',
+            description: 'The project you are looking for does not exist.',
+        };
+    }
+
+    const url = `https://www.cairostudio.com/case-study/${params.title}`;
+
+
+    return {
+        title: `${project.title} - Cairo Studio`,
+        description: project.introduction.slice(0, 165),
+        openGraph: {
+            type: 'website',
+            url,
+            title: project.title,
+            description: project.introduction,
+            images: [
+                {
+                    url: project.cover,
+                    width: 800,
+                    height: 600,
+                    alt: project.title,
+                },
+            ],
+            siteName: 'Cairo Studio',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: project.title,
+            description: project.introduction,
+            images: [project.cover],
+        },
+        robots: {
+            index: true,
+            follow: true,
+            nocache: true,
+        },
+        alternates: {
+            canonical: url,
+        },
+    };
+}
+
+const ProjectsDetails: React.FC<ProjectsDetailsProps> = async ({ params }) => {
+    let project: Project | null = null;
+    let error: string | null = null;
+
+    try {
+        const projects = await serverFetchData();
+        project = projects.find(p => p.title === params.title) || null;
+    } catch (err) {
+        error = (err as Error).message;
+    }
 
     if (error) return <p className={styles.error}>Error: {error}</p>;
     if (!project) return <p>NOT FOUND</p>;
 
     const renderCollectiveItems = (type: string) => {
-        const items = project.collectiveItems.find((item) => item.type === type)?.items;
+        const items = project.collectiveItems.find(item => item.type === type)?.items;
         return items ? <RenderImages items={items} /> : null;
     };
 
-
     return (
-        <main className={styles.projectsDetails} >
+        <main className={styles.projectsDetails}>
             <section className={styles.projectsDetails_left}>
                 {renderCollectiveItems('userExpImage')}
                 {renderCollectiveItems('designSystem')}

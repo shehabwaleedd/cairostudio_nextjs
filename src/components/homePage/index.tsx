@@ -11,19 +11,18 @@ import styles from "./style.module.scss"
 import ZoomParallax from "../zoomParallax";
 import ServicesList from '../ServicesList';
 
-
-
 const HomeComponents = () => {
+
     return (
         <div className={styles.homePage}>
             <Hero />
             <MainProjects />
             <AboutUs />
             <TextMask />
-            <ServicesList />
-            <Faqs Data={FaqsData} />
+
             <Perpective />
             <ZoomParallax />
+            <Faqs Data={FaqsData} />
         </div>
     )
 }
