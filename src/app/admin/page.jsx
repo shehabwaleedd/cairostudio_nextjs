@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../../firebase.config';
 import { useRouter } from 'next/navigation';
-import useFetchProjects from '../../components/useFetchProjects/useFetchProjects';
-import refetch from '../../components/useFetchProjects/fetchData';
+import useFetchProjects from "@/hooks/useFetchProjects";
 import Image from 'next/image';
 import './Dashboard.scss';
 import { useUserAuth } from '@/components/authContext/AuthContext';
@@ -22,7 +21,7 @@ const Dashboard = () => {
         if (window.confirm("Are you sure you want to delete this project?")) {
             try {
                 await deleteDoc(doc(db, "projects", projectId));
-                refetch(); // Refetch the data to update the list
+
             } catch (err) {
                 console.error("Error deleting project: ", err);
             }

@@ -2,12 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import ServicesData from './ServiceData'
-import awwwardslogo from '../../../public/assets/awwwardswhite.png'
-import cssdesignawardslogo from "../../../public/assets/css-design-awards-logos-iduloMMvGF.png"
-import thefwa from "../../../public/assets/fwa-logo-C34FEDAC2B-seeklogo.com.png"
-import Image from 'next/image';
 import Link from 'next/link';
-import useFetchProjects from '../../components/useFetchProjects/useFetchProjects';
+import useFetchProjects from '@/hooks/useFetchProjects';
 import { Project } from '@/common/types';
 import { useRouter } from 'next/navigation';
 import styles from "./page.module.scss"

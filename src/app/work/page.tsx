@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import useFetchProjects from '../../components/useFetchProjects/useFetchProjects';
+import useFetchProjects from '@/hooks/useFetchProjects';
 import RelatedWork from '../../components/relatedWork/RelatedWork';
 import { FetchProjectsResponse, Project } from '@/common/types';
 

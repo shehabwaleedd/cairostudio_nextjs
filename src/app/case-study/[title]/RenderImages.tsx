@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from "framer-motion";
 import styles from "./page.module.scss";
+import Image from 'next/image';
 
 interface Item {
     isImg: boolean;
@@ -9,23 +9,22 @@ interface Item {
 
 interface RenderImagesProps {
     items?: Item[];
-    translateY: any;  // Replace 'any' with the correct type if possible
 }
 
-const RenderImages: React.FC<RenderImagesProps> = ({ items, translateY }) => {
+const RenderImages: React.FC<RenderImagesProps> = ({ items }) => {
     if (!items) return null;
     return (
-        <motion.div className={styles.prdeco__collective1}>
+        <div className={styles.prdeco__collective1}>
             {items.map((item, index) => (
-                <motion.div className={styles.prdeco__collective1__item} key={`item-${index}`}>
+                <div className={styles.prdeco__collective1__item} key={`item-${index}`}>
                     {item.isImg ? (
-                        <motion.img src={item.image} alt={`Image ${index}`} style={{ translateY }} loading="lazy" key={`image-${index}`} />
+                        <Image src={item.image} alt={`Image ${index}`} loading="lazy" key={`image-${index}`} width={600} height={600}/>
                     ) : (
-                        <motion.video src={item.image} autoPlay loop muted playsInline title={`Video ${index}`} style={{ translateY }} key={`video-${index}`} />
+                        <video src={item.image} autoPlay loop muted playsInline title={`Video ${index}`} key={`video-${index}`} />
                     )}
-                </motion.div>
+                </div>
             ))}
-        </motion.div>
+        </div>
     );
 };
 

@@ -1,17 +1,30 @@
 'use client';
+
 import { useReducer, useEffect, useCallback } from 'react';
 import fetchData from './fetchData';
+import { Project } from '@/common/types'; // Adjust the import path as needed
 
 const CACHE_KEY = "projects";
 const CACHE_EXPIRY = 3600000; // 1 hour in milliseconds
 
-const initialState = {
+type State = {
+    projects: Project[];
+    loading: boolean;
+    error: string | null;
+};
+
+type Action =
+    | { type: 'FETCH_INIT' }
+    | { type: 'FETCH_SUCCESS'; payload: Project[] }
+    | { type: 'FETCH_FAILURE'; payload: string };
+
+const initialState: State = {
     projects: [],
     loading: false,
     error: null,
 };
 
-const reducer = (state, action) => {
+const reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case 'FETCH_INIT':
             return { ...state, loading: true, error: null };
@@ -27,7 +40,7 @@ const reducer = (state, action) => {
 const useFetchProjects = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const isCacheValid = useCallback(() => {
+    const isCacheValid = useCallback((): boolean => {
         const cache = sessionStorage.getItem(CACHE_KEY);
         if (!cache) return false;
         const { timestamp } = JSON.parse(cache);
@@ -40,13 +53,13 @@ const useFetchProjects = () => {
             const projectsData = await fetchData();
             dispatch({ type: 'FETCH_SUCCESS', payload: projectsData });
         } catch (error) {
-            dispatch({ type: 'FETCH_FAILURE', payload: error.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: (error as Error).message });
         }
     }, []);
 
     useEffect(() => {
         if (isCacheValid()) {
-            const cachedData = JSON.parse(sessionStorage.getItem(CACHE_KEY));
+            const cachedData = JSON.parse(sessionStorage.getItem(CACHE_KEY)!);
             dispatch({ type: 'FETCH_SUCCESS', payload: cachedData.projects });
         } else {
             refetch();

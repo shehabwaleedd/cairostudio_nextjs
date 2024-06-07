@@ -1,13 +1,11 @@
 'use client'
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../firebase.config';
 import styles from "./page.module.scss";
 import Link from 'next/link';
 import gsap from 'gsap';
 import { useSwipeable, SwipeableHandlers } from 'react-swipeable';
 import { debounce } from 'lodash'; // Ensure lodash is installed
-import { Project } from "@/common/types";
+import useFetchProjects from '@/hooks/useFetchProjects';
 
 type ProjectType = {
     id: string;
@@ -18,42 +16,6 @@ type ProjectType = {
     [key: string]: any; // For any additional properties
 };
 
-const useFetchProjects = (): { projects: ProjectType[], error: string | null } => {
-    const [projects, setProjects] = useState<ProjectType[]>([]);
-    const [error, setError] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
-
-    const fetchData = useCallback(async () => {
-        setLoading(true);
-        try {
-            const querySnapshot = await getDocs(collection(db, "projects"));
-            const projectsData: ProjectType[] = querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })) as ProjectType[];
-            sessionStorage.setItem("projects", JSON.stringify(projectsData));
-            setProjects(projectsData.filter(p => p.displayed));
-        } catch (err: any) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    }, []);
-
-    useEffect(() => {
-        const storedProjects = sessionStorage.getItem("projects");
-        if (storedProjects) {
-            try {
-                const parsedProjects = JSON.parse(storedProjects) as ProjectType[];
-                setProjects(parsedProjects.filter(p => p.displayed));
-            } catch (e) {
-                console.error("Failed to parse stored projects", e);
-                fetchData();
-            }
-        } else {
-            fetchData();
-        }
-    }, [fetchData]);
-
-    return { projects, error };
-};
 
 // Animation function (consider moving to a separate utility file)
 const animateSlides = (
