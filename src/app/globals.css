@@ -1,8 +1,8 @@
 :root {
-  /* --container-color: #eae4d8; */
   --container-color: #000000;
   --accent-color: #ff4b26;
-  --background-color: #f3eee5;
+  /* --background-color: #f3eee5; */
+  --background-color: #f2f2f2;
   --color-number: #999;
   --border-color: #eae4d8;
   --title-color: #242322;
@@ -38,8 +38,6 @@
 
 html {
   background-color: var(--background-color);
-  transition: background-color var(--animation-primary), color var(--animation-primary);
-
 }
 
 body {
@@ -118,13 +116,6 @@ img {
 
 
 
-.hiddenn {
-  display: none;
-}
-
-
-
-
 @font-face {
   font-family: 'Outfit';
   src: url('../../public/fonts/Outfit-Variable.woff2') format('woff2');
@@ -147,39 +138,33 @@ h1,
 .title {
   font-family: var(--font-family);
   font-weight: var(--title-font-weight);
-  /* Use the defined variable for title font weight */
 }
 
 h2 {
   font-family: var(--font-family);
   font-weight: var(--title-font-weight);
-  /* Use the defined variable for title font weight */
 }
 
 h3,
 .medium {
   font-family: var(--font-family);
   font-weight: var(--medium-font-weight);
-  /* Use the defined variable for medium font weight */
 }
 
 h4,
 .heavy {
   font-family: var(--font-family);
   font-weight: var(--heavy-font-weight);
-  /* Use the defined variable for heavy font weight */
 }
 
 h5,
 .semi-bold {
   font-family: var(--font-family);
   font-weight: var(--semi-bold-font-weight);
-  /* Use the defined variable for semi-bold font weight */
 }
 
 p,
 span {
   font-family: var(--font-family);
   font-weight: var(--body-font-weight);
-  /* Use the defined variable for body font weight */
 }

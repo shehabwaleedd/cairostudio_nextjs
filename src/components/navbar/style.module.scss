@@ -9,11 +9,10 @@
     height: 6.5vh;
     width: 100%;
     overflow: hidden;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: var(--animation-primary);
     z-index: 9999;
     user-select: none;
     mix-blend-mode: difference;
-
     @media (max-width: 1154px) {
         padding: 1rem;
         padding-top: 1rem;

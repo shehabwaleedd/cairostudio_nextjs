@@ -17,20 +17,20 @@ const AnimatedH3: React.FC<AnimatedH3Props> = ({ word }) => {
         if (containerRef.current) {
             const mm = gsap.matchMedia();
 
-            mm.add("(min-width: 556px)", () => {
+            mm.add("(min-width: 1256px)", () => {
                 const timeline = gsap.timeline({
                     scrollTrigger: {
                         trigger: containerRef.current,
-                        start: 'top 95%', // Adjust start position
-                        end: 'bottom 50%', // Adjust end position
+                        start: 'top 99%', // Adjust start position
+                        end: 'bottom 60%',
                         scrub: true,
                     }
                 });
 
                 lettersRef.current.forEach((letter, i) => {
                     timeline.fromTo(letter, {
-                        opacity: 0,
-                        y: 50
+                        opacity: 0.75,
+                        y: 75
                     }, {
                         opacity: 1,
                         y: 0,
@@ -45,7 +45,8 @@ const AnimatedH3: React.FC<AnimatedH3Props> = ({ word }) => {
                 };
             });
 
-            mm.add("(max-width: 555px)", () => {
+
+            mm.add("(max-width: 1255px)", () => {
                 const timeline = gsap.timeline({
                     scrollTrigger: {
                         trigger: containerRef.current,

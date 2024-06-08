@@ -1,16 +1,49 @@
-'use client'
-import React from 'react';
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { AnimatePresence } from 'framer-motion';
+'use client';
 
-const SmoothScrolling = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <AnimatePresence mode='wait'>
-            <ReactLenis root options={{ lerp: 0.05, duration: 2, multiplier: 0.5, direction: 'vertical', gestureDirection: "vertical", smoothTouch: true, touchMultiplier: 2 }}>
-                {children}
-            </ReactLenis>
-        </AnimatePresence>
-    );
-}
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import Tempus from '@studio-freight/tempus';
+import Lenis from '@studio-freight/lenis';
+import { usePathname, useSearchParams } from 'next/navigation';
 
-export default SmoothScrolling;
+const SmoothScroller = () => {
+    const lenisRef = useRef<Lenis | null>(null);
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        }
+    }, [pathname, searchParams]);
+
+    useLayoutEffect(() => {
+        const lenisInstance = new Lenis({
+            duration: 1.5,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            wheelMultiplier: 1.2,
+            touchMultiplier: 2,
+        });
+        lenisRef.current = lenisInstance;
+
+        const resizeInterval = setInterval(() => {
+            lenisInstance.resize();
+        }, 150);
+
+        const onFrame = (time: number) => {
+            lenisInstance.raf(time);
+        };
+
+        const unsubscribe = Tempus.add(onFrame);
+
+        return () => {
+            clearInterval(resizeInterval);
+            unsubscribe();
+            lenisInstance.destroy();
+            lenisRef.current = null;
+        };
+    }, []);
+
+    return null;
+};
+
+export default SmoothScroller;

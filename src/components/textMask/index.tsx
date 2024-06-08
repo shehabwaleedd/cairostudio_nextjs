@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import mainVideoPlaceholder from "../../../public/assets/mainVideoPlaceholder.webp"
 import styles from './style.module.scss';
+import Link from 'next/link';
 
 const TextMask: React.FC = () => {
     const container = useRef<HTMLElement | null>(null);
@@ -23,9 +24,9 @@ const TextMask: React.FC = () => {
                         <p>[S: 03]</p>
                     </div>
                 </div>
-                <h3>
-                    CAIRO STUDIO
-                </h3>
+                <Link href="/contact">
+                    Contact Us
+                </Link>
             </div>
             <div className={styles.video}>
                 <motion.div className={styles.video_cont} style={{ y }} >

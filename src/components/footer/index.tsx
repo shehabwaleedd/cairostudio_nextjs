@@ -1,26 +1,18 @@
-/* eslint-disable react/no-unescaped-entities */
 'use client';
 import React from 'react';
-import styles from "./style.module.scss"
+import styles from './style.module.scss';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import getChars from '@/animations/animatedHeaders/getChars';
-import AniamtedH3 from '@/animations/animatedH3';
+import { usePathname } from 'next/navigation';
 import AnimatedH3 from '@/animations/animatedH3';
 
 const Footer: React.FC = () => {
+    const pathname = usePathname();
 
-    const router = useRouter(); // Called unconditionally at the top level
-
-
-    const NextPageLink: React.FC = () => {
-        if (!router) return null;
-
-        let nextPage = "/work"; // Default next page
+    const getNextPageLink = () => {
+        let nextPage = "/work";
         let nextPageName = "Work";
 
-        // Logic to determine the next page based on the current location
-        switch (location.pathname) {
+        switch (pathname) {
             case '/':
                 nextPage = "/work";
                 nextPageName = "Work";
@@ -33,7 +25,6 @@ const Footer: React.FC = () => {
                 nextPage = "/contact";
                 nextPageName = "Contact";
                 break;
-
             case '/services':
                 nextPage = "/about";
                 nextPageName = "About";
@@ -50,9 +41,8 @@ const Footer: React.FC = () => {
                 nextPage = "/work";
                 nextPageName = "Work";
                 break;
-
             default:
-                return null; // Return null to not render the component on unspecified routes
+                return null;
         }
 
         return (
@@ -71,57 +61,43 @@ const Footer: React.FC = () => {
                 <div className={styles.footer__bottom}>
                     <div className={styles.footer__con}>
                         <div className={styles.footer__upper}>
-                            <NextPageLink />
+                            {getNextPageLink()}
                         </div>
                         <div className={styles.footer__container}>
                             <div className={styles.footer__address}>
-                                <h2>Cairo</h2>
-                                <address>
-                                    <p>Ahmed Heshmat, Zamalek <br /> Cairo, Egypt</p>
-                                </address>
-                            </div>
-                            <div className={styles.footer__address}>
-                                <h2>Business Inquires</h2>
+                                <h2>Business Inquiries</h2>
                                 <ul className={styles.focon__content}>
                                     <li>
-                                        <address>
-                                            <a href="mailto:hello@cairo-studio.com" target='_blank' rel="noreferrer">
-                                                hello@cairo-studio.com
-                                            </a>
-                                        </address>
+                                        <a href="mailto:hello@cairo-studio.com" target='_blank' rel="noopener noreferrer">
+                                            hello@cairo-studio.com
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div className={styles.footer__top}>
-                        {/* <h3>CAIRO STUDIO <span>©</span></h3> */}
-                        {/* {getChars('CAIRO STUDIO ©')} */}
-                        <AnimatedH3 word='CAIRO STUDIO ©' />
+                        <AnimatedH3 word='CAIRO STUDIO' />
                     </div>
                 </div>
             </footer>
             <div className={styles.footer__footer}>
                 <div className={styles.footer__footer_container}>
                     <div className={styles.footer__logo}>
-                        <h2>Cairo Studio © 2023 all rights reserved</h2>
+                        <h2>Cairo Studio © 2023 All Rights Reserved</h2>
                     </div>
                     <div className={styles.footer__rest}>
                         <ul className={styles.foso__content}>
                             <li>
-                                <a href="https://www.instagram.com/cairostudioo/" target='_blank' rel="noreferrer">
+                                <a href="https://www.instagram.com/cairostudioo/" target='_blank' rel="noopener noreferrer">
                                     Instagram
-                                    <span>
-                                        Instagram
-                                    </span>
+                                    <span>Instagram</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/company/cairostudio/" target='_blank' rel="noreferrer">
-                                    Linkedin
-                                    <span>
-                                        Linkedin
-                                    </span>
+                                <a href="https://www.linkedin.com/company/cairostudio/" target='_blank' rel="noopener noreferrer">
+                                    LinkedIn
+                                    <span>LinkedIn</span>
                                 </a>
                             </li>
                         </ul>
@@ -129,7 +105,7 @@ const Footer: React.FC = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

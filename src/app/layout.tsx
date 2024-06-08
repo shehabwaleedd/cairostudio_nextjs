@@ -44,10 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <UserContextProvider>
-          <SmoothScrolling>
+          <SmoothScrolling />
             <Toaster />
             {children}
-          </SmoothScrolling>
         </UserContextProvider>
         <FooterWithNoSSR />
       </body>

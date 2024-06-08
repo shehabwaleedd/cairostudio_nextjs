@@ -18,10 +18,10 @@ const HomeComponents = () => {
             <Hero />
             <MainProjects />
             <AboutUs />
-            <TextMask />
-
+            <ServicesList />
             <Perpective />
-            <ZoomParallax />
+            <TextMask />
+            {/* <ZoomParallax /> */}
             <Faqs Data={FaqsData} />
         </div>
     )

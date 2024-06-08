@@ -67,12 +67,3 @@
         }
     }
 }
-
-.spacer {
-    height: 30vh;
-
-    @media (max-width: 1156px) {
-        display: none;
-        height: 0vh;
-    }
-}

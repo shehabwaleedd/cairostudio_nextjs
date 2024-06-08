@@ -1,36 +1,39 @@
-const Data: { title: string; descTitle: string; desc: string; id: number; speed: number; link: string; }[] =
+const Data: { title: string; descTitle: string; id: number; link: string; img: string;
+
+    tags: string[];
+ }[] =
     [
         {
             title: "Web Development",
             descTitle: "Woww!!",
-            desc: "You will hear this sentence quite a lot from your clients or users when they visit the website we will make for you. We are here to make your website more attractive, trendy and user friendly .",
             id: 1,
-            speed: 0.8,
-            link: "/services/websites"
+            link: "/services/websites",
+            img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717807458/lelu_mockup_uyfzgd.webp",
+            tags: ["React", "Next.js", "Gatsby", "Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"]
         },
         {
             title: "Graphic Design",
             descTitle: "Authentic!",
-            desc: "keeping it simple yet adding those jaw-dropping details is our expertise. Crafting user experiences that sparkle across every device is what we do best. Our designs and animations will give your brand that extra glow, leaving a lasting and unforgettable mark.",
             id: 2,
-            speed: 0.8,
-            link: "/services/graphic-design"
+            link: "/services/graphic-design",
+            img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717807365/golofo_brand_guiedline_v03_1_iufhxp.webp",
+            tags: ["Figma", "Adobe XD", "Illustrator", "Photoshop"]
         },
         {
             title: "E-commerce",
             descTitle: "Let's Sell!",
-            desc: "We know how to make your online store stand out from the crowd. We will make your online store more attractive and user friendly. We will make sure that your customers will have a great experience while shopping from your store.",
             id: 3,
-            speed: 0.8,
-            link: "/services/e-commerce"
+            link: "/services/e-commerce",
+            img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717807454/barkartours_m6rzyd.webp",
+            tags: ["Shopify", "Custom", "WooCommerce"]
         },
         {
             title: "Branding",
             descTitle: "I Know Them!",
-            desc: "You've got it – you know exactly how your potential clients/users will react. Now, let's team up and give your brand a fresh look! We're masters at creating eye-catching styles that stick. With your vision and our magic touch, your brand is set to shine like never before.",
             id: 4,
-            speed: 0.8,
-            link: "/services/branding"
+            link: "/services/branding",
+            img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717807369/HIM_BRAND_GUIIEDLINE_V02_bmtql4.webp",
+            tags: ["Logo", "Identity", "Guidelines"]
         },
 
     ];

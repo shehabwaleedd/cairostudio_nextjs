@@ -50,13 +50,11 @@ const Perpective: React.FC = () => {
 
     return (
         <section className='perpective'>
-            <div className={styles.spacer}></div>
             <div ref={gallery} className={styles.gallery}>
                 <Column data={[Data[4], Data[5], Data[8]]} transform={transforms.transform1} isMobile={isMobile} />
                 <Column data={[Data[0], Data[7], Data[9]]} transform={transforms.transform2} isMobile={isMobile} />
                 <Column data={[Data[10], Data[9], Data[10]]} transform={transforms.transform3} isMobile={isMobile} />
             </div>
-            <div className={styles.spacer}></div>
         </section>
     );
 };

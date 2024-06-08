@@ -46,16 +46,40 @@
         width: 100%;
         z-index: 6;
 
-        h3 {
-            font-size: 3rem;
+        a {
+            font-size: clamp(10px, 7.2vw, 160px);
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            width: 100%;
             text-align: left;
+            position: relative;
+            width: fit-content;
 
             @media (max-width: 456px) {
                 font-size: 2rem;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 0.5px;
+                background-color: #fff;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            &:hover::before {
+                transform: scaleX(1);
+                animation: hoverLine 0.45s forwards;
+            }
+
+            &:not(:hover)::before {
+                animation: unhoverLine 0.45s forwards;
             }
         }
     }
@@ -93,4 +117,27 @@
     }
 
 
+}
+
+
+@keyframes hoverLine {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes unhoverLine {
+    from {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+
+    to {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
 }
