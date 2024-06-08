@@ -75,7 +75,7 @@ export const TransitionButton = ({ href, label }: { href: string, label: string 
     );
 }
 
-export const TransitionCard = ({ href, children } : { href: string; children: React.ReactNode }) => {
+export const TransitionCard = ({ href, children, className }: { href: string; children: React.ReactNode, className: string }) => {
     const router = useRouter();
     const pathname = usePathname();
 
@@ -86,7 +86,7 @@ export const TransitionCard = ({ href, children } : { href: string; children: Re
     };
 
     return (
-        <div onClick={handleClick}>
+        <div onClick={handleClick} className={className} style={{ cursor: 'pointer' }}>
             {children}
         </div>
     );

@@ -58,6 +58,10 @@
             padding: 0.5rem;
         }
 
+        &:last-child {
+            border-bottom: 1px solid var(--title-color);
+        }
+
         @media (min-width: 1350px) {
             &:nth-child(1) {
                 padding-left: 0;

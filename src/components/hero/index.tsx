@@ -1,9 +1,11 @@
+'use client'
 import React from 'react'
 import styles from "./style.module.scss"
 import getChars from '../../animations/animatedHeaders/getChars'
 import Link from 'next/link'
 import data from "@/components/workedWith/WorkedWithData"
 import { TransitionLink } from '../transitionLink'
+import Upper from '../upper'
 const Home = () => {
 
     return (
@@ -26,6 +28,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Upper  p1="Information" p2='01' />
             <div className={styles.lower}>
                 <div className={styles.lower_left}>
                     <div className={styles.home__subheader}>

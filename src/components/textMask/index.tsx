@@ -21,7 +21,7 @@ const TextMask: React.FC = () => {
                 <div className={styles.upper}>
                     <div className={styles.upper_top}>
                         <p>BRIEF</p>
-                        <p>[S: 03]</p>
+                        <p>[S: 06]</p>
                     </div>
                 </div>
                 <Link href="/contact">

@@ -9,7 +9,7 @@ import Upper from '../upper';
 const AboutUs: React.FC = () => {
     return (
         <>
-            <Upper p1="ABOUT US" p2="02" p3='' h2="ABOUT US" span="CAIRO STUDIO" secondRow={false} />
+            <Upper p1="ABOUT US" p2="03" p3='' h2="ABOUT US" span="CAIRO STUDIO" secondRow={false} />
             <div className={styles.aboutus}>
                 <p>
                     BIG STUDIO THINKING, SMALL STUDIO PASSION

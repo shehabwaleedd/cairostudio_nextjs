@@ -5,6 +5,7 @@ import styles from './page.module.scss';
 import Image from 'next/image';
 import Data from './Data';
 import useWindowSize from '@/hooks/useWindowWidth';
+import Upper from '../upper';
 
 interface Dimension {
     width: number;
@@ -50,6 +51,8 @@ const Perpective: React.FC = () => {
 
     return (
         <>
+            <Upper p1="Snippets" p2="05" />
+
             {!isMobile && <section className='perpective'>
                 <div ref={gallery} className={styles.gallery}>
                     <Column data={[Data[4], Data[5], Data[8]]} transform={transforms.transform1} isMobile={isMobile} />
