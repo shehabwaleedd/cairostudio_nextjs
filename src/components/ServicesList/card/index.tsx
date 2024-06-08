@@ -51,6 +51,8 @@ const Card = ({
                             alt=""
                             width={1920}
                             height={1260}
+                            placeholder='blur'
+                            blurDataURL={project.img}
                         />
                     </div>
                 </motion.div>

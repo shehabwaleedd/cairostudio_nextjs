@@ -52,7 +52,7 @@ const WorkedWith = ({ Data }) => {
                             toggleActions: 'play none none none',
                             onEnter: () => item.classList.add('in-view'),
                         },
-                        delay: index * 0.1 // Stagger the animation by 0.1 seconds for each item
+                        delay: index * 0.1
                     }
                 );
             });
@@ -67,20 +67,20 @@ const WorkedWith = ({ Data }) => {
             ref={containerRef}
         >
             <div className="faqs__container containered">
-                {Data.map(({ id, name, desc, categories }, index) => (
+                {Data.map(({ id, name, desc, categories }) => (
                     <div className={`item-1 ${activeAccordion === id ? 'open' : ''}`} key={id}>
-                        <div className="accordion" onClick={() => toggleAccordion(index)}>
+                        <div className="accordion" onClick={() => toggleAccordion(id)}>
                             <div className="title"><h2>{name}</h2></div>
                             <div className="accCategory">
-                                {categories && categories.map((category, index) => (
-                                    <h3 key={index}>{category.replace("-", "")}</h3>
+                                {categories && categories.map((category, idx) => (
+                                    <h3 key={`${id}-category-${idx}`}>{category.replace("-", "")}</h3>
                                 ))}
-                                <div className="icon">{activeAccordion === 0 ? 'Less -' : 'More +'}</div>
+                                <div className="icon">{activeAccordion === id ? 'Less -' : 'More +'}</div>
                             </div>
                         </div>
                         <div className="panel">
-                            {desc && desc.map((desc, index) => (
-                                <div className="desc" key={index}><p>{desc}</p></div>
+                            {desc && desc.map((description, idx) => (
+                                <div className="desc" key={`${id}-desc-${idx}`}><p>{description}</p></div>
                             ))}
                         </div>
                     </div>

@@ -16,11 +16,6 @@ export interface ProjectData {
 
 }
 
-
-
-
-
-
 const ServicesList: React.FC = () => {
 
     const container = useRef(null);

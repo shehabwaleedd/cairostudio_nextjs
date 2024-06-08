@@ -35,23 +35,25 @@ const Home = () => {
                     </div>
                     <div className={styles.lower__callToActionsBtns}>
                         <Link className={styles.schedule} href="/about"> Schedule A brief </Link>
-                        {/* <Link className={styles.contact} href="/contact"> Contact Us </Link> */}
                         <TransitionLink href="/contact" label="Contact Us" />
                     </div>
                 </div>
                 <div className={styles.lower_right}>
                     <ul>
                         <li>Web Development</li>
-                        <li>Branding</li>
+                        <li>Graphic Design</li>
                         <li>UI/UX Design</li>
                         <li>SEO</li>
-                        <li>Content Strategy</li>
+                        <li>Mobile Application</li>
                         <li>Branding</li>
                     </ul>
                     <ul>
                         {data.slice(0, 6).map((item, i) => (
                             <li key={i}>{item.name}</li>
                         ))}
+                        <li>
+                            & More
+                        </li>
                     </ul>
                 </div>
             </div>

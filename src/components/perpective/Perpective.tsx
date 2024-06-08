@@ -49,17 +49,22 @@ const Perpective: React.FC = () => {
     const transforms = isMobile ? horizontalTransforms : verticalTransforms;
 
     return (
-        <section className='perpective'>
-            <div ref={gallery} className={styles.gallery}>
-                <Column data={[Data[4], Data[5], Data[8]]} transform={transforms.transform1} isMobile={isMobile} />
-                <Column data={[Data[0], Data[7], Data[9]]} transform={transforms.transform2} isMobile={isMobile} />
-                <Column data={[Data[10], Data[9], Data[10]]} transform={transforms.transform3} isMobile={isMobile} />
-            </div>
-        </section>
+        <>
+            {!isMobile && <section className='perpective'>
+                <div ref={gallery} className={styles.gallery}>
+                    <Column data={[Data[4], Data[5], Data[8]]} transform={transforms.transform1} isMobile={isMobile} />
+                    <Column data={[Data[0], Data[7], Data[9]]} transform={transforms.transform2} isMobile={isMobile} />
+                    <Column data={[Data[10], Data[9], Data[10]]} transform={transforms.transform3} isMobile={isMobile} />
+                </div>
+            </section>}
+        </>
     );
 };
 
 export default Perpective;
+
+
+
 
 interface ColumnProps {
     data: typeof Data;
@@ -70,7 +75,7 @@ interface ColumnProps {
 const Column: React.FC<ColumnProps> = ({ data, transform, isMobile }) => {
     return (
         <LazyMotion features={domAnimation}>
-            <m.div className={styles.column} style={isMobile ? { x: transform } : { y: transform }}>
+            <m.div className={`${styles.column}`} style={isMobile ? {} : { y: transform }}>
                 {data.map((item, i) => (
                     <div key={i} className={styles.imageContainer}>
                         <Image

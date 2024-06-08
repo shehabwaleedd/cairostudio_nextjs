@@ -55,7 +55,7 @@ const MainProjects = () => {
     return (
         <div className={styles.mainProjects}>
 
-            <Upper p1="Latest Work" p2="01" p3="All Work" h2="Latest" secondRow={true} span={`${numberOfProjects}`} />
+            <Upper p1="Latest Work" p2="01" label="All Work" link='/work' h2="Latest" secondRow={true} span={`${numberOfProjects}`} />
 
             <div className={styles.mainProjects__container}>
                 {displayedProjects.map((item: Project, index: number) => (

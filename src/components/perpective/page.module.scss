@@ -23,25 +23,12 @@
         flex-direction: column;
         gap: 2vw;
 
-        @media (max-width: 555px) {
-            flex-direction: row;
-            height: auto;
-            width: 100%;
-            min-width: 100%;
-        }
-
         .imageContainer {
             height: 100%;
             width: 100%;
             position: relative;
             border-radius: 1vw;
             overflow: hidden;
-
-            @media (max-width: 555px) {
-                height: auto;
-                width: auto;
-                flex: 1;
-            }
 
             img {
                 height: 100%;
@@ -67,3 +54,12 @@
         }
     }
 }
+
+
+.mobileColumn {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+

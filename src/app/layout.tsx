@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import { UserContextProvider } from '../context/authContext/AuthContext';
 import SmoothScrolling from '@/animations/SmoothScrolling';
 import { Toaster } from 'sonner';
+import AnimationProvider from '@/context/AnimationContext';
 
 export const metadata: Metadata = {
   title: 'Cairo Studio | Leading in UI/UX & Web Development',
@@ -39,14 +40,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-      <script defer src="https://cloud.umami.is/script.js" data-website-id="2af62211-472c-4dfc-925a-197b88a8c4c9"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="2af62211-472c-4dfc-925a-197b88a8c4c9"></script>
       </head>
       <body>
         <Navbar />
         <UserContextProvider>
-          <SmoothScrolling />
+          <AnimationProvider>
+            <SmoothScrolling />
             <Toaster />
             {children}
+          </AnimationProvider>
         </UserContextProvider>
         <FooterWithNoSSR />
       </body>

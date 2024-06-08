@@ -14,6 +14,7 @@
     z-index: 999999;
     display: flex;
     top: 0;
+    background-color: var(--background-color);
 
 }
 
@@ -36,7 +37,7 @@
     color: var(--container-color);
     padding: 0.2em 0.4em;
     font-size: 20vw;
-    font-family: "Outfit-Black", sans-serif;
+    font-weight: 700;
 }
 
 .opening h2 {
@@ -55,7 +56,8 @@
     letter-spacing: 0.5rem;
     line-height: 0;
     width: 100%;
-    font-family: "Outfit-Black", sans-serif;
+    font-weight: 700;
+
 }
 
 .opening h1 {

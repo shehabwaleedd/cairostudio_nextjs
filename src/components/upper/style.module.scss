@@ -43,17 +43,62 @@
     }
 
     &_bottom {
-        p {
+        a {
             font-size: calc(50/var(--gfs)*1rem);
             font-weight: 300;
             color: var(--container-color);
             letter-spacing: -0.05rem;
             text-transform: uppercase;
+            position: relative;
             @media (max-width: 1256px) {
                 font-size: calc(25/var(--gfs)*1rem);
                 margin: 1rem 0;
             }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: var(--title-color);
+                bottom: 2.5rem;
+                left: 0;
+                z-index: -1;
+                transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+                transform: scaleX(0);
+                transform-origin: left;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                animation: hoverLine 0.45s forwards;
+            }
+
+            &:not(:hover)::after {
+                animation: unhoverLine 0.45s forwards;
+            }
         }
     }
 
+}
+
+@keyframes hoverLine {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes unhoverLine {
+    from {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+
+    to {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
 }
