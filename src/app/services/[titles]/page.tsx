@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import Data from '../Data';
 import styles from "./page.module.scss";
