@@ -10,7 +10,7 @@ const TextMask = dynamic(() => import('@/components/textMask'));
 const ServicesList = dynamic(() => import('@/components/ServicesList'));
 const Perpective = dynamic(() => import('@/components/perpective/Perpective'));
 const Faqs = dynamic(() => import('@/components/workedWith'));
-
+import Upper from '@/components/upper';
 
 
 const HomePage: React.FC = () => {
@@ -20,10 +20,14 @@ const HomePage: React.FC = () => {
       <Opening />
       <Hero />
       <MainProjects />
+      <Upper p1="About Us" p2="03" p3='' h2="ABOUT US" span="CAIRO STUDIO" secondRow={false} />
       <AboutUs />
+      <Upper p1="Services" p2='04' />
       <ServicesList />
+      <Upper p1="Snippets" p2="05" />
       <Perpective />
       <TextMask />
+      <Upper p1="Worked With" p2="07" />
       <Faqs Data={FaqsData} />
     </main >
   );

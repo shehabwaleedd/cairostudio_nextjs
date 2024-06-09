@@ -13,6 +13,11 @@
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         font-size: clamp(10px, 7.2vw, 160px);
         font-weight: 800;
+
+        @media (min-width: 600px) and (max-width: 900px) {
+            font-size: clamp(12px, 6vw, 120px);
+        }
+
         @media (max-width: 556px) {
             margin-top: 0;
             line-height: 0.88;

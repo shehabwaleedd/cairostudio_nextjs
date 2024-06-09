@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import styles from "./page.module.scss";
 import emailjs from '@emailjs/browser';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
@@ -41,6 +41,24 @@ const validationSchema = Yup.object({
 });
 
 const Contact: React.FC = () => {
+
+    const setDefaultColors = useCallback(() => {
+        document.documentElement.style.setProperty('--background-color', '#0b0b0b');
+        document.documentElement.style.setProperty('--container-color', '#eae4d8');
+        document.documentElement.style.setProperty('--title-color', '#eae4d8');
+    }, []);
+
+    useEffect(() => {
+        setDefaultColors();
+
+        // Cleanup function to reset styles
+        return () => {
+            document.documentElement.style.removeProperty('--background-color');
+            document.documentElement.style.removeProperty('--container-color');
+            document.documentElement.style.removeProperty('--title-color');
+        };
+    }, [setDefaultColors]);
+
 
     const sendEmail = (formData: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
         const emailData: Record<string, unknown> = { ...formData };

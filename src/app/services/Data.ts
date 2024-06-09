@@ -1,38 +1,20 @@
+import { Service } from "@/common/types";
 import BrandingImage from "../../../public/assets/branding/HIM BRAND GUIIEDLINE V02.webp";
 import { StaticImageData } from "next/image";
 
-interface DataType {
-    serviceTitle: string;
-    underTitle: string[];
-    image: {
-        isImg: boolean;
-        src: StaticImageData;
-    };
-    upperDescription: string;
-    serviceDescription: string[];
-    relatedNames: string[];
-    services: {
-        description: string;
-        content: {
-            title: string;
-            options: string[];
-        }[]
-    }[];
-    process: {
-        description: string;
-        content: {
-            name: string;
-            desc: string[];
-        }[]
-    }[];
-}
 
 
-const Data: DataType[] = [ 
+const Data: Service[] = [ 
     {
         serviceTitle: "websites",
         underTitle: [
             "From Concept And Strategy To Design And Implementation",
+        ],
+        header: [
+            "Crafting Cutting-Edge",
+            "Websites for an Innovative",
+            "& Dynamic Digital",
+            "Experience."
         ],
         image: {
             isImg: true,
@@ -188,6 +170,12 @@ const Data: DataType[] = [
         underTitle: [
             "Strategy Driven E-commerce",
             "Delivering Unforgettable Online Experiences."
+        ],
+        header: [
+            "Building Robust",
+            "E-Commerce Platforms",
+            "That Drive Sales",
+            "& Foster Trust."
         ],
         image: {
             isImg: true,
@@ -357,6 +345,13 @@ const Data: DataType[] = [
             isImg: true,
             src: BrandingImage,
         },
+        header: [
+            "Transforming Brands",
+            "into Memorable and",
+            "Unique Customer",
+            "Experiences."
+
+        ],
         underTitle: [
             "Strategy Driven Branding",
             "Delivering Unforgettable Online Experiences."

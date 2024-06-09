@@ -7,6 +7,7 @@ import RelatedWork from '@/components/relatedWork/RelatedWork';
 import { Service } from '@/common/types';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import Header from '../components/Header';
 
 interface ServicesSectionsProps {
     params: { titles: string }
@@ -66,57 +67,45 @@ const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => 
     return (
         <>
             <main className={styles.servicesSections}>
-                <header>
-                    <h1>{service.serviceTitle}</h1>
-                </header>
+                <Header header={service.header} />
                 <section className={styles.services__container_upper}>
-                    <p>{service.underTitle[0]} <br /> {service.underTitle[1]}</p>
-                    <div className={styles.servicesSpans}>
-                        <h2>{service.upperDescription}</h2>
-                        {service.serviceDescription.map((desc, index) => (
-                            <p key={index}>{desc}</p>
-                        ))}
-                    </div>
+                    <h2>{service.upperDescription}</h2>
+                    {service.serviceDescription.map((desc, index) => (
+                        <p key={index}>{desc}</p>
+                    ))}
                 </section>
                 <section className={styles.servicesMedia}>
                     <Image src={service.image.src} alt={service.serviceTitle} width={800} height={600} />
                 </section>
                 <section className={styles.services__bottom}>
-                    <div className={styles.services__bottom_container}>
-                        <div className={styles.seboco__left}>
-                            <h2>Services</h2>
-                            <p>{service.services[0].description}</p>
-                            <Link href="/contact">
-                                <h3>Get Quote</h3>
-                            </Link>
-                        </div>
-                        <div className={styles.seboco__right}>
-                            <div className={styles.services__bottom_container_right}>
-                                {service.services[0]?.content.map(({ title, options }, index) => (
-                                    <div key={index} className={styles.services__bottom_container_right_section}>
-                                        <div className={styles.upper}>
-                                            <h2>{title}</h2>
-                                        </div>
-                                        <div className={styles.lower}>
-                                            {options.map((option, optIndex) => (
-                                                <p key={optIndex}>{option}</p>
-                                            ))}
-                                        </div>
+                    <div className={styles.seboco__left}>
+                        <h3>Services</h3>
+                        <p>{service.services[0].description}</p>
+                    </div>
+                    <div className={styles.seboco__right}>
+                        <div className={styles.services__bottom_container_right}>
+                            {service.services[0]?.content.map(({ title, options }, index) => (
+                                <div key={index} className={styles.services__bottom_container_right_section}>
+                                    <div className={styles.upper}>
+                                        <h2>{title}</h2>
                                     </div>
-                                ))}
-                            </div>
+                                    <div className={styles.lower}>
+                                        {options.map((option, optIndex) => (
+                                            <p key={optIndex}>{option}</p>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
                 <section className={styles.services__bottom}>
                     <div className={styles.services__bottom_container}>
                         <div className={styles.seboco__left}>
-                            <h2>Process</h2>
+                            <h3>Process</h3>
                             <p>{service.process[0].description}</p>
                         </div>
-                        <div className={styles.seboco__right}>
-                            <WorkedWith Data={service.process[0].content} />
-                        </div>
+                        <WorkedWith Data={service.process[0].content} />
                     </div>
                 </section>
                 <section className={styles.services__related}>

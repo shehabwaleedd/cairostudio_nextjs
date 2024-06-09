@@ -197,6 +197,7 @@ export interface ServiceProcess {
 export interface Service {
     serviceTitle: string;
     underTitle: string[];
+    header: string[];
     image: {
         isImg: boolean;
         src: StaticImageData;
@@ -209,13 +210,17 @@ export interface Service {
         content: {
             title: string;
             options: string[];
-        }[];
+        }[]
     }[];
     process: {
         description: string;
-        content: any[]; // replace 'any' with the actual type
+        content: {
+            name: string;
+            desc: string[];
+        }[]
     }[];
 }
+
 
 export interface WorkedWith {
     title: string;

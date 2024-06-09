@@ -14,19 +14,16 @@
         height: 100%;
     }
 
+}
 
-    .about__title {
+.about__title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+
+    .headers {
         display: flex;
-        flex-direction: column;
         width: 100%;
-        padding: 1rem;
-        // border-bottom: 1px solid var(--title-color);
-        // padding-bottom: 1rem;
-        .headers {
-            display: flex;
-            width: 100%;
-        }
     }
-
-
 }

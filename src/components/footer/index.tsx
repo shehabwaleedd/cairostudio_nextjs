@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
                 nextPageName = "About";
                 break;
             case '/studio':
-                nextPage = "/work";
-                nextPageName = "Work";
+                nextPage = "/services";
+                nextPageName = "Services";
                 break;
             case '/terms':
                 nextPage = "/privacy";
