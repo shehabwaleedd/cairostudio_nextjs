@@ -3,17 +3,12 @@ import React, { useState } from 'react';
 import { Project } from '@/common/types';
 import styles from "./style.module.scss"
 import { motion, AnimatePresence } from "framer-motion"
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+
 import { TransitionH4 } from '@/components/transitionLink';
 const ServicesCards = ({ displayedProjects }: { displayedProjects: Project[] }) => {
     const [hoveredProjectIndex, setHoveredProjectIndex] = useState<number | null>(null);
     const [hoveredLearnMoreIndex, setHoveredLearnMoreIndex] = useState<number | null>(null);
-    const router = useRouter();
 
-    const handleProjectClick = (title: string) => {
-        router.push(`/services/${title}`);
-    }
 
 
     return (
@@ -26,9 +21,6 @@ const ServicesCards = ({ displayedProjects }: { displayedProjects: Project[] }) 
                             {item.serviceDescription}
                         </p>
                         <div className={styles.navigationService}>
-                            {/* <Link href={`/services/${item.title}`}>
-                                Learn More
-                            </Link> */}
                             <TransitionH4 href={`/services/${item.serviceTitle}`} label="Learn More" />
                         </div>
                     </motion.div>

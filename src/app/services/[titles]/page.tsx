@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Data from '../Data';
 import styles from "./page.module.scss";
-import Link from 'next/link';
 import WorkedWith from '@/components/workedWith';
 import RelatedWork from '@/components/relatedWork/RelatedWork';
 import { Service } from '@/common/types';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import Header from '../components/Header';
+import Header from './components/Header';
 
 interface ServicesSectionsProps {
     params: { titles: string }
@@ -55,64 +54,71 @@ export async function generateMetadata({ params }: { params: { titles: string } 
     };
 }
 
-const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => {
-    const service = await fetchService(params.titles);
+const ServicesSections: React.FC<ServicesSectionsProps> = ({ params }) => {
+    const [service, setService] = useState<Service | null>(null);
 
-    const heading = "Related Work";
+    useEffect(() => {
+        const fetchAndSetService = async () => {
+            const fetchedService = await fetchService(params.titles);
+            setService(fetchedService);
+        };
+
+        fetchAndSetService();
+    }, [params.titles]);
 
     if (!service) {
         return <p>Service not found.</p>;
     }
 
+    const heading = "Related Work";
+
     return (
-        <>
-            <main className={styles.servicesSections}>
-                <Header header={service.header} />
-                <section className={styles.services__container_upper}>
-                    <h2>{service.upperDescription}</h2>
-                    {service.serviceDescription.map((desc, index) => (
-                        <p key={index}>{desc}</p>
-                    ))}
-                </section>
-                <section className={styles.servicesMedia}>
-                    <Image src={service.image.src} alt={service.serviceTitle} width={800} height={600} />
-                </section>
-                <section className={styles.services__bottom}>
-                    <div className={styles.seboco__left}>
-                        <h3>Services</h3>
-                        <p>{service.services[0].description}</p>
-                    </div>
-                    <div className={styles.seboco__right}>
-                        <div className={styles.services__bottom_container_right}>
-                            {service.services[0]?.content.map(({ title, options }, index) => (
-                                <div key={index} className={styles.services__bottom_container_right_section}>
-                                    <div className={styles.upper}>
-                                        <h2>{title}</h2>
-                                    </div>
-                                    <div className={styles.lower}>
-                                        {options.map((option, optIndex) => (
-                                            <p key={optIndex}>{option}</p>
-                                        ))}
-                                    </div>
+        <main className={styles.servicesSections}>
+            <Header header={service.header} />
+            <section className={styles.services__container_upper}>
+                <h2>{service.upperDescription}</h2>
+                {service.serviceDescription.map((desc, index) => (
+                    <p key={index}>{desc}</p>
+                ))}
+            </section>
+            <section className={styles.servicesMedia}>
+                <Image src={service.image.src} alt={service.serviceTitle} width={800} height={600} />
+            </section>
+            <section className={styles.services__bottom}>
+                <div className={styles.seboco__left}>
+                    <h3>Services</h3>
+                    <p>{service.services[0].description}</p>
+                </div>
+                <div className={styles.seboco__right}>
+                    <div className={styles.services__bottom_container_right}>
+                        {service.services[0]?.content.map(({ title, options }, index) => (
+                            <div key={index} className={styles.services__bottom_container_right_section}>
+                                <div className={styles.upper}>
+                                    <h2>{title}</h2>
                                 </div>
-                            ))}
-                        </div>
+                                <div className={styles.lower}>
+                                    {options.map((option, optIndex) => (
+                                        <p key={optIndex}>{option}</p>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </section>
-                <section className={styles.services__bottom}>
-                    <div className={styles.services__bottom_container}>
-                        <div className={styles.seboco__left}>
-                            <h3>Process</h3>
-                            <p>{service.process[0].description}</p>
-                        </div>
-                        <WorkedWith Data={service.process[0].content} />
+                </div>
+            </section>
+            <section className={styles.services__bottom}>
+                <div className={styles.services__bottom_container}>
+                    <div className={styles.seboco__left}>
+                        <h3>Process</h3>
+                        <p>{service.process[0].description}</p>
                     </div>
-                </section>
-                <section className={styles.services__related}>
-                    <RelatedWork relatedNames={service.relatedNames} heading={heading} />
-                </section>
-            </main>
-        </>
+                    <WorkedWith Data={service.process[0].content} />
+                </div>
+            </section>
+            <section className={styles.services__related}>
+                <RelatedWork relatedNames={service.relatedNames} heading={heading} />
+            </section>
+        </main>
     );
 };
 
