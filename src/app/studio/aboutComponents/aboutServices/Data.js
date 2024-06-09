@@ -74,91 +74,91 @@ const Data = [
             }
         ]
     },
-
     {
-        id: 3,
-        title: "Design",
-        elements: [
+        "id": 3,
+        "title": "Design",
+        "elements": [
             {
-                text: "ART DIRECTION",
+                "text": "Art Direction"
             },
             {
-                text: "BRAND IDENTITY DESIGN",
+                "text": "Brand Identity Design"
             },
             {
-                text: "DESIGN SYSTEMS",
+                "text": "Design Systems"
             },
             {
-                text: "GRAPHIC DESIGN",
+                "text": "Graphic Design"
             },
             {
-                text: "WIREFRAMING & PROTOTYPING",
+                "text": "Wireframing & Prototyping"
             },
             {
-                text: "USER INTERFACE DESIGN",
+                "text": "User Interface Design"
             },
             {
-                text: "USER EXPERIENCE DESIGN",
+                "text": "User Experience Design"
             },
             {
-                text: "INTERACTION DESIGN",
+                "text": "Interaction Design"
             },
             {
-                text: "MOBILE APP DESIGN",
+                "text": "Mobile App Design"
             },
             {
-                text: "WEB DESIGN",
+                "text": "Web Design"
             },
             {
-                text: "RESPONSIVE DESIGN",
+                "text": "Responsive Design"
             },
             {
-                text: "DIGITAL PRODUCT DESIGN",
+                "text": "Digital Product Design"
             },
             {
-                text: "PACKAGING DESIGN",
+                "text": "Packaging Design"
             },
             {
-                text: "ILLUSTRATION",
+                "text": "Illustration"
             },
             {
-                text: "MOTION DESIGN"
+                "text": "Motion Design"
             },
             {
-                text: "QUALITY ASSURANCE"
-            },
+                "text": "Quality Assurance"
+            }
         ]
     },
+    
     {
         id: 4,
         title: "Development",
         elements: [
             {
-                text: "TECHNICAL STRATEGY"
+                text: "Techinal Strategy"
             },
             {
                 text: "TECHNICAL CONSULTING"
             },
             {
-                text: "CMS IMPLEMENTATION"
+                text: "CMS Implementation"
             },
             {
-                text: "REACT / NEXT.JS DEVELOPMENT"
+                text: "React / Next.JS Development"
             },
             {
-                text: "WEBGL / 3D DEVELOPMENT",
+                text: "WebGL / 3D Development",
             },
             {
-                text: "SHOPIFY DEVELOPMENT",
+                text: "Shopify Development",
             },
             {
-                text: "WORDPRESS DEVELOPMENT",
+                text: "Wordpress Development",
             },
             {
                 text: "Mobile Development",
             },
             {
-                text: "WEBFLOW DEVELOPMENT",
+                text: "Webflow Development",
             },
             {
                 text: "Shopify Development",
@@ -167,11 +167,8 @@ const Data = [
                 text: "E-Commerce Development",
             },
             {
-                text: "QUALITY ASSURANCE"
+                text: "Quality Assurance"
             },
-            {
-                text: "CROSS-DEVICE TESTING"
-            }
         ]
     },
     {

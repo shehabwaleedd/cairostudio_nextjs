@@ -18,20 +18,16 @@ const Footer: React.FC = () => {
                 nextPageName = "Work";
                 break;
             case '/work':
-                nextPage = "/case-studies";
-                nextPageName = "Case Studies";
-                break;
-            case '/case-studies':
-                nextPage = "/contact";
+                nextPage = "/Contact";
                 nextPageName = "Contact";
                 break;
             case '/services':
                 nextPage = "/about";
                 nextPageName = "About";
                 break;
-            case '/about':
-                nextPage = "/terms";
-                nextPageName = "Terms";
+            case '/studio':
+                nextPage = "/work";
+                nextPageName = "Work";
                 break;
             case '/terms':
                 nextPage = "/privacy";
@@ -84,7 +80,7 @@ const Footer: React.FC = () => {
             <div className={styles.footer__footer}>
                 <div className={styles.footer__footer_container}>
                     <div className={styles.footer__logo}>
-                        <h2>Cairo Studio © 2023 All Rights Reserved</h2>
+                        <h2>Cairo Studio © {new Date().getFullYear()} All Rights Reserved</h2>
                     </div>
                     <div className={styles.footer__rest}>
                         <ul className={styles.foso__content}>

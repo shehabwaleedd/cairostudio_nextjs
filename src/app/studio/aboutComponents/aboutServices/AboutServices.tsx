@@ -67,7 +67,7 @@ const AboutServices = () => {
                     <div className="aboutServicesCo__left_container">
                         {Data.map((item: Project) => (
                             <div key={item.id} className={`aboutServicesCo__left_container_details`}>
-                                <h1 ref={(el) => {item.headline = el}}>{item.title}</h1>
+                                <h3 ref={(el) => {item.headline = el}}>{item.title}</h3>
                             </div>
                         ))}
                     </div>

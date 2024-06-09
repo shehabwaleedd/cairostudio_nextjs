@@ -1,6 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Navbar from '../components/navbar'
+import Navbar from '../components/navbar';
 import './globals.css';
 const FooterWithNoSSR = dynamic(() => import('../components/footer'), { ssr: false });
 import { Metadata } from 'next';
@@ -10,31 +10,40 @@ import { Toaster } from 'sonner';
 import AnimationProvider from '@/context/AnimationContext';
 
 export const metadata: Metadata = {
-  title: 'Cairo Studio | Leading in UI/UX & Web Development',
-  description: 'Elevating digital experiences with Cairo Studio. Specialized in innovative UI/UX design, responsive web development, and unique brand identity solutions. Visit us for cutting-edge, user-centric digital designs that blend functionality with visual appeal.',
+  title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
+  description: 'Cairo Studio elevates digital experiences through innovative UI/UX design, responsive web development, and unique brand identity solutions in Egypt. Visit us for cutting-edge, user-centric digital designs that blend functionality with visual appeal.',
   metadataBase: new URL('https://cairo-studio.com'),
   keywords: [
-    'UI/UX Design',
-    'Web Development',
-    'Brand Identity',
-    'Digital Design',
-    'Cairo Studio',
-    'Cairo',
-    'Egypt',
-    'UI',
-    'UX',
-    'Design',
-    'Web',
-    'Development',
-    'Brand',
-    'Identity',
-    'Digital',
-    'Design',
-    'Cairo Studio',
-    'Cairo',
-    'Egypt',
+    'UI/UX Design', 'Web Development', 'Brand Identity', 'Digital Design', 
+    'Graphic Design', 'Illustrations', 'E-commerce', 'Cairo Studio', 'Cairo', 'Egypt'
   ],
-}
+  openGraph: {
+    type: 'website',
+    url: 'https://cairo-studio.com',
+    title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
+    description: 'Cairo Studio specializes in creating unique digital experiences through innovative design and development.',
+    images: [
+      {
+        url: 'https://cairo-studio.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cairo Studio'
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@CairoStudioo',
+    title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
+    description: 'Cairo Studio specializes in creating unique digital experiences through innovative design and development.',
+    images : 'https://cairo-studio.com/og-image.jpg'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  }
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -54,5 +63,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FooterWithNoSSR />
       </body>
     </html>
-  )
+  );
 }

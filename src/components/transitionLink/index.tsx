@@ -93,7 +93,7 @@ export const TransitionCard = ({ href, children, className }: { href: string; ch
 }
 
 
-export const TransitionLink2 = ({ href, label }: { href: string, label: string }) => {
+export const TransitionP = ({ href, children, label }: { href: string; children: React.ReactNode, label: string }) => {
     const router = useRouter();
     const pathname = usePathname();
 
@@ -104,8 +104,8 @@ export const TransitionLink2 = ({ href, label }: { href: string, label: string }
     };
 
     return (
-        <Link href={href} onClick={handleClick} aria-label={label}>
-            {label}
-        </Link>
+        <p  onClick={handleClick} aria-label={label}>
+            {children}
+        </p>
     );
 }

@@ -1,5 +1,4 @@
 .projectsPage {
-    margin-top: 7rem;
     height: 100%;
     width: 100%;
     display: flex;
@@ -9,6 +8,19 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    padding-top: 7rem;
+
+    @media (max-width: 956px) {
+        padding-top: 3rem;
+    }
+
+
+    h2 {
+        line-height: 0.4;
+        font-weight: 800;
+        font-size: clamp(2.5rem, 5.2vw, 160px);
+        padding-bottom: 1rem;
+    }
 
     .projectsPage__heading {
         display: flex;
@@ -30,15 +42,11 @@
         gap: 1rem;
 
         @media (max-width: 1106px) {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-
-        }
-
-        @media (max-width: 956px) {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            align-items: flex-start;
+            gap: 0;
+
         }
     }
 
@@ -54,8 +62,6 @@
 
         @media (max-width: 1100px) {
             top: -2rem;
-            display: flex;
-            flex-direction: column-reverse;
             justify-content: flex-start;
             align-items: flex-start;
             place-content: start;
@@ -92,6 +98,7 @@
                 text-transform: uppercase;
                 background-color: transparent;
                 padding: 1rem;
+                padding-top: 0;
                 margin-bottom: 1rem;
                 transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             }

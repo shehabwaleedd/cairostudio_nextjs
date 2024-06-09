@@ -9,10 +9,11 @@
     transition: var(--animation-primary);
     z-index: 8;
     gap: 2rem;
+    padding-top: 5vh;
 
     @media(max-width: 978px) {
         height: 100%;
-        padding-top: 5vh;
+        padding-top: 10vh;
     }
 
     &__container {
@@ -33,11 +34,6 @@
         align-content: center;
         justify-content: center;
 
-        h2 {
-            line-height: 0.4;
-            font-weight: 800;
-            font-size: clamp(10px, 7.2vw, 160px);
-        }
     }
 
     &__subheader {
@@ -96,6 +92,7 @@
             color: var(--background-color);
         }
     }
+
     button {
         background-color: transparent;
     }

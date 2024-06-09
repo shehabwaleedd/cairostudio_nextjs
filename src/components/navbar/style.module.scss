@@ -13,9 +13,13 @@
     z-index: 9999;
     user-select: none;
     mix-blend-mode: difference;
+
     @media (max-width: 1154px) {
-        padding: 1rem;
-        padding-top: 1rem;
+        display: none;
+    }
+
+    @media (max-width: 555px) {
+        border-bottom: 1px solid #fff;
     }
 
 
@@ -28,6 +32,12 @@
         letter-spacing: 0.1rem;
         width: 100%;
         font-weight: 500;
+
+        @media (max-width: 1154px) {
+            display: none;
+        }
+
+
     }
 
 
@@ -41,32 +51,7 @@
         right: 0;
         width: 100%;
 
-        span {
-            position: relative;
-            right: 0rem;
-            font-size: 1rem;
-            color: #fff;
-            text-transform: lowercase;
 
-            @media (max-width: 456px) {
-                left: 0rem;
-                font-size: 0.8rem;
-            }
-
-            @media (max-width: 306px) {
-                display: none;
-            }
-        }
-
-        .menuNav {
-            cursor: pointer;
-            background-color: transparent;
-            color: #fff;
-
-            @media (min-width: 1103px) {
-                display: none;
-            }
-        }
 
         .navLinks {
             gap: 1rem;
@@ -103,4 +88,44 @@
         }
     }
 
+}
+
+.mobile {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+    height: 5vh;
+    width: 100%;
+    overflow: hidden;
+    transition: var(--animation-primary);
+    z-index: 9999999;
+    user-select: none;
+    border-bottom: 1px solid var(--title-color);
+    background-color: var(--background-color);
+
+    @media (min-width: 1200px) {
+        display: none;
+    }
+
+    .menuNav {
+        position: relative;
+        cursor: pointer;
+        background-color: transparent;
+        color: var(--title-color);
+
+
+    }
+
+    span {
+        position: relative;
+        right: 0rem;
+        font-size: 0.8rem;
+        color: var(--title-color);
+        text-transform: lowercase;
+    }
 }

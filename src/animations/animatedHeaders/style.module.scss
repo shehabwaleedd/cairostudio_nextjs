@@ -4,16 +4,18 @@
     user-select: none;
 
     h2 {
-        margin-top: 1.5rem;
+
         color: var(--container-color);
         letter-spacing: normal;
-        padding-left: 0.1rem;
         text-transform: uppercase;
         position: relative;
-        line-height: 0.78;
+        line-height: 0.8;
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        @media (max-width: 456px) {
-            line-height: 0.78;
+        font-size: clamp(10px, 7.2vw, 160px);
+        font-weight: 800;
+        @media (max-width: 556px) {
+            margin-top: 0;
+            line-height: 0.88;
         }
     }
 }

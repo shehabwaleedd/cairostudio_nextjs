@@ -2,8 +2,8 @@ import styles from './style.module.scss';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { height } from '../anim';
-import Body from './Body';
-import Footer from './Footer';
+import Body from "./Body"
+import Footer from "./Footer"
 
 const links = [
   {
@@ -19,12 +19,8 @@ const links = [
     href: "/work",
   },
   {
-    title: "Case Studies",
-    href: "/case-study",
-  },
-  {
     title: "Studio",
-    href: "/about",
+    href: "/studio",
   },
   {
     title: "Contact",
@@ -45,9 +41,6 @@ export default function Index({ setNavOpen }) {
       className={styles.nav}>
 
       <div className={styles.wrapper}>
-        <div className={styles.hamburger} onClick={() => setNavOpen(false)}>
-          X
-        </div>
         <div className={styles.container}>
           <Body links={links} selectedLink={selectedLink} setSelectedLink={setSelectedLink} />
           <Footer />
