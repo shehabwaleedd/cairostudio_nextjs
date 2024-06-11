@@ -7,7 +7,7 @@
     width: 100%;
 
     .projectsMain {
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
         position: relative;
         display: flex;
         align-items: center;
@@ -43,7 +43,7 @@
         z-index: 2;
         line-height: 1;
         @media (max-width: 1256px) {
-            font-size: calc(40 / var(--gfs) * 1rem);
+            font-size: calc(35 / var(--gfs) * 1rem);
         }
     }
 }
@@ -51,7 +51,7 @@
 .upper {
     display: flex;
     width: 100%;
-    justify-content: center; // Changed from space-between to center
+    justify-content: center; 
     align-items: center;
     padding: 0 0.5rem;
     position: relative;

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: 'Cairo Studio elevates digital experiences through innovative UI/UX design, responsive web development, and unique brand identity solutions in Egypt. Visit us for cutting-edge, user-centric digital designs that blend functionality with visual appeal.',
   metadataBase: new URL('https://cairo-studio.com'),
   keywords: [
-    'UI/UX Design', 'Web Development', 'Brand Identity', 'Digital Design', 
+    'UI/UX Design', 'Web Development', 'Brand Identity', 'Digital Design',
     'Graphic Design', 'Illustrations', 'E-commerce', 'Cairo Studio', 'Cairo', 'Egypt'
   ],
   openGraph: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     site: '@CairoStudioo',
     title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
     description: 'Cairo Studio specializes in creating unique digital experiences through innovative design and development.',
-    images : 'https://cairo-studio.com/og-image.jpg'
+    images: 'https://cairo-studio.com/og-image.jpg'
   },
   robots: {
     index: true,

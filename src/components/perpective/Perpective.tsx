@@ -50,7 +50,6 @@ const Perpective: React.FC = () => {
 
     return (
         <>
-
             {!isMobile && <section className='perpective'>
                 <div ref={gallery} className={styles.gallery}>
                     <Column data={[Data[4], Data[5], Data[8]]} transform={transforms.transform1} isMobile={isMobile} />
@@ -84,8 +83,9 @@ const Column: React.FC<ColumnProps> = ({ data, transform, isMobile }) => {
                             alt="Snapshots of our work with our latest clients"
                             title="Snapshots of our work with our latest clients"
                             loading="lazy"
-                            placeholder="blur"
                             sizes="(max-width: 500px) 100vw, 500px, (max-width: 768px) 100vw, 500px, (max-width: 1024px) 100vw, 500px, (max-width: 1280px) 100vw, 500px, (max-width: 1536px) 100vw, 500px, 500px"
+                            width={600}
+                            height={1000}
                         />
                     </div>
                 ))}

@@ -8,11 +8,9 @@
     width: 100%;
     position: relative;
     gap: 5rem;
-    padding: 1rem 0;
     transition: var(--animation-primary);
-    @media (max-width: 1025px) {
-        padding: 1rem;
-    }
+    padding: 1rem;
+
     .faqs__container {
         display: flex;
         flex-direction: column;
@@ -73,14 +71,16 @@
                 transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
                 h2 {
                     color: var(--container-color);
-                    padding-left: 0.5rem;
-                    font-size: 1.5rem;
-                    font-weight: 400;
+                    font-size: 1.25rem;
+                    font-weight: 500;
                     text-transform: uppercase;
                     letter-spacing: -0.05rem;
                     padding-bottom: 1rem;   
                     user-select: none;
-                    @media (max-width: 456px) {
+                    @media (max-width: 956px) {
+                        font-size: 1rem;
+                    }
+                    @media (max-width: 556px) {
                         font-size: 0.9rem;
                     }
                 }     
@@ -110,16 +110,13 @@
                 .icon {
                     width: 100%;
                     transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-                    font-size: 1.5rem;
+                    font-size: 1rem;
                     padding-right: 1rem;
                     font-weight: 300;
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
                     color: var(--container-color);
-                    @media (max-width: 456px) {
-                        font-size: 0.9rem;
-                    }
                 }
                 
                 .icon.spin {
@@ -135,7 +132,6 @@
                     color: var(--container-color);
                     font-weight: 300;
                     width: 95%;
-                    padding-left: 0.5rem;
                     text-align: justify;
                     font-size: 0.9rem;
                     padding-bottom: 1rem;

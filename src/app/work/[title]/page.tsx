@@ -1,5 +1,3 @@
-
-// app/projects/[title]/page.tsx
 import React from 'react';
 import { Metadata } from 'next';
 import styles from './page.module.scss';

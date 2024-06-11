@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './style.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -7,6 +7,28 @@ import AnimatedH3 from '@/animations/animatedH3';
 
 const Footer: React.FC = () => {
     const pathname = usePathname();
+
+    useEffect(() => {
+        const workPathRegex = /^\/work(\/.*)?$/;
+
+        if (workPathRegex.test(pathname)) {
+            document.documentElement.style.setProperty('--background-color', '#0b0b0b');
+            document.documentElement.style.setProperty('--container-color', '#eae4d8');
+            document.documentElement.style.setProperty('--title-color', '#eae4d8');
+        } else {
+            document.documentElement.style.removeProperty('--background-color');
+            document.documentElement.style.removeProperty('--container-color');
+            document.documentElement.style.removeProperty('--title-color');
+        }
+
+        // Cleanup function to remove properties when the component unmounts or pathname changes
+        return () => {
+            document.documentElement.style.removeProperty('--background-color');
+            document.documentElement.style.removeProperty('--container-color');
+            document.documentElement.style.removeProperty('--title-color');
+        };
+    }, [pathname]); // Dependency array to re-run the effect on pathname change
+
 
     const getNextPageLink = () => {
         let nextPage = "/work";

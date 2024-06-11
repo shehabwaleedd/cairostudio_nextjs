@@ -1,39 +1,36 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../../firebase.config';
 import { useRouter } from 'next/navigation';
 import useFetchProjects from "@/hooks/useFetchProjects";
 import Image from 'next/image';
 import './Dashboard.scss';
-import { useUserAuth } from '@/components/authContext/AuthContext';
+import { useUserAuth } from '@/context/authContext/AuthContext';
+
 const Dashboard = () => {
     const router = useRouter();
-    const user = useUserAuth();
+    const { user } = useUserAuth();
     const { projects, error, loading } = useFetchProjects();
+
     const navigateToAddProject = () => {
         router.push('/admin/newItem'); // Assuming '/add-project' is your route for adding a new project
     };
-    const navigateToEditProject = (projectId) => {
+
+    const navigateToEditProject = (projectId: string) => {
         router.push(`/admin/${projectId}`); // Assuming '/edit-project/:id' is your route for editing a project
     };
-    const deleteProject = async (projectId) => {
+
+    const deleteProject = async (projectId: string) => {
         if (window.confirm("Are you sure you want to delete this project?")) {
             try {
-                await deleteDoc(doc(db, "projects", projectId));
-
+                await deleteDoc(doc(db, "projects", projectId.toString()));
             } catch (err) {
                 console.error("Error deleting project: ", err);
             }
         }
     };
-    useEffect(() => {
-        if (user) {
-            return
-        } else {
-            router.push('/login');
-        }
-    }, [user, router]);
+
 
     if (loading) return <div>LOADING</div>;
     if (error) return <p>Error: {error}</p>;
@@ -54,7 +51,6 @@ const Dashboard = () => {
                                     alt={project.title}
                                     width={600}
                                     height={200}
-                                    
                                 />
                             </div>
                             <div className="dashboard__project__info">
@@ -62,8 +58,8 @@ const Dashboard = () => {
                                 <p>{project.description}</p>
                             </div>
                             <div className="dashboard__project__actions">
-                                <button onClick={() => navigateToEditProject(project.title)}>edit</button>
-                                <button onClick={() => deleteProject(project.id)}>-</button>
+                                <button onClick={() => navigateToEditProject(project.id)}>Edit</button>
+                                <button onClick={() => deleteProject(project.id)}>Delete</button>
                             </div>
                         </div>
                     ))}

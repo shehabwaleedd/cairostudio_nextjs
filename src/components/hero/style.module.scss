@@ -1,5 +1,4 @@
 .home {
-    height: 90vh;
     position: relative;
     display: flex;
     left: 0;
@@ -9,12 +8,7 @@
     transition: var(--animation-primary);
     z-index: 8;
     gap: 2rem;
-    padding-top: 5vh;
-
-    @media(max-width: 978px) {
-        height: 100%;
-        padding-top: 10vh;
-    }
+    padding-top: 10vh;
 
     &__container {
         display: flex;

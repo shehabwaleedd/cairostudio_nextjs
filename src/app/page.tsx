@@ -20,14 +20,13 @@ const HomePage: React.FC = () => {
       <Opening />
       <Hero />
       <MainProjects />
-      <Upper p1="About Us" p2="03" p3='' h2="ABOUT US" span="CAIRO STUDIO" secondRow={false} />
+      <Upper p1="About Us" p2="03" />
       <AboutUs />
-      <Upper p1="Services" p2='04' />
-      <ServicesList />
+      <ServicesList p2={"04"} />
       <Upper p1="Snippets" p2="05" />
       <Perpective />
       <TextMask />
-      <Upper p1="Worked With" p2="07" />
+      <Upper p1="Worked With" p2="06" />
       <Faqs Data={FaqsData} />
     </main >
   );

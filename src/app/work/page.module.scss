@@ -264,7 +264,7 @@
                 }
 
                 .projectsPageCo__item {
-                    padding: 2rem;
+                    padding: 1rem;
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
@@ -275,7 +275,7 @@
                     cursor: pointer;
 
                     @media (max-width: 456px) {
-                        padding: 1rem;
+                        padding: 1rem 0.5rem;
                     }
 
                     .projectsPageCo__item__img {
@@ -325,14 +325,12 @@
 
                         p {
                             font-size: 1rem;
-                            font-weight: 300;
+                            font-weight: 400;
                             color: var(--container-color);
-                            letter-spacing: 0.2rem;
                             text-transform: uppercase;
 
                             @media (max-width: 456px) {
                                 font-size: 0.8rem;
-                                letter-spacing: 0.05rem;
                             }
                         }
 
@@ -340,7 +338,7 @@
                             font-size: 1.5rem;
                             font-weight: 400;
                             color: var(--container-color);
-                            letter-spacing: 0.2rem;
+                            letter-spacing: 0.05rem;
                             margin: 0px;
                             margin-top: 1rem;
                             text-transform: uppercase;

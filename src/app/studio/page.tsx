@@ -50,8 +50,7 @@ const About: React.FC = () => {
                 <Upper p1="Team" p2='02' />
                 <Team />
             </main>
-            <Upper p1="Services" p2='03' />
-            <ServicesList />
+            <ServicesList p2={"03"} />
         </>
     )
 }

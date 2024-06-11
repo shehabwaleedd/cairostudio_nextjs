@@ -12,9 +12,9 @@ const Data: Service[] = [
         ],
         header: [
             "Crafting Cutting-Edge",
-            "Websites for an Innovative",
-            "& Dynamic Digital",
-            "Experience."
+            "Websites for an",
+            "Innovative & Dynamic",
+            "Digital Experience."
         ],
         image: {
             isImg: true,

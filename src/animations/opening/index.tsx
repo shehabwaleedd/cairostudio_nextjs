@@ -33,10 +33,8 @@ const Opening = () => {
 
     useEffect(() => {
         if (animationComplete && renderingOpening) {
-            console.log('Starting animation...');
             const tl = gsap.timeline({
                 onComplete: () => {
-                    console.log('Container animation complete, state updated.');
                     Cookies.set('hasAnimationShown', 'true');
                     setRenderingOpening(false);
                     setHasAnimationShown(true);

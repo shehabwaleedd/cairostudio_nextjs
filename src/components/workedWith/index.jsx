@@ -5,7 +5,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import './WorkedWith.scss';
 import { motion } from 'framer-motion';
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 const WorkedWith = ({ Data }) => {
@@ -72,15 +71,15 @@ const WorkedWith = ({ Data }) => {
                         <div className="accordion" onClick={() => toggleAccordion(index)}>
                             <div className="title"><h2>{name}</h2></div>
                             <div className="accCategory">
-                                {categories && categories.map((category, index) => (
-                                    <h3 key={index}>{category.replace("-", "")}</h3>
+                                {categories && categories.map((category, catIndex) => (
+                                    <h3 key={id + '-' + catIndex}>{category.replace("-", "")}</h3>
                                 ))}
                                 <div className="icon">{activeAccordion === 0 ? 'Less -' : 'More +'}</div>
                             </div>
                         </div>
                         <div className="panel">
-                            {desc && desc.map((desc, index) => (
-                                <div className="desc" key={index}><p>{desc}</p></div>
+                            {desc && desc.map((descItem, descIndex) => (
+                                <div className="desc" key={id + '-' + descIndex}><p>{descItem}</p></div>
                             ))}
                         </div>
                     </div>

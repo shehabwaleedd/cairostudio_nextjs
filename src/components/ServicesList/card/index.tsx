@@ -1,8 +1,7 @@
 'use client'
 
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from "../style.module.scss";
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { ProjectData } from '..';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,31 +10,19 @@ import useWindowSize from '@/hooks/useWindowWidth';
 const Card = ({
     project,
     i,
-    progress,
-    range,
-    targetScale
+
 }: {
     project: ProjectData,
     i: number,
-    progress: any,
-    range: any,
-    targetScale: number
-}) => {
-    const container = useRef(null);
-    const { windowWidth } = useWindowSize();
-    const isDesktopOrLarger = windowWidth !== null && windowWidth >= 1200;
 
-    const scale = useTransform(progress, range, [1, targetScale]);
+}) => {
+
 
     return (
         <div 
-            className={styles.cardContainer} 
-            key={i} 
-            ref={container} 
-            style={isDesktopOrLarger ? { position: 'sticky', top: '4vh' } : { position: 'relative' }}
-        >
+            className={styles.cardContainer} key={i}>
             <div className={styles.wrapper}>
-                <motion.div style={{ scale, top: `0` }} className={styles.card}>
+                <div className={styles.card}>
                     <div className={styles.upper}>
                         <p>{project.descTitle}</p>
                         <Link href={project.link}>{project.title}</Link>
@@ -55,7 +42,7 @@ const Card = ({
                             blurDataURL={project.img}
                         />
                     </div>
-                </motion.div>
+                </div>
             </div>
         </div>
     );

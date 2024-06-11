@@ -1,5 +1,4 @@
-'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Data from '../Data';
 import styles from "./page.module.scss";
 import WorkedWith from '@/components/workedWith';
@@ -55,36 +54,20 @@ export async function generateMetadata({ params }: { params: { titles: string } 
     };
 }
 
-const ServicesSections: React.FC<ServicesSectionsProps> = ({ params }) => {
-    const [service, setService] = useState<Service | null>(null);
-
-    useEffect(() => {
-        const fetchAndSetService = async () => {
-            const fetchedService = await fetchService(params.titles);
-            setService(fetchedService);
-        };
-
-        fetchAndSetService();
-    }, [params.titles]);
+const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => {
+    const title = params.titles.toLowerCase();
+    const service = await fetchService(title);
+    const heading = "Related Work";
 
     if (!service) {
         return <p>Service not found.</p>;
     }
 
-    const heading = "Related Work";
-
     return (
         <main className={styles.servicesSections}>
             <Header header={service.header} />
-            <section className={styles.services__container_upper}>
-                <h2>{service.upperDescription}</h2>
-                {service.serviceDescription.map((desc, index) => (
-                    <p key={index}>{desc}</p>
-                ))}
-            </section>
-            <section className={styles.servicesMedia}>
-                <Image src={service.image.src} alt={service.serviceTitle} width={800} height={600} />
-            </section>
+            <Image src={service.image.src} alt={service.serviceTitle} width={1920} height={1230} />
+
             <section className={styles.services__bottom}>
                 <div className={styles.seboco__left}>
                     <h3>Services</h3>
@@ -93,13 +76,13 @@ const ServicesSections: React.FC<ServicesSectionsProps> = ({ params }) => {
                 <div className={styles.seboco__right}>
                     <div className={styles.services__bottom_container_right}>
                         {service.services[0]?.content.map(({ title, options }, index) => (
-                            <div key={index} className={styles.services__bottom_container_right_section}>
+                            <div key={title + index} className={styles.services__bottom_container_right_section}>
                                 <div className={styles.upper}>
                                     <h2>{title}</h2>
                                 </div>
                                 <div className={styles.lower}>
                                     {options.map((option, optIndex) => (
-                                        <p key={optIndex}>{option}</p>
+                                        <p key={option + optIndex}>{option}</p>
                                     ))}
                                 </div>
                             </div>
