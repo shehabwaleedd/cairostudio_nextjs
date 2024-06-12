@@ -1,23 +1,16 @@
 
-import img3 from "../../../public/assets/mobileImages/elementt7.webp"
-import img4 from "../../../public/assets/mobileImages/elementt9.webp"
-import img2 from "../../../public/assets/mobileImages/elementt9.webp"
-import img11 from "../../../public/assets/mobileImages/elementt10.webp"
-import img12 from "../../../public/assets/mobileImages/element8.webp"
-import img13 from  "../../../public/assets/mobileImages/elementt3.webp"
-
 const Data = [
     {
         image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718131284/WhatsApp_Image_2024-06-01_at_02.56.01_cnctq1.jpg",
     },
     {
-        image: img2,
+        image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718214380/elementt9_zqngwr.webp",
     },
     {
-        image: img3,
+        image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718214380/elementt7_o3v8bg.webp",
     },
     {
-        image: img4,
+        image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718214380/elementt9_zqngwr.webp",
     },
     {
         image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718128490/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2024-06-11_at_10.06.36_ffymrr.png",
@@ -41,10 +34,10 @@ const Data = [
         image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718131550/Mockup_3_t010dg.webp",
     },
     {
-        image: img12,
+        image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718214380/element8_wmfbsk.webp",
     },
     {
-        image: img13,
+        image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718214380/elementt3_ycrio0.webp",
     }
 ]
 
