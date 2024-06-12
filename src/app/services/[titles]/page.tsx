@@ -43,8 +43,7 @@ export async function generateMetadata({ params }: { params: { titles: string } 
     }
 
     return {
-        title: `${service.serviceTitle.toUpperCase()} - Cairo Studio`,
-        description: service.upperDescription,
+        title: `${service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} - Cairo Studio`,        description: service.upperDescription,
         openGraph: {
             title: `${service.serviceTitle} - Cairo Studio`,
             description: service.upperDescription,

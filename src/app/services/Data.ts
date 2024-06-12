@@ -4,7 +4,7 @@ import { Service } from "@/common/types";
 
 const Data: Service[] = [ 
     {
-        serviceTitle: "websites",
+        serviceTitle: "web-development",
         underTitle: [
             "From Concept And Strategy To Design And Implementation",
         ],
@@ -445,15 +445,16 @@ const Data: Service[] = [
         ],
     },
     {
-        serviceTitle: "Graphic-Design",
+        serviceTitle: "graphic-design",
         image: {
             isImg: true,
             src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718124095/WhatsApp_Image_2024-06-01_at_02.56.01_khqote.jpg", // Ensure you update this path with the actual image path
         },
         header: [
-            "Crafting Visual Masterpieces",
-            "That Speak Volumes",
-            "And Captivate Audiences"
+            "Crafting Visual",
+            "Masterpieces That",
+            "Speak Volumes And",
+            "Captivate Audiences"
         ],
         underTitle: [
             "Elite Graphic Design Services",

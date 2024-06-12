@@ -2,12 +2,14 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import Navbar from '../components/navbar';
 import './globals.css';
-const FooterWithNoSSR = dynamic(() => import('../components/footer'), { ssr: false });
 import { Metadata } from 'next';
 import { UserContextProvider } from '../context/authContext/AuthContext';
 import SmoothScrolling from '@/animations/SmoothScrolling';
 import { Toaster } from 'sonner';
 import AnimationProvider from '@/context/AnimationContext';
+import Script from 'next/script';
+
+const FooterWithNoSSR = dynamic(() => import('../components/footer'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
@@ -49,7 +51,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="2af62211-472c-4dfc-925a-197b88a8c4c9"></script>
+        <Script async src="https://cloud.umami.is/script.js" data-website-id="2af62211-472c-4dfc-925a-197b88a8c4c9" />
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+        <Script id="gtag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
+        </Script>
       </head>
       <body>
         <Navbar />
