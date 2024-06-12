@@ -3,7 +3,7 @@
     grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
     width: 100%;
-    background-color: var(--background-color);
+    background-color: var(--container-color);
     position: relative;
     z-index: 1;
     padding-top: 2.5rem;
@@ -17,9 +17,8 @@
         text-align: left;
         font-size: 10vh;
         text-transform: uppercase;
-        color: var(--title-color);
+        color: var(--background-color);
         font-weight: 700; // Bold weight
-        letter-spacing: 0.7rem;
         position: relative;
         width: 100%;
     }
@@ -27,7 +26,7 @@
 
     p {
         font-size: 2vh;
-        color: var(--title-color);
+        color: var(--background-color);
         width: 80%;
         font-weight: 300; // Thin weight
         text-align: justify;
@@ -87,7 +86,7 @@
         text-transform: lowercase;
         font-size: 1.2rem;
         padding-bottom: 0.5rem;
-        color: var(--title-color);
+        color: var(--background-color);
         text-decoration: none;
 
     }
@@ -100,7 +99,7 @@
         font-size: 1rem;
         text-transform: lowercase;
         user-select: text;
-        color: var(--title-color);
+        color: var(--background-color);
     }
 }
 

@@ -7,28 +7,7 @@ import AnimatedH3 from '@/animations/animatedH3';
 
 const Footer: React.FC = () => {
     const pathname = usePathname();
-
-    useEffect(() => {
-        const workPathRegex = /^\/work(\/.*)?$/;
-
-        if (workPathRegex.test(pathname)) {
-            document.documentElement.style.setProperty('--background-color', '#0b0b0b');
-            document.documentElement.style.setProperty('--container-color', '#eae4d8');
-            document.documentElement.style.setProperty('--title-color', '#eae4d8');
-        } else {
-            document.documentElement.style.removeProperty('--background-color');
-            document.documentElement.style.removeProperty('--container-color');
-            document.documentElement.style.removeProperty('--title-color');
-        }
-
-        // Cleanup function to remove properties when the component unmounts or pathname changes
-        return () => {
-            document.documentElement.style.removeProperty('--background-color');
-            document.documentElement.style.removeProperty('--container-color');
-            document.documentElement.style.removeProperty('--title-color');
-        };
-    }, [pathname]); // Dependency array to re-run the effect on pathname change
-
+    const workPathRegex = /^\/work(\/.*)?$/;
 
     const getNextPageLink = () => {
         let nextPage = "/work";
@@ -75,7 +54,7 @@ const Footer: React.FC = () => {
 
     return (
         <>
-            <footer className={styles.footer}>
+            <footer className={styles.footer} style={{ display: (workPathRegex.test(pathname)) ? "none" : "block" }}>
                 <div className={styles.footer__bottom}>
                     <div className={styles.footer__con}>
                         <div className={styles.footer__upper}>
@@ -99,7 +78,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </footer>
-            <div className={styles.footer__footer}>
+            <div className={styles.footer__footer}  style={{ display: (workPathRegex.test(pathname)) ? "none" : "block" }}>
                 <div className={styles.footer__footer_container}>
                     <div className={styles.footer__logo}>
                         <h2>Cairo Studio © {new Date().getFullYear()} All Rights Reserved</h2>

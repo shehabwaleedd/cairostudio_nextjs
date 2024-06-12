@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import styles from "./style.module.scss";
 import Image from 'next/image';
 import { TransitionCard } from '../transitionLink';
+import slugify from 'slugify'; // Import slugify library
 
 interface Project {
     id: string;
@@ -17,8 +18,9 @@ interface ProjectItemProps {
     index: number;
 }
 
+
 const ProjectItem = memo(({ item, index }: ProjectItemProps) => (
-    <TransitionCard href={`/work/${item.title}`} className={styles.mainProjects__item}>
+    <TransitionCard href={`/work/${slugify(item.title, { lower: true })}`} className={styles.mainProjects__item}>
         <div className={styles.mainProjects__container__imgs}>
             <Image
                 src={item.poster}

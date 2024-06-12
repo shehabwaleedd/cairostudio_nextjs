@@ -379,7 +379,10 @@ const NewItem = () => {
                 {projectData[name] && projectData[name] !== '' &&
                     <>
                         {name === 'homePage' || name === 'poster' || name === 'cover' ?
-                            <Image src={projectData[name]} alt={name} />
+                            <Image src={projectData[name]} alt={name} 
+                                width={600}
+                                height={700}
+                            />
                             :
                             <video src={projectData[name]} controls />
                         }

@@ -37,7 +37,7 @@ const Home = () => {
                         </span>
                     </div>
                     <div className={styles.lower__callToActionsBtns}>
-                        <Link className={styles.schedule} href="/about"> Schedule A brief </Link>
+                        <Link className={styles.schedule} href="https://calendly.com/hello-cairo-studio/30min" target="_blank" rel="noopener noreferrer"> Schedule A brief </Link>
                         <TransitionLink href="/contact" label="Contact Us" />
                     </div>
                 </div>

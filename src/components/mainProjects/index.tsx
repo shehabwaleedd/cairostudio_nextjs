@@ -12,7 +12,7 @@ const MainProjects = async () => {
     const projects: Project[] = await fetchProjectsWithBlurData();
 
     const displayedProjects = projects.filter((project: Project) =>
-        ['Lemkus', 'Aldar', 'Innovest', 'Tiger', 'Swag'].includes(project.title)
+        ['Lemkus', 'Barkar', 'Innovest', 'Tag Media', 'Pyramids'].includes(project.title)
     );
 
     const numberOfProjects = displayedProjects.length || 0;

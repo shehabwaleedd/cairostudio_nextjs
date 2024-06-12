@@ -5,6 +5,7 @@ import RenderImages from './RenderImages';
 import Upper from './components/Upper';
 import { Project } from '@/common/types';
 import serverFetchData from '@/lib/serverFetchData';
+import slugify from 'slugify'; 
 
 interface ProjectsDetailsProps {
     params: { title: string };
@@ -65,7 +66,8 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = async ({ params }) => {
 
     try {
         const projects = await serverFetchData();
-        project = projects.find(p => p.title === params.title) || null;
+        project = projects.find(p => slugify(p.title, { lower: true }) === params.title) || null;
+
     } catch (err) {
         error = (err as Error).message;
     }
@@ -81,14 +83,7 @@ const ProjectsDetails: React.FC<ProjectsDetailsProps> = async ({ params }) => {
     return (
         <main className={styles.projectsDetails}>
             <section className={styles.projectsDetails_left}>
-                {renderCollectiveItems('userExpImage')}
-                {renderCollectiveItems('designSystem')}
-                {renderCollectiveItems('collective1')}
-                {renderCollectiveItems('collectiveGrid')}
-                {renderCollectiveItems('collectiveDraggable')}
-                {renderCollectiveItems('filterImage')}
-                {renderCollectiveItems('interactionVideo')}
-                {renderCollectiveItems('collective2')}
+                {renderCollectiveItems('projectImages')}
             </section>
             <section className={styles.projectsDetails_right}>
                 <Upper project={project} />
