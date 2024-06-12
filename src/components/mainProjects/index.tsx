@@ -3,19 +3,16 @@ import ProjectItem from './ProjectItem';
 import Upper from '../upper';
 import styles from './style.module.scss';
 
-export const metadata = {
-    title: 'Projects Page',
-    description: 'Latest projects and works',
-};
-
 const MainProjects = async () => {
     const projects: Project[] = await fetchProjectsWithBlurData();
 
-    const displayedProjects = projects.filter((project: Project) =>
-        ['Lemkus', 'Barkar', 'Innovest', 'Tag Media', 'Pyramids'].includes(project.title)
-    );
+    const order = ['Pyramids', 'Lemkus', 'Barkar', 'Tag Media', 'Aldar'];
 
-    const numberOfProjects = displayedProjects.length || 0;
+    const displayedProjects = projects
+        .filter((project: Project) => order.includes(project.title))
+        .sort((a: Project, b: Project) => order.indexOf(a.title) - order.indexOf(b.title));
+
+    const numberOfProjects = displayedProjects.length;
 
     return (
         <div className={styles.mainProjects}>

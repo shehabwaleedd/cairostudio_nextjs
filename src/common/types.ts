@@ -191,7 +191,7 @@ export interface ServiceContent {
 
 export interface ServiceProcess {
     description: string;
-    content: WorkedWithContent[]; // Assuming WorkedWith component accepts an array of a specific type
+    content: WorkedWithContent[]; 
 }
 
 export interface Service {
@@ -200,7 +200,7 @@ export interface Service {
     header: string[];
     image: {
         isImg: boolean;
-        src: StaticImageData;
+        src: string;
     };
     upperDescription: string;
     serviceDescription: string[];

@@ -1,6 +1,4 @@
 import { Service } from "@/common/types";
-import BrandingImage from "../../../public/assets/branding/HIM BRAND GUIIEDLINE V02.webp";
-import { StaticImageData } from "next/image";
 
 
 
@@ -18,7 +16,7 @@ const Data: Service[] = [
         ],
         image: {
             isImg: true,
-            src: BrandingImage,
+            src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718124200/Macbook_Pro_Mockup_kdwc6t.webp",
         },
         upperDescription: "Transforming User Experiences Through Exceptional Design.",
         serviceDescription: [
@@ -26,8 +24,8 @@ const Data: Service[] = [
         ],
         relatedNames: [
             "Lemkus",
-            "Banyana",
-            "Emma"
+            "Pyramids",
+            "Tag Media"
         ],
         services: [
             {
@@ -179,7 +177,7 @@ const Data: Service[] = [
         ],
         image: {
             isImg: true,
-            src: BrandingImage,
+            src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718131555/Mockup_2_ymumub.webp",
         },
         upperDescription: "Crafting Immersive Digital Experiences That Drive Results",
         serviceDescription: [
@@ -188,8 +186,8 @@ const Data: Service[] = [
         ],
         relatedNames: [
             "Lemkus",
-            "Banyana",
-            "Emma"
+            "Barkar",
+            "Pyramids"
         ],
         services: [
             {
@@ -343,7 +341,7 @@ const Data: Service[] = [
         serviceTitle: "branding",
         image: {
             isImg: true,
-            src: BrandingImage,
+            src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717807365/golofo_brand_guiedline_v03_1_iufhxp.webp",
         },
         header: [
             "Transforming Brands",
@@ -362,9 +360,9 @@ const Data: Service[] = [
             "Consumers are increasingly seeking out brands that they identify with – that mirror their lifestyle, their beliefs and their actions. And it is precisely when a brand translates its own ethics and values through defined brand identity and communication that it comes across as authentic, natural, almost human-like.",
         ],
         relatedNames: [
-            "Lemkus",
-            "Banyana",
-            "Emma"
+            "Aldar",
+            "Cairo Hosts",
+            "Innovest"
         ],
         services: [
             {
@@ -445,7 +443,112 @@ const Data: Service[] = [
                 ],
             },
         ],
+    },
+    {
+        serviceTitle: "Graphic-Design",
+        image: {
+            isImg: true,
+            src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718124095/WhatsApp_Image_2024-06-01_at_02.56.01_khqote.jpg", // Ensure you update this path with the actual image path
+        },
+        header: [
+            "Crafting Visual Masterpieces",
+            "That Speak Volumes",
+            "And Captivate Audiences"
+        ],
+        underTitle: [
+            "Elite Graphic Design Services",
+            "Transforming Ideas into Visual Art"
+        ],
+        upperDescription: "In today's competitive market, standing out visually is imperative. Our graphic design services ensure your brand not only captures attention but also remains memorable.",
+        serviceDescription: [
+            "In an era where visual content dominates, your brand needs more than just a good look. It needs a compelling story, conveyed through meticulously crafted design elements that resonate with your audience.",
+            "Our team of experts focuses on creating designs that reflect your brand's values and identity, making your brand relatable and unforgettable. From logos to full-fledged branding packages, we ensure every detail is perfect."
+        ],
+        relatedNames: [
+            "Aldar",
+            "Cairo Hosts",
+            "Innovest"
+        ],
+        services: [
+            {
+                description: "Experience a seamless collaboration as we bring your creative ideas to life with our comprehensive graphic design solutions.",
+                content: [
+                    {
+                        title: "Research",
+                        options: [
+                            "Customer Research",
+                            "Trends Analysis",
+                            "Competitor Review",
+                            "Market Research",
+                        ]
+                    },
+                    {
+                        title: "Strategy",
+                        options: [
+                            "Brand Positioning & Architecture",
+                            "Brand Naming & Strategy",
+                            "Target Audience Discovery",
+                            "Customer Journey Mapping",
+                            "Post-launch Strategy",
+                        ]
+                    },
+                    {
+                        title: "Design",
+                        options: [
+                            "Art Direction",
+                            "Brand Identity Design",
+                            "Design Systems",
+                            "Graphic Design",
+                            "Motion Design",
+                            "3D Design",
+                            "Illustration",
+                            "Digital Product Design",
+                            "Packaging",
+                        ]
+                    },
+                ]
+            }
+        ],
+        process: [
+            {
+                description: "Our meticulous analysis informs a strategic approach that guides every stage of our process for effective implementation.",
+                content: [
+                    {
+                        name: "Discovery",
+                        desc: [
+                            "The research phase of our graphic design process involves gathering and analyzing critical information about your business, industry, competitors, and target audience. This step typically includes brand questionnaires, workshops, and interviews.",
+                            "Research is the cornerstone of our strategy. We leave no stone unturned in understanding your brand’s essence."
+                        ]
+                    },
+                    {
+                        name: "Define",
+                        desc: [
+                            "In the define stage, we focus on honing and unifying various elements of your brand, including your origin story, brand values, target audience, brand personality, tone of voice, and stylescapes. This crucial step sets the foundation for your brand's visual and communicative strategy."
+                        ]
+                    },
+                    {
+                        name: "Design",
+                        desc: [
+                            "The graphic identity serves as the face of your brand. Our team crafts a unique visual story that aligns with your positioning. This process includes developing a captivating logo, selecting brand colors, choosing typography, and incorporating graphic elements. Each component is designed to create a cohesive and impactful visual representation of your brand."
+                        ]
+                    },
+                    {
+                        name: "Roll-Out",
+                        desc: [
+                            "A successful brand rollout is never a one-size-fits-all process. We collaborate closely with you to identify and create the design collateral that best aligns with your business goals. This ensures a tailored and impactful brand presence."
+                        ]
+                    },
+                    {
+                        name: "Handover + Visual Guidelines",
+                        desc: [
+                            "We provide a comprehensive brand book that includes detailed guidelines for fonts, colors, and other design elements. This ensures consistency and ease of use, allowing anyone to work with your brand effectively."
+                        ]
+                    },
+                ],
+            },
+        ],
     }
+    
 ]
 
 export default Data;

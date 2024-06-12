@@ -9,8 +9,6 @@ const ServicesCards = ({ displayedProjects }: { displayedProjects: Project[] }) 
     const [hoveredProjectIndex, setHoveredProjectIndex] = useState<number | null>(null);
     const [hoveredLearnMoreIndex, setHoveredLearnMoreIndex] = useState<number | null>(null);
 
-
-
     return (
         <div className={styles.services__container_lower}>
             {displayedProjects.map((item: Project, index: number) => (
