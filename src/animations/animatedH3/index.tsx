@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './style.module.scss';
@@ -13,7 +13,7 @@ const AnimatedH3: React.FC<AnimatedH3Props> = ({ word }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const lettersRef = useRef<HTMLDivElement[]>([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (containerRef.current) {
             const mm = gsap.matchMedia();
 

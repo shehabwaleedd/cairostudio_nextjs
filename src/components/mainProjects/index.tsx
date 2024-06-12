@@ -6,7 +6,7 @@ import styles from './style.module.scss';
 const MainProjects = async () => {
     const projects: Project[] = await fetchProjectsWithBlurData();
 
-    const order = ['Pyramids', 'Lemkus', 'Barkar', 'Tag Media', 'Aldar'];
+    const order = ['Pyramids', 'Lemkus', 'Cairo Hosts', 'Tag Media', 'Aldar'];
 
     const displayedProjects = projects
         .filter((project: Project) => order.includes(project.title))

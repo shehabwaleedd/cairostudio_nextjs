@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './WorkedWith.scss';
@@ -36,25 +36,19 @@ const WorkedWith = ({ Data }) => {
         }
     };
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (containerRef.current) {
             const items = containerRef.current.querySelectorAll('.item-1');
 
-            items.forEach((item, index) => {
-                gsap.fromTo(item,
-                    { opacity: 0 },
-                    {
-                        opacity: 1,
-                        duration: 1,
-                        scrollTrigger: {
-                            trigger: item,
-                            start: 'top 70%',
-                            toggleActions: 'play none none none',
-                            onEnter: () => item.classList.add('in-view'),
-                        },
-                        delay: index * 0.1 // Stagger the animation by 0.1 seconds for each item
-                    }
-                );
+            items.forEach((item) => {
+                gsap.to(item, {
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 90%',
+                        toggleClass: { targets: item, className: 'in-view' },
+                        once: true, // Animation happens only once
+                    },
+                });
             });
         }
     }, [containerRef]);
