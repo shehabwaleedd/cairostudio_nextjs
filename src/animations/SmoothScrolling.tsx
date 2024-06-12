@@ -3,19 +3,19 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import Tempus from '@studio-freight/tempus';
 import Lenis from '@studio-freight/lenis';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const SmoothScroller = () => {
     const lenisRef = useRef<Lenis | null>(null);
     const pathname = usePathname();
-    const searchParams = useSearchParams();
+
 
     useEffect(() => {
         if (lenisRef.current) {
             lenisRef.current.scrollTo(0, { immediate: true });
         }
-    }, [pathname, searchParams]);
-
+        }, [pathname]);
+    
     useLayoutEffect(() => {
         const lenisInstance = new Lenis({
             duration: 2.5,

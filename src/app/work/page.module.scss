@@ -64,8 +64,8 @@
             top: -2rem;
             justify-content: flex-start;
             align-items: flex-start;
-            place-content: start;
-            place-items: start;
+            place-content: flex-start;
+            place-items: flex-start;
         }
 
         @media (max-width: 456px) {
@@ -177,8 +177,8 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            place-content: start;
-            place-items: start;
+            place-content: flex-start;
+            place-items: flex-start;
             left: 1rem;
 
         }
