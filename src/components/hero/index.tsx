@@ -47,7 +47,7 @@ const Home = () => {
                         <li>Graphic Design</li>
                         <li>UI/UX Design</li>
                         <li>SEO</li>
-                        <li>Mobile Application</li>
+                        <li>E-Commerce</li>
                         <li>Branding</li>
                     </ul>
                     <ul>

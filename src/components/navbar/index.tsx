@@ -29,6 +29,19 @@ const Navbar: React.FC = () => {
         console.log('Pathname changed, nav closed:', pathname);
     }, [pathname]);
 
+    useEffect(() => {
+        if (navOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.body.style.overflow = ''; // Reset overflow when component unmounts
+        };
+    }, [navOpen]);
+    
+
 
 
     return (

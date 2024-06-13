@@ -19,7 +19,7 @@ export const height = {
         height: 0
     },
     enter: {
-        height: "110vh",
+        height: "110lvh",
         transition
     },
     exit: {

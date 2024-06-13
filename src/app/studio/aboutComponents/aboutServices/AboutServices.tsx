@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import Data from './Data';
 import './aboutServices.scss';
 import gsap from 'gsap';
@@ -14,12 +14,7 @@ interface Project {
 
 const AboutServices = () => {
     const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         const details = gsap.utils.toArray<HTMLElement>('.aboutServicesCo__right_content_section:not(:first-child)');
