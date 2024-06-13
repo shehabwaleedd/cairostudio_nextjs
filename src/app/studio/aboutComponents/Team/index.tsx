@@ -1,6 +1,9 @@
+'use client'
 import React from 'react'
-import styles from "./style.module.scss"
+import "./Team.scss"
 import Image from 'next/image'
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 
 const TeamData = [
     {
@@ -21,20 +24,49 @@ const TeamData = [
         role: "Graphic Designer",
         image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717921059/311267169_421362886800865_3750963405119657114_n_yxpecy.jpg"
     },
+    {
+        id: 4,
+        name: "Mina Nagy",
+        role: "Backend Developer",
+        image: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718282493/116976297_efajx9.jpg"
+    },
 
 ]
 
 const Team = () => {
+
+    const [sliderRef] = useKeenSlider<HTMLDivElement>({
+        loop: false,
+        mode: "snap",
+        drag: true,
+        rubberband: false,
+        breakpoints: {
+            "(min-width: 380px)": {
+                slides: { perView: 1, spacing: 10 },
+            },
+            "(min-width: 768px)": {
+                slides: { perView: 2, spacing: 20 },
+            },
+            "(min-width: 1024px)": {
+                slides: { perView: 3, spacing: 30 },
+            },
+        },
+        slides: {
+            perView: 1, spacing: 20, origin: "auto",
+        },
+    });
+
+
     return (
-        <section className={styles.team}>
-            <div className={styles.team__members}>
+        <section className={`team keen-slider `} ref={sliderRef}>
+            <div className="team__members">
                 {TeamData.map((member) => {
                     return (
-                        <div key={member.id} className={styles.member}>
-                            <Image src={member.image} alt={member.name} className={styles.team__member__image} width={600} height={600} />
-                            <div className={styles.details}>
-                                <h3 className={styles.team__member__name}>{member.name}</h3>
-                                <p className={styles.team__member__role}>{member.role}</p>
+                        <div key={member.id} className={`member keen-slider__slide`}>
+                            <Image src={member.image} alt={member.name} className="team__member__image" width={600} height={600} />
+                            <div className="details">
+                                <h3 className="team__member__name">{member.name}</h3>
+                                <p className="team__member__role">{member.role}</p>
                             </div>
                         </div>
                     )
