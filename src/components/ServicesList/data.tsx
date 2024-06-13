@@ -10,7 +10,7 @@ const Data: {
             id: 1,
             link: "/services/websites",
             img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718124189/Tag_Media_MBA_M2_cchjgs.webp",
-            tags: ["React", "Next.js", "Gatsby", "Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"]
+            tags: ["Next.js", "Node.js", "MongoDB", "PostgreSQL", "GraphQL"]
         },
         {
             title: "Graphic Design",
@@ -18,14 +18,13 @@ const Data: {
             id: 2,
             link: "/services/graphic-design",
             img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718127727/WhatsApp_Image_2024-06-01_at_02.56.01_1_1_rx257b.webp",
-            tags: ["Figma", "Adobe XD", "Illustrator", "Photoshop"]
+            tags: ["Figma", "Photoshop", "Illustrator", "Photoshop"]
         },
         {
             title: "E-commerce",
             descTitle: "Let's Sell!",
             id: 3,
             link: "/services/e-commerce",
-            // img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1717807458/lelu_mockup_uyfzgd.webp",
             img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718131533/Mockup_5_outshs.webp",
             tags: ["Shopify", "Custom", "WooCommerce"]
         },
