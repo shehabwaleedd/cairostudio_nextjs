@@ -4,6 +4,7 @@ import styles from './style.module.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AnimatedH3 from '@/animations/animatedH3';
+import { TransitionLink } from '../transitionLink';
 
 const Footer: React.FC = () => {
     const pathname = usePathname();
@@ -45,9 +46,7 @@ const Footer: React.FC = () => {
         return (
             <div className={styles.nextPage}>
                 <h2>Next Page</h2>
-                <Link href={nextPage}>
-                    {nextPageName}
-                </Link>
+                <TransitionLink href={`${nextPage}`} label={`${nextPageName}`} />
             </div>
         );
     };

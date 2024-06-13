@@ -141,13 +141,16 @@
             }
 
             .nextPage {
-                a {
+                h2 {
+                    font-size: 1rem;
+                }
+                button {
+                    background-color: transparent;
                     font-size: 6vh;
                     font-weight: 500;
                     color: var(--container-color);
                     letter-spacing: 0.06rem;
                     text-transform: uppercase;
-                    margin-top: 3rem;
                     position: relative;
 
                     @media (max-width: 965px) {
@@ -158,7 +161,7 @@
                         content: '';
                         position: absolute;
                         width: 100%;
-                        height: 0.5px;
+                        height: 1px;
                         background-color: var(--title-color);
                         bottom: 0;
                         left: 0;

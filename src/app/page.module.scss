@@ -1,30 +1,10 @@
-.banner1,
-.banner2,
-.banner3,
-.banner4 {
+.banner1 {
     position: fixed;
     top: 0;
     z-index: 9999;
-    width: 25%;
+    width: 100%;
     height: 100lvh;
-    // background-color: #eae4d8;
     background-color: #fdefe0;
-}
-
-.banner1 {
-    left: 0;
-}
-
-.banner2 {
-    left: 25%;
-}
-
-.banner3 {
-    left: 50%;
-}
-
-.banner4 {
-    left: 75%;
 }
 
 
