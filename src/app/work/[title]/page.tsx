@@ -60,6 +60,13 @@ export async function generateMetadata({ params }: ProjectsDetailsProps): Promis
     };
 }
 
+
+export async function generateStaticParams() {
+    const projects = await serverFetchData();
+    return projects.map(project => ({ params: { title: slugify(project.title, { lower: true }) } }));
+}
+
+
 const ProjectsDetails: React.FC<ProjectsDetailsProps> = async ({ params }) => {
     let project: Project | null = null;
     let error: string | null = null;
