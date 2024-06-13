@@ -1,6 +1,6 @@
 'use client'
 import { useEffect } from "react";
-import { animatePageIn, animatePageOut } from "@/animations/animatePageOut"
+import { animatePageIn  } from "@/animations/animatePageOut"
 import getChars from "@/animations/animatedHeaders/getChars";
 import styles from "./page.module.scss";
 import { usePathname } from "next/navigation";

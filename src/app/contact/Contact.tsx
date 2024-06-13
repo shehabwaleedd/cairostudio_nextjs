@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
                                 <div className={styles.cocori__container}>
                                     <p>My project is about</p>
                                     <div className={styles.cocori__options}>
-                                        {['websiteDesign', 'websiteDevelopment', 'branding', 'mobileApp', 'uiix', 'marketingSeo', 'onlineShop'].map((service) => (
+                                        {['websiteDesign', 'websiteDevelopment', 'branding', 'mobileApp', 'ui/ux', 'marketingSeo', 'onlineShop'].map((service) => (
                                             <label key={service} className={`${styles.cocori__option} ${values[service] ? styles.checked : ''}`}>
                                                 <Field type="checkbox" name={service} />
                                                 <span>{service.replace(/([A-Z])/g, ' $1').trim()}</span>

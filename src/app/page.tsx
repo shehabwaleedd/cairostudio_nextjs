@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "./page.module.scss"
-import Opening from '@/animations/opening';
 import Hero from "@/components/hero";
 import MainProjects from "@/components/mainProjects";
 import FaqsData from '@/components/workedWith/WorkedWithData';
@@ -17,7 +16,6 @@ const HomePage: React.FC = () => {
 
   return (
     <main className={styles.homePage}>
-      <Opening />
       <Hero />
       <MainProjects />
       <Upper p1="About Us" p2="03" />

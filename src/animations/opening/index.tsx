@@ -35,7 +35,7 @@ const Opening = () => {
         if (animationComplete && renderingOpening) {
             const tl = gsap.timeline({
                 onComplete: () => {
-                    Cookies.set('hasAnimationShown', 'true');
+                    Cookies.set('hasAnimationShown', 'true', { expires: 1 / 48 });
                     setRenderingOpening(false);
                     setHasAnimationShown(true);
                 }

@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             document.body.style.overflow = ''; // Reset overflow when component unmounts
         };
     }, [navOpen]);
-    
+
 
 
 

@@ -30,10 +30,8 @@ export const AnimationProvider: React.FC<AnimationProviderProps> = ({ children }
 
     useEffect(() => {
         const hasShown = !!Cookies.get("hasAnimationShown");
-        console.log('Initial hasAnimationShown:', hasShown);
         setHasAnimationShown(hasShown);
         setRenderingOpening(!hasShown);
-        console.log('Initial renderingOpening:', !hasShown);
     }, []);
 
     return (

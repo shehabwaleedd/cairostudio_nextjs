@@ -16,6 +16,7 @@
         margin-top: 10px;
         list-style-type: none;
         padding: 0;
+        font-size: 1.1rem;
 
         @media (max-width: 456px) {
             width: 100%;
@@ -31,13 +32,14 @@
 
     li {
         color: var(--container-color);
-        border-bottom: 1px solid var(--title-color);
-        display: flex;
-        justify-content: space-between;
-        width: 70%;
-        align-items: center;
 
+        
         a {
+            border-bottom: 1px solid var(--title-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 70%;
             color: var(--container-color);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);

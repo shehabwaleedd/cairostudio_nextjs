@@ -14,9 +14,6 @@
     user-select: none;
     mix-blend-mode: difference;
 
-    @media (max-width: 1154px) {
-        display: none;
-    }
 
     @media (max-width: 555px) {
         border-bottom: 1px solid #fff;
@@ -32,11 +29,6 @@
         letter-spacing: 0.1rem;
         width: 100%;
         font-weight: 500;
-
-        @media (max-width: 1154px) {
-            display: none;
-        }
-
 
     }
 
@@ -59,10 +51,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            @media (max-width: 1200px) {
-                display: none;
-            }
 
             ul {
                 display: flex;
@@ -93,9 +81,8 @@
 .mobile {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: fixed;
-    justify-content: space-between;
     top: 0;
     left: 0;
     padding: 0.5rem 1rem;
@@ -121,14 +108,11 @@
 
     }
 
-    span {
-        position: relative;
-        right: 0rem;
-        font-size: 0.8rem;
-        color: var(--title-color);
-        text-transform: lowercase;
-    }
     button {
+        
         font-size: 1rem;
+        @media (min-width: 555px) {
+            font-size: 1.3rem;
+        }
     }
 }

@@ -18,9 +18,7 @@
         padding: 2rem 0;
         transition: var(--animation-primary);
 
-        @media (max-width: 1156px) {
-            display: flex;
-            flex-direction: column;
+        @media (max-width: 1056px) {
             align-items: flex-start;
             justify-content: flex-start;
             padding: 0.5rem;
@@ -62,7 +60,7 @@
             border-bottom: 1px solid var(--title-color);
         }
 
-        @media (min-width: 1350px) {
+        @media (min-width: 956px) {
             &:nth-child(1) {
                 padding-left: 0;
             }
