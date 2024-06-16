@@ -4,12 +4,11 @@ import Navbar from '../components/navbar';
 import './globals.css';
 import { Metadata } from 'next';
 import { UserContextProvider } from '../context/authContext/AuthContext';
+import { ThemeProvider } from '@/context/ThemeProvider';
 import SmoothScrolling from '@/animations/SmoothScrolling';
 import { Toaster } from 'sonner';
-import AnimationProvider from '@/context/AnimationContext';
 import Script from 'next/script';
-
-const FooterWithNoSSR = dynamic(() => import('../components/footer'), { ssr: false });
+const FooterWithNoSSR = dynamic(() => import('../components/footer'));
 
 export const metadata: Metadata = {
   title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
@@ -26,10 +25,10 @@ export const metadata: Metadata = {
     description: 'Cairo Studio specializes in creating unique digital experiences through innovative design and development.',
     images: [
       {
-        url: 'https://cairo-studio.com/og-image.jpg',
+        url: 'https://res.cloudinary.com/ds20vy7zo/image/upload/v1718564315/og_pgmuwr.webp',
         width: 1200,
         height: 630,
-        alt: 'Cairo Studio'
+        alt: 'Cairo Studio Poster'
       }
     ],
   },
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     site: '@CairoStudioo',
     title: 'Cairo Studio | Leading in UI/UX & Web Development in Egypt',
     description: 'Cairo Studio specializes in creating unique digital experiences through innovative design and development.',
-    images: 'https://cairo-studio.com/og-image.jpg'
+    images: 'https://res.cloudinary.com/ds20vy7zo/image/upload/v1718564315/og_pgmuwr.webp'
   },
   robots: {
     index: true,
@@ -61,15 +60,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body>
-        <Navbar />
-        <UserContextProvider>
-          <AnimationProvider>
+        <ThemeProvider>
+          <Navbar />
+          <UserContextProvider>
             <SmoothScrolling />
             <Toaster />
             {children}
-          </AnimationProvider>
-        </UserContextProvider>
-        <FooterWithNoSSR />
+          </UserContextProvider>
+          <FooterWithNoSSR />
+        </ThemeProvider>
       </body>
     </html>
   );

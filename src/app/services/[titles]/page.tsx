@@ -1,15 +1,24 @@
 import React from 'react';
 import Data from '../Data';
 import styles from "./page.module.scss";
-import WorkedWith from '@/components/workedWith';
+
 import RelatedWork from '@/components/relatedWork/RelatedWork';
 import { Service } from '@/common/types';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import Header from './components/Header';
+import ServicesSplit from '@/components/servicesSplit';
+import WorkedWith from '@/components/workedWith';
 
 interface ServicesSectionsProps {
     params: { titles: string }
+}
+
+interface Project {
+    id: number;
+    headline?: HTMLHeadingElement | null;
+    title: string;
+    elements: { text: string }[];
 }
 
 async function fetchService(title: string): Promise<Service | null> {
@@ -43,7 +52,8 @@ export async function generateMetadata({ params }: { params: { titles: string } 
     }
 
     return {
-        title: `${service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} - Cairo Studio`,        description: service.upperDescription,
+        title: `${service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} - Cairo Studio`,
+        description: service.upperDescription,
         openGraph: {
             title: `${service.serviceTitle} - Cairo Studio`,
             description: service.upperDescription,
@@ -62,6 +72,24 @@ const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => 
         return <p>Service not found.</p>;
     }
 
+    const transformServiceContentToProjects = (content: { title: string; options: string[]; }[]): Project[] => {
+        return content.map((item, index) => ({
+            id: index + 1, // Assuming id is just the index + 1 for simplicity
+            title: item.title,
+            elements: item.options.map(option => ({ text: option }))
+        }));
+    };
+
+    const serviceContent = service.services[0].content;
+    const transformedData = transformServiceContentToProjects(serviceContent);
+
+    // Transform process data to match the required structure
+    const processData = service.process[0].content.map((item, index) => ({
+        id: index + 1,
+        name: item.name,
+        desc: item.desc
+    }));
+
     return (
         <main className={styles.servicesSections}>
             <Header header={service.header} />
@@ -72,22 +100,7 @@ const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => 
                     <h3>Services</h3>
                     <p>{service.services[0].description}</p>
                 </div>
-                <div className={styles.seboco__right}>
-                    <div className={styles.services__bottom_container_right}>
-                        {service.services[0]?.content.map(({ title, options }, index) => (
-                            <div key={title + index} className={styles.services__bottom_container_right_section}>
-                                <div className={styles.upper}>
-                                    <h2>{title}</h2>
-                                </div>
-                                <div className={styles.lower}>
-                                    {options.map((option, optIndex) => (
-                                        <p key={option + optIndex}>{option}</p>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <ServicesSplit data={transformedData} />
             </section>
             <section className={styles.services__bottom}>
                 <div className={styles.services__bottom_container}>
@@ -95,7 +108,7 @@ const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => 
                         <h3>Process</h3>
                         <p>{service.process[0].description}</p>
                     </div>
-                    <WorkedWith Data={service.process[0].content} />
+                    <WorkedWith Data={processData} />
                 </div>
             </section>
             <section className={styles.services__related}>

@@ -12,7 +12,6 @@ import { Project, ProjectState, RelatedWorkProps } from '@/common/types';
 
 const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading }) => {
     const { projects } = useFetchProjects();
-    const [project, setProject] = useState<Project | null>(null);
     const [menuOpened, setMenuOpened] = useState<boolean>(false);
     const router = usePathname();
 
@@ -57,9 +56,8 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
 
     const handleProjectClick = useCallback((index: number) => {
         const selectedProject = filteredProjects[index];
-        console.log(selectedProject, "selected project")
         if (selectedProject) {
-            setProject(selectedProject);
+
             setProjectState((prevState) => ({
                 ...prevState,
                 detailsOpened: true,
@@ -97,11 +95,11 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                             <div className={styles.proectPage__categories_container}>
                                 <div onClick={handleMenuClick}>
                                     <h3>Filter: {selectedCategory ? selectedCategory : "All Work+"}</h3>
-                                    <AnimatePresence mode='wait'>
+                                    <AnimatePresence>
                                         {menuOpened && (
                                             <motion.div className={styles.projectPage__categories__menu__container__content}
                                                 initial={{ height: "0vh" }}
-                                                animate={{ height: "50vh" }}
+                                                animate={{ height: "auto" }}
                                                 exit={{ height: "0vh" }}
                                                 transition={{ duration: 0.4, ease: [0.42, 0, 0.58, 1] }}
                                             >

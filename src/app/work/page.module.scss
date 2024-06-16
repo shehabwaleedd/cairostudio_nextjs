@@ -62,19 +62,14 @@
 
         @media (max-width: 1100px) {
             top: -2rem;
-            justify-content: flex-start;
-            align-items: flex-start;
-            place-content: flex-start;
-            place-items: flex-start;
+            flex-direction: row-reverse;
+            justify-content: space-between;
         }
 
         @media (max-width: 456px) {
             position: relative;
             top: 0rem;
-            right: 0;
             z-index: 999999;
-            padding-right: 0;
-            top: 0rem;
         }
 
         .proectPage__categories_container {
@@ -94,30 +89,17 @@
                 width: 100%;
                 font-weight: 400;
                 color: var(--container-color);
-                letter-spacing: 0.2rem;
-                text-transform: uppercase;
+                text-transform: lowercase;
                 background-color: transparent;
                 padding: 1rem;
                 padding-top: 0;
-                margin-bottom: 1rem;
                 transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            }
-
-            button {
-                position: relative;
-                font-size: 1rem;
-                font-weight: 400;
-                color: var(--container-color);
-                letter-spacing: 0.2rem;
-                text-transform: uppercase;
-                background-color: transparent;
-                padding: 1rem;
-                margin-bottom: 1rem;
-
-                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-
-                &:hover {
-                    color: var(--accent-color);
+                @media (max-width: 1100px) {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    right: 1rem;
+        
                 }
             }
         }
@@ -174,11 +156,8 @@
         top: -1rem;
 
         @media (max-width: 1100px) {
-            display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            place-content: flex-start;
-            place-items: flex-start;
             left: 1rem;
 
         }
@@ -197,14 +176,17 @@
                 font-size: 1rem;
                 font-weight: 300;
                 color: var(--container-color);
-                letter-spacing: 0.2rem;
-                text-transform: uppercase;
                 cursor: pointer;
                 transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
                 &:hover {
                     color: var(--accent-color);
                 }
+
+                @media (max-width: 1222px) {
+                    padding: 0.5rem;
+                }
+
 
             }
 

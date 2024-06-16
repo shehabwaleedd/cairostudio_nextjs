@@ -1,19 +1,18 @@
+// ServicesSplit.tsx
 'use client'
 import React, { useRef, useLayoutEffect } from 'react';
-import Data from './Data';
-import './aboutServices.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './aboutServices.scss';
+import { Project } from '@/types/interface';
 
-interface Project {
-    id: number;
-    headline?: HTMLHeadingElement | null;
-    title: string;
-    elements: { text: string }[];
+interface ServicesSplitProps {
+    data: Project[];
 }
 
-const AboutServices = () => {
+const ServicesSplit: React.FC<ServicesSplitProps> = ({ data }) => {
     const containerRef = useRef<HTMLDivElement>(null);
+
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
@@ -39,19 +38,19 @@ const AboutServices = () => {
                 scrub: 0.5,
             });
         });
-    }, []);
+    }, [data]);
 
     return (
         <section className="aboutServices">
             <div className="aboutServices__container" ref={containerRef}>
                 <div className="aboutServicesCo__right">
                     <div className="aboutServicesCo__right_content">
-                        {Data.map((item: Project) => (
+                        {data.map((item: Project) => (
                             <div key={item.id} className="aboutServicesCo__right_content_section">
                                 <h2 ref={(el) => { item.headline = el; }}>- 0{item.id}</h2>
                                 {item.elements.map((element, index) => (
-                                    <div key={index} className={`aboutServices__details_container`}>
-                                        <AnimatedText key={index}>{element.text}</AnimatedText>
+                                    <div key={index} className="aboutServices__details_container">
+                                        <AnimatedText>{element.text}</AnimatedText>
                                     </div>
                                 ))}
                             </div>
@@ -60,9 +59,9 @@ const AboutServices = () => {
                 </div>
                 <div className="aboutServicesCo__left">
                     <div className="aboutServicesCo__left_container">
-                        {Data.map((item: Project) => (
-                            <div key={item.id} className={`aboutServicesCo__left_container_details`}>
-                                <h3 ref={(el) => {item.headline = el}}>{item.title}</h3>
+                        {data.map((item: Project) => (
+                            <div key={item.id} className="aboutServicesCo__left_container_details">
+                                <h3>{item.title}</h3>
                             </div>
                         ))}
                     </div>
@@ -73,10 +72,15 @@ const AboutServices = () => {
     );
 };
 
-export default AboutServices;
+export default ServicesSplit;
 
-function AnimatedText({ children }: { children: string }) {
+interface AnimatedTextProps {
+    children: string;
+}
+
+const AnimatedText: React.FC<AnimatedTextProps> = ({ children }) => {
     const text = useRef<HTMLParagraphElement>(null);
+
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(text.current,
@@ -97,4 +101,4 @@ function AnimatedText({ children }: { children: string }) {
     }, []);
 
     return <p ref={text}>{children}</p>
-}
+};

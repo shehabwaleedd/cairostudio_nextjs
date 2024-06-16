@@ -1,12 +1,11 @@
 import React from 'react';
-import ServicesData from '@/app/studio/aboutComponents/aboutServices/Data'
+import ServicesData from '@/app/studio/Data'
 import serverFetchData from '@/lib/serverFetchData';
 import { Project } from '@/common/types';
 import styles from "./page.module.scss"
 import ServicesCards from './components/services';
 import Header from './components/Header';
-
-
+import ServicesSplit from '@/components/servicesSplit';
 
 
 
@@ -30,6 +29,7 @@ const Services: React.FC = async () => {
 
 
 
+
     if (error) {
         return <div>{error}</div>;
     }
@@ -37,25 +37,9 @@ const Services: React.FC = async () => {
     return (
         <main className={styles.services}>
             <Header />
-            <ServicesCards displayedProjects={displayedProjects}/>
-            <div className={styles.services__bottom}>
-                <div className={styles.services__bottom_container}>
-                    <div className={styles.seboco__right}>
-                        <div className={styles.services__bottom_container_right}>
-                            {ServicesData.map((item, index) => (
-                                <div key={index} className={styles.services__bottom_container_right_section}>
-                                    <h2>{item.title}</h2>
-                                    {item.elements.map((element, index) => (
-                                        <div key={index} className={styles.services__details_container}>
-                                            <p >{element.text}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ServicesCards displayedProjects={displayedProjects} />x
+
+            <ServicesSplit data={ServicesData}/>
 
         </main>
     )

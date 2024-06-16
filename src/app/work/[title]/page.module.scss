@@ -3,7 +3,7 @@
     grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
     width: 100%;
-    background-color: var(--container-color);
+    background-color: #131313;
     position: relative;
     z-index: 1;
     padding-top: 2.5rem;
@@ -19,7 +19,7 @@
         text-align: left;
         font-size: 10vh;
         text-transform: uppercase;
-        color: var(--background-color);
+        color: #f1dbb2;
         font-weight: 700; // Bold weight
         position: relative;
         width: 100%;
@@ -32,7 +32,7 @@
 
     p {
         font-size: 2vh;
-        color: var(--background-color);
+        color: #f1dbb2;
         width: 80%;
         font-weight: 300; // Thin weight
         text-align: justify;
@@ -89,7 +89,7 @@
         text-transform: lowercase;
         font-size: 1.2rem;
         padding-bottom: 0.5rem;
-        color: var(--background-color);
+        color: #f1dbb2;
         text-decoration: none;
 
     }
@@ -103,7 +103,7 @@
         font-size: 1rem;
         text-transform: lowercase;
         user-select: text;
-        color: var(--background-color);
+        color: #f1dbb2;
     }
 }
 
@@ -126,6 +126,7 @@
             font-weight: 300;
             font-size: 0.9rem;
             text-transform: lowercase;
+            color: #f1dbb2;
         }
     }
 }

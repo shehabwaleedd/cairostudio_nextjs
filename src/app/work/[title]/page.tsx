@@ -5,7 +5,7 @@ import RenderImages from './RenderImages';
 import Upper from './components/Upper';
 import { Project } from '@/common/types';
 import serverFetchData from '@/lib/serverFetchData';
-import slugify from 'slugify'; 
+import slugify from 'slugify';
 
 interface ProjectsDetailsProps {
     params: { title: string };
@@ -13,7 +13,7 @@ interface ProjectsDetailsProps {
 
 export async function generateMetadata({ params }: ProjectsDetailsProps): Promise<Metadata> {
     const projects = await serverFetchData();
-    const project = projects.find(p => p.title === params.title);
+    const project = projects.find(p => slugify(p.title, { lower: true }) === params.title) || null;
 
     if (!project) {
         return {

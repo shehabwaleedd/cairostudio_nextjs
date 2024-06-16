@@ -8,7 +8,6 @@
     width: 100%;
     transition: var(--animation-primary);
 
-
     &__container {
         position: relative;
         display: flex;
@@ -35,9 +34,7 @@
                 object-fit: cover;
                 transition: var(--animation-primary);
             }
-
         }
-
     }
 
     &__item {
@@ -81,11 +78,8 @@
                 padding-left: 5%;
             }
         }
-
     }
-
 }
-
 
 .desc {
     display: flex;
@@ -103,14 +97,12 @@
         padding-bottom: 0.5rem;
     }
 
-
     h2 {
         font-size: 2rem;
         font-weight: 400;
         color: var(--container-color);
         letter-spacing: -0.06rem;
         text-transform: uppercase;
-
     }
 
     p {
@@ -119,7 +111,6 @@
         color: var(--container-color);
         letter-spacing: 0.05rem;
         text-transform: uppercase;
-
 
         @media (max-width: 456px) {
             font-size: 0.8rem;

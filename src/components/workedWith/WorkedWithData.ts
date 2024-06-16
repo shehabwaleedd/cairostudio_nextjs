@@ -1,5 +1,17 @@
-const FaqsData = [
+interface BaseData {
+    id: number;
+    name: string;
+    desc?: string[];
+    categories?: string[];
+    insideSlider?: boolean;
+}
+
+
+
+
+const FaqsData: BaseData[] = [
     {
+        id: 1,
         name: "Pyramids Egypt Tours",
         categories: ["Identity", "Branding", "Design", "Development"],
         desc: [
@@ -7,6 +19,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 2,
         name: "F365 Global",
         categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
@@ -14,6 +27,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 3,
         name: "RAÏNA",
         categories: ["Design", "Development"],
         desc: [
@@ -21,6 +35,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 4,
         name: "Tag Media",
         categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
@@ -28,6 +43,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 5,
         name: "Pyramids Inn Hotel",
         categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
@@ -35,6 +51,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 6,
         name: "Lelu Store",
         categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
@@ -42,6 +59,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 7,
         name: "Barkar Tours Egypt",
         categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
@@ -49,6 +67,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 8,
         name: "BCHICK",
         categories: ["Research", "Strategy", "Design", "Branding"],
         desc: [
@@ -56,6 +75,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 9,
         name: "Il Reve",
         categories: ["Research", "Strategy", "Design", "Development"],
         desc: [
@@ -63,6 +83,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 10,
         name: "Spicers",
         categories: ["Research", "Strategy", "Design", "Branding"],
         desc: [
@@ -70,6 +91,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 11,
         name: "Eagle Lake",
         categories: ["Research", "Design", "Development"],
         desc: [
@@ -77,6 +99,7 @@ const FaqsData = [
         ]
     },
     {
+        id: 12,
         name: "& Tomorrow",
         categories: ["Strategy", "Design", "Development"],
         desc: [

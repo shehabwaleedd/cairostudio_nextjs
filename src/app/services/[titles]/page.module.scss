@@ -41,53 +41,6 @@
     }
 }
 
-.seboco__right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    position: relative;
-    padding-top: 1rem;
-
-
-    .services__bottom_container_right {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 100%;
-        gap: 1rem;
-
-        @media (max-width: 578px) {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 500;
-            text-align: left;
-            margin-bottom: 0;
-            text-transform: uppercase;
-            color: var(--container-color);
-            background-color: var(--background-color);
-            border-bottom: 1px solid var(--title-color);
-            width: fit-content;
-            @media (max-width: 978px) {
-                font-size: 4vh;
-            }
-        }
-
-        p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            text-align: left;
-            margin-bottom: 0;
-            text-transform: lowercase;
-            color: var(--container-color);
-            letter-spacing: 0.05rem;
-        }
-    }
-}
-
 .seboco__left {
     display: flex;
     flex-direction: column;

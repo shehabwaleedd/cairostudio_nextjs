@@ -1,13 +1,13 @@
 
 import React from 'react'
 import styles from "./page.module.scss"
-import AboutServices from './aboutComponents/aboutServices/AboutServices'
+import ServicesSplit from '@/components/servicesSplit'
 import Header from './aboutComponents/Header'
 import { Metadata } from 'next'
 import Team from './aboutComponents/Team'
 import ServicesList from '@/components/ServicesList'
 import Upper from '@/components/upper';
-
+import Data from './Data'
 export function generateMetadata(): Metadata {
     const url = "https://www.cairos-tudio.com/studio"
     return {
@@ -46,7 +46,7 @@ const About: React.FC = () => {
             <main className={styles.about}>
                 <Header />
                 <Upper p1="What we offer" p2='01' />
-                <AboutServices />
+                <ServicesSplit data={Data} />
                 <Upper p1="Team" p2='02' />
                 <Team />
             </main>

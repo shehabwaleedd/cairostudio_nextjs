@@ -1,0 +1,25 @@
+.toggleCircle {
+    position: fixed;
+    z-index: 999999;
+    width: 1vw;
+    height: 0.5vw;
+    top: 2vh;
+    left: 50%;
+}
+
+.circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    left: 0rem;
+    cursor: pointer;
+    mix-blend-mode: difference;
+
+    @media (max-width: 555px) {
+        background-color: var(--title-color);
+    }
+}

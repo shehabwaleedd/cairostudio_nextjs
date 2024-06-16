@@ -6,6 +6,7 @@ import { TransitionLink, TransitionLogo } from '../transitionLink';
 import styles from './style.module.scss';
 import Nav from "./nav/index";
 import { NavLink } from "@/common/types";
+import ToggleTheme from '../toggleTheme';
 
 
 const links: NavLink[] = [
@@ -59,12 +60,13 @@ const Navbar: React.FC = () => {
                         </ul>
                     </div>
                 </div>
+                <ToggleTheme />
+                <div className={styles.mobile}>
+                    <button onClick={toggleNavOpen} className={styles.menuNav}>
+                        {navOpen ? "close" : "menu"}
+                    </button>
+                </div>
             </nav>
-            <div className={styles.mobile}>
-                <button onClick={toggleNavOpen} className={styles.menuNav}>
-                    {navOpen ? "close" : "menu"}
-                </button>
-            </div>
             <AnimatePresence mode='wait'>
                 {navOpen && <Nav setNavOpen={setNavOpen} />}
             </AnimatePresence>

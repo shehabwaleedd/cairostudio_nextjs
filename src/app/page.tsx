@@ -8,8 +8,8 @@ const AboutUs = dynamic(() => import('@/components/aboutUs'));
 const TextMask = dynamic(() => import('@/components/textMask'));
 const ServicesList = dynamic(() => import('@/components/ServicesList'));
 const Perpective = dynamic(() => import('@/components/perpective/Perpective'));
-const Faqs = dynamic(() => import('@/components/workedWith'));
 import Upper from '@/components/upper';
+import WorkedWith from '@/components/workedWith';
 
 
 const HomePage: React.FC = () => {
@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
       <Perpective />
       <TextMask />
       <Upper p1="Worked With" p2="06" />
-      <Faqs Data={FaqsData} />
+      <WorkedWith Data={FaqsData} />
     </main >
   );
 }

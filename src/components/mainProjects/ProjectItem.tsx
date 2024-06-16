@@ -18,7 +18,6 @@ interface ProjectItemProps {
     index: number;
 }
 
-
 const ProjectItem = memo(({ item, index }: ProjectItemProps) => (
     <TransitionCard href={`/work/${slugify(item.title, { lower: true })}`} className={styles.mainProjects__item}>
         <div className={styles.mainProjects__container__imgs}>
@@ -28,10 +27,11 @@ const ProjectItem = memo(({ item, index }: ProjectItemProps) => (
                 title={item.title}
                 width={500}
                 height={500}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={true}
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                priority={index === 0}
                 placeholder='blur'
                 blurDataURL={item.blurDataURL}
+                {...{ srcSet: `${item.poster}?w=500 500w, ${item.poster}?w=1000 1000w` }}
             />
         </div>
         <div className={styles.desc}>

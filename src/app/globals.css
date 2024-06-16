@@ -1,14 +1,6 @@
 :root {
-  --container-color: #242322;
-  --accent-color: #ff4b26;
-  /* --background-color: #f3eee5; */
   --background-color: #fdefe0;
-  --color-number: #999;
-  --border-color: #eae4d8;
-  --title-color: #242322;
-
   --font-family: 'Outfit', sans-serif;
-
   --body-font-weight: 400;
   /* Regular */
   --subtitle-font-weight: 100;
@@ -21,13 +13,37 @@
   /* Black */
   --semi-bold-font-weight: 600;
   /* SemiBold */
-
   --gfs: 14.4;
-
-
   --animation-primary: 0.4s cubic-bezier(0.5, 0.75, 0, 1);
 
 }
+
+.light {
+  --container-color: #242322;
+  --title-color: #242322;
+  --subtitle-color: #8a8a8a;
+  --accent-color: #ff4b26;
+  --background-color: #fdefe0;
+  --color-number: #999;
+  --border-color: #eae4d8;
+  --opposite-color: #fff;
+  background-color: var(--background-color)
+
+}
+
+.dark {
+  --container-color: #f1dbb2;
+  --title-color: #f1dbb2;
+  --subtitle-color: #9c9485;
+  --accent-color: #ff3911;
+  --background-color: #131313;
+  --border-color: #fdefe0;
+  --menu-text-color: #fff;
+  --opposite-color: #f1dbb2;
+
+  background-color: var(--background-color)
+}
+
 
 * {
   margin: 0;
@@ -177,6 +193,6 @@ h4,
 h5,
 h6,
 p,
-span {
+span, li {
   color: var(--title-color);
 }
