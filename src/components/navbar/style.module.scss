@@ -10,7 +10,7 @@
     width: 100%;
     overflow: hidden;
     transition: var(--animation-primary);
-    z-index: 9999;
+    z-index: 999999999;
     user-select: none;
     mix-blend-mode: difference;
 
@@ -28,13 +28,14 @@
         font-size: clamp(16px, 1.52vw, 300px);
         color: var(--opposite-color);
         text-transform: capitalize;
-        width: 100%;
         font-weight: 500;
+        width: 20%;
 
         @media (max-width: 555px) {
             color: var(--title-color);
             letter-spacing: normal;
             text-transform: lowercase;
+            width: 30%;
         }
 
     }

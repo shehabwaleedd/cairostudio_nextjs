@@ -57,7 +57,6 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
     const handleProjectClick = useCallback((index: number) => {
         const selectedProject = filteredProjects[index];
         if (selectedProject) {
-
             setProjectState((prevState) => ({
                 ...prevState,
                 detailsOpened: true,
@@ -97,22 +96,34 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                                     <h3>Filter: {selectedCategory ? selectedCategory : "All Work+"}</h3>
                                     <AnimatePresence>
                                         {menuOpened && (
-                                            <motion.div className={styles.projectPage__categories__menu__container__content}
-                                                initial={{ height: "0vh" }}
-                                                animate={{ height: "auto" }}
-                                                exit={{ height: "0vh" }}
+                                            <motion.div
+                                                key="menu"
+                                                className={styles.projectPage__categories__menu__container__content}
+                                                initial={{ clipPath: 'inset(0 0 100% 0)' }}
+                                                animate={{ clipPath: 'inset(0 0 0% 0)' }}
+                                                exit={{ clipPath: 'inset(0 0 100% 0)' }}
                                                 transition={{ duration: 0.4, ease: [0.42, 0, 0.58, 1] }}
+                                                style={{ maxHeight: '50vh', overflowY: 'auto' }}
                                             >
-                                                <ul>
-                                                    {categories.map((category, index) => (
-                                                        <li key={index} onClick={() => handleCategoryClick(category)}>
-                                                            <motion.h3 initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] } }} exit={{ opacity: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } }}>{category}</motion.h3>
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                                <div> 
+                                                    <ul>
+                                                        {categories.map((category, index) => (
+                                                            <li key={index} onClick={() => handleCategoryClick(category)}>
+                                                                <motion.h3
+                                                                    initial={{ opacity: 0 }}
+                                                                    animate={{ opacity: 1, transition: { duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
+                                                                    exit={{ opacity: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } }}
+                                                                >
+                                                                    {category}
+                                                                </motion.h3>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
+
                                 </div>
                             </div>
                             <div className={styles.projectPage__viewSelect}>
@@ -126,7 +137,6 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                                     <motion.button
                                         style={{ backgroundColor: selectedView === 'list' ? '#000' : '', color: selectedView === 'list' ? 'var(--background-color)' : 'var(--container-color)' }}
                                         onClick={() => setSelectedView('list')}
-
                                     >
                                         List
                                     </motion.button>
@@ -140,7 +150,7 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                         <Layout projectState={projectState} setProjectState={setProjectState} filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} />
                     </div>
                 ) : (
-                    <List filteredProjects={filteredProjects} handleProjectClick={handleProjectClick} />
+                    <List filteredProjects={filteredProjects} />
                 )}
             </section>
             <InsideLayout projectState={projectState} relatedProjects={relatedProjects} handleDetailsClose={handleDetailsClose} />

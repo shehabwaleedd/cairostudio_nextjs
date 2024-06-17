@@ -34,13 +34,17 @@
             padding: 1rem;
 
             h2 {
-                font-size: 2.5rem;
-                letter-spacing: 0.1rem;
                 text-transform: uppercase;
                 color: var(--container-color);
                 font-weight: 700;
                 padding-top: 1rem;
+                
+                font-size: clamp(10px, 6.5vw, 160px);
 
+                @media (min-width: 600px) and (max-width: 900px) {
+                    font-size: clamp(12px, 6vw, 120px);
+                }
+        
                 &:first-child {
                     padding-top: 0;
                 }
@@ -48,7 +52,7 @@
             }
 
             p {
-                font-size: 1.3rem;
+                font-size: 1rem;
                 text-align: center;
                 margin-bottom: 0;
                 text-transform: lowercase;
@@ -60,12 +64,12 @@
 
                 @media (max-width: 1278px) {
                     width: 100%;
+                    font-size: 0.9rem;
                 }
 
                 @media (max-width: 478px) {
-                    font-size: 1rem;
                     letter-spacing: normal;
-                    width: 85%;
+                    width: 90%;
                 }
             }
 
@@ -108,7 +112,7 @@
                 padding: 0.5rem 0;
             }
 
-            .seco__righ_img {
+            &_img {
                 min-height: 55vh;
                 display: flex;
                 align-items: flex-start;
@@ -140,7 +144,7 @@
                 justify-content: space-between;
                 height: 100%;
                 width: 100%;
-
+                padding: 0 0.5rem;
                 h2 {
                     font-size: 2rem;
                     text-align: center;

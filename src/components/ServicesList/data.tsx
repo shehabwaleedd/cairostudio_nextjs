@@ -8,7 +8,7 @@ const Data: {
             title: "Web Development",
             descTitle: "Woww!!",
             id: 1,
-            link: "/services/websites",
+            link: "/services/web-development",
             img: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718124189/Tag_Media_MBA_M2_cchjgs.webp",
             tags: ["Next.js", "Node.js", "MongoDB", "PostgreSQL", "GraphQL"]
         },

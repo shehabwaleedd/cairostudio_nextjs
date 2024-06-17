@@ -18,7 +18,7 @@
     left: 0rem;
     cursor: pointer;
     mix-blend-mode: difference;
-
+    z-index: 999999;
     @media (max-width: 555px) {
         background-color: var(--title-color);
     }

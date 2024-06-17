@@ -23,7 +23,7 @@ const ServicesCards = ({ displayedProjects }: { displayedProjects: Project[] }) 
                         </div>
                     </motion.div>
                     <div className={styles.seco__right} onMouseEnter={() => setHoveredProjectIndex(index)} onMouseLeave={() => setHoveredProjectIndex(null)} >
-                        <div className={styles.seco__righ_img} style={{ backgroundImage: item.title === "Lemkus" ? `url(${item.homePage})` : `url(${item.poster})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}>
+                        <div className={styles.seco__right_img} style={{ backgroundImage: item.title === "Lemkus" ? `url(${item.homePage})` : `url(${item.poster})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', }}>
                             <AnimatePresence mode='wait'>
                                 {(hoveredProjectIndex === index || hoveredLearnMoreIndex === index) && (
                                     <motion.video

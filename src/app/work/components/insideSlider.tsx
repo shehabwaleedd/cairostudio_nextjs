@@ -31,12 +31,14 @@ const InsideSlider: React.FC<InsideSliderProps> = ({ selectedProject }) => {
 
 
     return (
-        <div ref={sliderRef} className={`keen-slider ${styles.keenSlider}`}>
+        <div ref={sliderRef} className={`keen-slider ${styles.insdeSlider}`}>
             {selectedProject.collectiveItems?.find((item: any) => item.type === 'projectImages')?.items.map((detail: any, index: number) => (
                 <div className={`keen-slider__slide ${styles.projectsPageCo__details__container__item}`} key={index}>
                     {detail.isImg ? (
                         <div className={styles.projectsPageCo__details__container__item__img}>
-                            <Image src={detail.image} alt={`Project Img ${index}`} loading="lazy" layout="fill" objectFit="cover" />
+                            <Image src={detail.image} alt={`Project Img ${index}`} 
+                                priority={index < 4} 
+                            width={500} height={300} />
                         </div>
                     ) : (
                         <div className={styles.projectsPageCo__details__container__item__video}>

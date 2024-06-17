@@ -11,7 +11,6 @@
     border-top: 1px solid var(--container-color);
     overflow: hidden;
 
-
     .projectsPageCo__details__container__close {
         position: relative;
         display: flex;
@@ -52,42 +51,49 @@
         }
     }
 
-    .projectsPageCo__deCo {
-        display: flex;
-        height: 100%;
-        justify-content: center;
-        width: 100%;
-        position: relative;
-        gap: 2rem;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-        top: -2rem;
-
-        .projectsPageCo__details__container {
-            gap: 2rem;
-            cursor: grabbing;
-
-        }
-    }
-
     img {
-        width: 25vw;
-        height: 25vh;
+        aspect-ratio: 6/4;
+        cursor: pointer;
         object-fit: cover;
-
     }
 
     video {
-
+        cursor: pointer;
         width: 25vw;
         height: 25vh;
         object-fit: cover;
     }
+
+}
+
+.insdeSlider {
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    width: 100%;
+    transition: var(--animation-primary);
+    z-index: 5;
+    height: fit-content;
+    padding: 1rem 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+        aspect-ratio: 6/4;
+        object-fit: cover;
+    }
+
+    video {
+        width: 25vw;
+        height: 25vh;
+        object-fit: cover;
+    }
+
 }
 
 .keen-slider__slide {
     cursor: grabbing;
+
 }
 
 .fullscreen_overlay {

@@ -59,7 +59,6 @@ const ProjectsPage = async () => {
     try {
         const projects: Project[] = await serverFetchData();
         allProjectsNames = projects.map((project: Project) => project.title);
-        console.log(allProjectsNames, "allProjectsNames");
     } catch (err) {
         error = (err as Error).message;
     }
