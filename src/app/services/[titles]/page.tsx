@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: { params: { titles: string } 
             openGraph: {
                 title: 'Service Not Found - Cairo Studio',
                 description: 'The service you are looking for does not exist.',
-                url: `https://www.cairo-studio.com/services/${title}`,
+                url: `https://cairo-studio.com/services/${title}`,
                 type: 'website',
                 images: [
                     {
-                        url: 'https://www.cairo-studio.com/default-image.jpg',
+                        url: 'https://cairo-studio.com/default-image.jpg',
                         width: 800,
                         height: 600,
                         alt: 'My Company Default Image',
@@ -51,15 +51,25 @@ export async function generateMetadata({ params }: { params: { titles: string } 
         };
     }
 
+    const keywords = [
+        service.serviceTitle,
+        ...service.services[0].content.flatMap(content => content.options),
+        ...service.process[0].content.map(process => process.name)
+    ].join(', ');
+
     return {
         title: `${service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} - Cairo Studio`,
         description: service.upperDescription,
+        keywords: keywords,
         openGraph: {
             title: `${service.serviceTitle} - Cairo Studio`,
             description: service.upperDescription,
-            url: `https://www.cairo-studio.com/services/${title}`,
+            url: `https://cairo-studio.com/services/${title}`,
             type: 'website',
         },
+        alternates: {
+            canonical: `https://cairo-studio.com/services/${title}`
+        }
     };
 }
 
@@ -92,24 +102,20 @@ const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => 
 
     return (
         <main className={styles.servicesSections}>
+            <h1 style={{ display: "none" }}>
+                Cairo Studio&apos;s {service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} Service
+            </h1>
             <Header header={service.header} />
-            <Image src={service.image.src} alt={service.serviceTitle} width={1920} height={1230} />
-
+            <Image src={service.image.src} alt={service.serviceTitle} width={1920} height={1230} placeholder='blur' blurDataURL={service.image.src} />
             <section className={styles.services__bottom}>
-                <div className={styles.seboco__left}>
-                    <h3>Services</h3>
-                    <p>{service.services[0].description}</p>
-                </div>
                 <ServicesSplit data={transformedData} />
             </section>
-            <section className={styles.services__bottom}>
-                <div className={styles.services__bottom_container}>
-                    <div className={styles.seboco__left}>
-                        <h3>Process</h3>
-                        <p>{service.process[0].description}</p>
-                    </div>
-                    <WorkedWith Data={processData} />
+            <section className={styles.services__process}>
+                <div className={styles.seboco__left}>
+                    <h3>Process</h3>
+                    <p>{service.process[0].description}</p>
                 </div>
+                <WorkedWith Data={processData} />
             </section>
             <section className={styles.services__related}>
                 <RelatedWork relatedNames={service.relatedNames} heading={heading} />

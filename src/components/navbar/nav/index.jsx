@@ -15,8 +15,8 @@ const links = [
     href: "/services",
   },
   {
-    title: "Work",
-    href: "/work",
+    title: "Projects",
+    href: "/projects",
   },
   {
     title: "Studio",

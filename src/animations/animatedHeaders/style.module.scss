@@ -17,6 +17,10 @@
             font-size: clamp(12px, 6vw, 120px);
         }
 
+        @media (max-width: 480px) {
+            font-size: calc(28/var(--gfs)*1rem);
+        }
+
         @media (max-width: 556px) {
             margin-top: 0;
             line-height: 0.88;

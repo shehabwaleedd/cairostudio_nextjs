@@ -71,6 +71,10 @@
     width: 100%;
     max-width: 70%;
 
+    @media (max-width: 1234px) {
+        padding-left: 1rem;
+    }
+
     button,
     a {
         border: 1px solid var(--title-color);

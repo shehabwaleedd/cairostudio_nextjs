@@ -11,7 +11,7 @@
 
     @media (max-width: 555px) {
         flex-direction: column;
-        height: auto;
+        height: fit-content;
     }
 
     .column {
@@ -56,10 +56,28 @@
 }
 
 
-.mobileColumn {
+.row {
+    display: flex;
     flex-direction: row;
+    height: 33.3vh;
+    position: sticky;
     overflow-x: auto;
-    overflow-y: hidden;
     white-space: nowrap;
+    overflow-y: hidden;
+
+    .imageContainer {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 300px; // Ensure each image has a minimum width for visibility
+        position: relative;
+        border-radius: 1vw;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
 }
 

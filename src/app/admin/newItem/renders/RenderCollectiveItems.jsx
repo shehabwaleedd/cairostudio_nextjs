@@ -17,7 +17,7 @@ const RenderCollectiveItems = ({ projectData, collectiveType, handleFileChange, 
             {collectiveItems.length > 0 &&
                 collectiveItems.map((item, index) => (
                     <div key={index} className={`collectiveGridItem`}>
-                        {item.isImg ? <Image src={item.image} alt={`${collectiveType} item ${index}`} /> : <video src={item.image} controls />}
+                        {item.isImg ? <Image src={item.image} alt={`${collectiveType} item ${index}`}  width={200} height={200}/> : <video src={item.image} controls />}
                         <div className="itemControls">
                             <label>
                                 Is Image?

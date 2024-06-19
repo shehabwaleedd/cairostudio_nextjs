@@ -32,9 +32,9 @@ export const TransitionLogo = ({ href, label }: { href: string, label: string })
     };
 
     return (
-        <h1 onClick={handleClick} style={{ cursor: 'pointer' }} aria-label={label}>
+        <span onClick={handleClick} style={{ cursor: 'pointer' }} aria-label={label}>
             {label}
-        </h1>
+        </span>
     );
 };
 

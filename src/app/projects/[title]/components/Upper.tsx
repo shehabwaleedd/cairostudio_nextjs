@@ -7,7 +7,7 @@ const Upper = ({ project }: { project: Project }) => {
     return (
         <section className={styles.details_upper}>
             <div className={styles.upper}>
-                <TransitionLink href='/work' label='Back' />
+                <TransitionLink href='/projects' label='Back' />
                 <h1>{project.title}</h1>
             </div>
             <div className={styles.container}>

@@ -11,7 +11,7 @@
     padding-top: 7rem;
 
     @media (max-width: 956px) {
-        padding-top: 3rem;
+        padding-top: 5rem;
     }
 
 
@@ -50,7 +50,7 @@
         }
     }
 
-    .projectPage__categories {
+    &__categories {
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
@@ -61,18 +61,15 @@
         right: 0;
 
         @media (max-width: 1100px) {
-            top: -2rem;
             flex-direction: row-reverse;
             justify-content: space-between;
         }
 
         @media (max-width: 456px) {
-            position: relative;
-            top: 0rem;
             z-index: 999999;
         }
 
-        .proectPage__categories_container {
+        &_container {
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
@@ -93,18 +90,11 @@
                 background-color: transparent;
                 padding: 1rem;
                 padding-top: 0;
-                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-                @media (max-width: 1100px) {
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: flex-end;
-                    right: 1rem;
-        
-                }
+                transition: var(--animation-primary);
             }
         }
 
-        .projectPage__categories__menu__container__content {
+        .projectsPage__categories__menu__container__content {
             position: absolute;
             left: 0rem;
             background-color: var(--title-color);
@@ -118,12 +108,15 @@
             transition: var(--animation-primary);
             padding: 1rem 0;
 
+            @media (max-width: 1200px) {
+                top: 2rem;
+            }
+
             h3 {
                 font-size: 1rem;
                 font-weight: 400;
                 color: var(--background-color);
-                letter-spacing: 0.2rem;
-                text-transform: uppercase;
+                text-transform: lowercase;
                 margin: 0px;
                 text-align: left;
                 user-select: none;
@@ -176,7 +169,7 @@
                 font-weight: 300;
                 color: var(--container-color);
                 cursor: pointer;
-                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                transition: var(--animation-primary);
 
                 &:hover {
                     color: var(--accent-color);
@@ -202,7 +195,7 @@
         align-items: flex-start;
         width: 100%;
         height: 100%;
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: var(--animation-primary);
         position: relative;
 
         .projectsPageCo__content {
@@ -210,7 +203,7 @@
             grid-template-columns: repeat(2, 1fr);
             width: 100%;
             height: 100%;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: var(--animation-primary);
             min-height: max-content;
 
             @media (max-width: 1256px) {
@@ -267,7 +260,7 @@
                         width: 100%;
                         height: 100%;
                         position: relative;
-                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        transition: var(--animation-primary);
 
                         @media (max-width: 456px) {
                             min-height: 40vh;
@@ -279,7 +272,7 @@
                             top: 0;
                             left: 0;
                             object-fit: cover;
-                            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                            transition: var(--animation-primary);
                         }
 
                         video {
@@ -288,7 +281,7 @@
                             top: 0;
                             left: 0;
                             object-fit: contain;
-                            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                            transition: var(--animation-primary);
                         }
                     }
 
@@ -301,7 +294,7 @@
                         height: fit-content;
                         position: relative;
                         opacity: 1;
-                        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                        transition: var(--animation-primary);
                         padding-top: 2rem;
 
                         p {
@@ -349,5 +342,5 @@
 
 .open {
     max-height: 100%;
-    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: var(--animation-primary);
 }

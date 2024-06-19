@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 import useFetchProjects from "@/hooks/useFetchProjects";
 import Image from 'next/image';
 import './Dashboard.scss';
-import { useUserAuth } from '@/context/authContext/AuthContext';
+import slugify from 'slugify';
+
 
 const Dashboard = () => {
     const router = useRouter();
-    const { user } = useUserAuth();
     const { projects, error, loading } = useFetchProjects();
 
     const navigateToAddProject = () => {
@@ -58,8 +58,8 @@ const Dashboard = () => {
                                 <p>{project.description}</p>
                             </div>
                             <div className="dashboard__project__actions">
-                                <button onClick={() => navigateToEditProject(project.id)}>Edit</button>
-                                <button onClick={() => deleteProject(project.id)}>Delete</button>
+                                <button onClick={() => navigateToEditProject(slugify(project.title, { lower: true }))}>Edit</button>
+                                <button onClick={() => deleteProject(slugify(project.title, { lower: true }))}>Delete</button>
                             </div>
                         </div>
                     ))}

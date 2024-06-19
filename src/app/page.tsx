@@ -7,20 +7,18 @@ import dynamic from 'next/dynamic';
 const AboutUs = dynamic(() => import('@/components/aboutUs'));
 const TextMask = dynamic(() => import('@/components/textMask'));
 const ServicesList = dynamic(() => import('@/components/ServicesList'));
+const WorkedWith = dynamic(() => import('@/components/workedWith'));
 const Perpective = dynamic(() => import('@/components/perpective/Perpective'));
 import Upper from '@/components/upper';
-import WorkedWith from '@/components/workedWith';
-
 
 const HomePage: React.FC = () => {
-
   return (
     <main className={styles.homePage}>
       <Hero />
       <MainProjects />
       <Upper p1="About Us" p2="03" />
       <AboutUs />
-      <ServicesList p2={"04"} />
+      <ServicesList p2="04" />
       <Upper p1="Snippets" p2="05" />
       <Perpective />
       <TextMask />

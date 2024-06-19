@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import useFetchProjects from '@/hooks/useFetchProjects';
 import getChars from '@/animations/animatedHeaders/getChars';
 import { usePathname } from 'next/navigation';
-import styles from '@/app/work/page.module.scss';
-import Layout from '@/app/work/components/Layout';
-import InsideLayout from '@/app/work/components/InsideLayout';
-import List from '@/app/work/components/list/List';
+import styles from '@/app/projects/page.module.scss';
+import Layout from '@/app/projects/components/Layout';
+import InsideLayout from '@/app/projects/components/InsideLayout';
+import List from '@/app/projects/components/list/List';
 import { Project, ProjectState, RelatedWorkProps } from '@/common/types';
 
 const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading }) => {
@@ -22,7 +22,7 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
     });
 
     const [selectedView, setSelectedView] = useState<string>('grid');
-    const isWorkRoute = router === '/work';
+    const isWorkRoute = router === '/projects';
 
     const relatedProjects = useMemo(() => {
         return projects.filter((project: Project) => relatedNames.includes(project.title));
@@ -90,15 +90,15 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                         {getChars(heading)}
                     </div>
                     {isWorkRoute && (
-                        <div className={styles.projectPage__categories}>
-                            <div className={styles.proectPage__categories_container}>
+                        <div className={styles.projectsPage__categories}>
+                            <div className={styles.projectsPage__categories_container}>
                                 <div onClick={handleMenuClick}>
                                     <h3>Filter: {selectedCategory ? selectedCategory : "All Work+"}</h3>
                                     <AnimatePresence>
                                         {menuOpened && (
                                             <motion.div
                                                 key="menu"
-                                                className={styles.projectPage__categories__menu__container__content}
+                                                className={styles.projectsPage__categories__menu__container__content}
                                                 initial={{ clipPath: 'inset(0 0 100% 0)' }}
                                                 animate={{ clipPath: 'inset(0 0 0% 0)' }}
                                                 exit={{ clipPath: 'inset(0 0 100% 0)' }}
@@ -129,13 +129,13 @@ const RelatedWork: React.FC<RelatedWorkProps> = ({ relatedNames = [], heading })
                             <div className={styles.projectPage__viewSelect}>
                                 <div className={styles.pv__container}>
                                     <motion.button
-                                        style={{ backgroundColor: selectedView === 'grid' ? '#000' : '', color: selectedView === 'grid' ? 'var(--background-color)' : 'var(--container-color)' }}
+                                        style={{ backgroundColor: selectedView === 'grid' ? 'var(--title-color)' : '', color: selectedView === 'grid' ? 'var(--background-color)' : 'var(--container-color)' }}
                                         onClick={() => setSelectedView('grid')}
                                     >
                                         Grid
                                     </motion.button>
                                     <motion.button
-                                        style={{ backgroundColor: selectedView === 'list' ? '#000' : '', color: selectedView === 'list' ? 'var(--background-color)' : 'var(--container-color)' }}
+                                        style={{ backgroundColor: selectedView === 'list' ? 'var(--title-color)' : '', color: selectedView === 'list' ? 'var(--background-color)' : 'var(--container-color)' }}
                                         onClick={() => setSelectedView('list')}
                                     >
                                         List

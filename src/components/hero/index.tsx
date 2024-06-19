@@ -9,26 +9,29 @@ import Upper from '../upper'
 const Home = () => {
 
     return (
-        <section className={styles.home} >
+        <section className={styles.home}>
+            <h1 style={{ display: "none" }}>
+                Cairo Studio: Egypt&apos;s Experts in Websites, UI/UX & Graphic Design
+            </h1>
             <div className={styles.home__container}>
                 <div className={styles.home__container__content}>
                     <div className={styles.home__title_group}>
                         <div className={styles.home__title}>
-                            {getChars("Cairo Studio Is")}
+                            {getChars("Cairo Studio Is A")}
                         </div>
                         <div className={styles.home__title}>
-                            {getChars("A DIGITAL DESIGN STUDIO")}
+                            {getChars("Digital Design Studio")}
                         </div>
                         <div className={styles.home__title}>
-                            {getChars(" DRIVEN BY RESEARCH")}
+                            {getChars(" Driven By Research")}
                         </div>
                         <div className={styles.home__title}>
-                            {getChars("& STRATEGY")}
+                            {getChars("& Strategy")}
                         </div>
                     </div>
                 </div>
             </div>
-            <Upper  p1="Information" p2='01' />
+            <Upper p1="Information" p2='01' />
             <div className={styles.lower}>
                 <div className={styles.lower_left}>
                     <div className={styles.home__subheader}>

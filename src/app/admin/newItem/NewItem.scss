@@ -20,17 +20,15 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
-            font-family: "Outfit-Bold";
             color: var(--container-color);
         }
 
         input {
             width: 100%;
             padding: 0.5rem;
-            border: 1px solid #ccc;
+            border: 1px solid var(--title-color);
             border-radius: 0.5rem;
             font-size: 1.5vh;
-            font-family: "Outfit-Regular";
             text-transform: uppercase;
 
             &:focus {
@@ -40,8 +38,6 @@
         }
         textarea {
             font-size: 1.5vh;
-            font-family: "Outfit-Regular";
-            text-transform: uppercase;
             width: 100%;
             padding: 0.5rem;
             border: 1px solid #ccc; 
@@ -52,11 +48,10 @@
         button {
             background-color: transparent;
             padding: 0.5rem;
-            border: 1px solid #ccc;
+            border: 1px solid var(--title-color);
             color: var(--container-color);
             border-radius: 0.5rem;
             font-size: 1.5vh;
-            font-family: "Outfit-Regular";
             text-transform: uppercase;
 
             &:focus {
@@ -104,9 +99,6 @@
                     border: 1px solid #ccc;
                     border-radius: 0.5rem;
                     font-size: 1.5vh;
-                    font-family: "Outfit-Regular";
-                    text-transform: uppercase;
-
                     &:focus {
                         outline: none;
                         border: 1px solid #000;
@@ -139,8 +131,6 @@
                     border: 1px solid #ccc;
                     border-radius: 0.5rem;
                     font-size: 1.5vh;
-                    font-family: "Outfit-Regular";
-                    text-transform: uppercase;
 
                     &:focus {
                         outline: none;
@@ -216,9 +206,7 @@
             label {
                 font-size: 1.5vh;
                 color: var(--container-color);
-                font-family: 'Outfit-Medium';
                 letter-spacing: 0.1rem;
-                text-transform: uppercase;
                 width: 100%;
                 text-align: left;
                 padding-left: 0.5rem;
@@ -231,7 +219,7 @@
                 input[type="checkbox"] {
                     width: 1rem;
                     height: 1rem;
-                    border: 0.5px solid rgba(50, 50, 50, 0.136);
+                    border: 1px solid var(--title-color);
                     background-color: transparent;
                     outline: none;
                     color: var(--title-color);
@@ -241,7 +229,6 @@
 
                     &::placeholder {
                         color: var(--title-color);
-                        font-family: 'Outfit-Medium';
                         text-transform: capitalize;
                         font-size: 2rem;
                     }
@@ -282,7 +269,6 @@
             label {
                 font-size: 1.5vh;
                 color: var(--container-color);
-                font-family: 'Outfit-Medium';
                 letter-spacing: 0.1rem;
                 text-transform: uppercase;
                 width: 100%;
@@ -308,7 +294,6 @@
 
                     &::placeholder {
                         color: var(--title-color);
-                        font-family: 'Outfit-Medium';
                         text-transform: capitalize;
                         font-size: 2rem;
                     }

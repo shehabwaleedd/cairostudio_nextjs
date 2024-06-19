@@ -5,8 +5,8 @@
     justify-content: space-between;
     top: 0;
     left: 0;
-    padding: 2rem 1rem;
-    height: 6.5vh;
+    padding: 1rem;
+    height: 5vh;
     width: 100%;
     overflow: hidden;
     transition: var(--animation-primary);
@@ -14,15 +14,14 @@
     user-select: none;
     mix-blend-mode: difference;
 
-    @media (max-width: 555px) {
-        height: fit-content;
+    @media (max-width: 900px) {
         background-color: var(--background-color);
         mix-blend-mode: normal;
         border-bottom: 1px solid var(--title-color);
         padding: 0.5rem;
     }
 
-    h1 {
+    span {
         position: relative;
         left: 0rem;
         font-size: clamp(16px, 1.52vw, 300px);
@@ -31,7 +30,7 @@
         font-weight: 500;
         width: 20%;
 
-        @media (max-width: 555px) {
+        @media (max-width: 900px) {
             color: var(--title-color);
             letter-spacing: normal;
             text-transform: lowercase;
@@ -51,38 +50,28 @@
         right: 0;
         width: 100%;
 
-        @media (max-width: 555px) {
+        @media (max-width: 900px) {
             display: none;
         }
 
-
-
-        .navLinks {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
             gap: 1rem;
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            ul {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                gap: 1rem;
-                width: 100%;
+            li {
+                position: relative;
+                text-transform: uppercase;
 
-                li {
-                    position: relative;
-                    font-size: 1vw;
-                    text-transform: uppercase;
-
-                    button {
-                        background-color: transparent;
-                        width: 100%;
-                        text-decoration: none;
-                        color: var(--opposite-color);
-                        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-                    }
+                button {
+                    font-size: var(--small-font-size);
+                    background-color: transparent;
+                    width: 100%;
+                    text-decoration: none;
+                    color: var(--opposite-color);
+                    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
                 }
             }
         }
@@ -91,9 +80,7 @@
 }
 
 .mobile {
-
-
-    @media (min-width: 1200px) {
+    @media (min-width: 901px) {
         display: none;
     }
 
@@ -102,15 +89,11 @@
         cursor: pointer;
         background-color: transparent;
         color: var(--title-color);
-
-
     }
 
     button {
-
         font-size: 1rem;
-
-        @media (min-width: 555px) {
+        @media (min-width: 901px) {
             font-size: 1.3rem;
         }
     }

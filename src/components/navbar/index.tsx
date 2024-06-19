@@ -11,7 +11,7 @@ import ToggleTheme from '../toggleTheme';
 
 const links: NavLink[] = [
     { title: "Services", href: "/services" },
-    { title: "Work", href: "/work" },
+    { title: "Projects", href: "/projects" },
     { title: "Studio", href: "/studio" },
     { title: "Get A Quote", href: "/contact" },
 ];
@@ -27,7 +27,6 @@ const Navbar: React.FC = () => {
 
     useEffect(() => {
         setNavOpen(false); // Close the navbar when the pathname changes
-        console.log('Pathname changed, nav closed:', pathname);
     }, [pathname]);
 
     useEffect(() => {
@@ -50,15 +49,13 @@ const Navbar: React.FC = () => {
             <nav className={styles.nav}>
                 <TransitionLogo href="/" label="Cairo Studio" />
                 <div className={styles.nav__corner}>
-                    <div className={styles.navLinks}>
-                        <ul>
-                            {links.map((link, index) => (
-                                <li key={index}>
-                                    <TransitionLink href={link.href} label={link.title} />
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <ul>
+                        {links.map((link, index) => (
+                            <li key={index}>
+                                <TransitionLink href={link.href} label={link.title} />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <ToggleTheme />
                 <div className={styles.mobile}>

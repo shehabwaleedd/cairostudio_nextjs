@@ -1,106 +1,56 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './style.module.scss';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import AnimatedH3 from '@/animations/animatedH3';
 import { TransitionLink } from '../transitionLink';
 
 const Footer: React.FC = () => {
     const pathname = usePathname();
-    const workPathRegex = /^\/work(\/.*)?$/;
+    const workPathRegex = /^\/projects\/.+$/; // Matches /projects/* but not /projects
+
+    const nextPageMap: { [key: string]: { nextPage: string, nextPageName: string } } = {
+        '/': { nextPage: "/projects", nextPageName: "Projects" },
+        '/projects': { nextPage: "/contact", nextPageName: "Contact" },
+        '/services': { nextPage: "/studio", nextPageName: "Studio" },
+        '/studio': { nextPage: "/services", nextPageName: "Services" },
+        '/privacy': { nextPage: "/projects", nextPageName: "Projects" }
+    };
 
     const getNextPageLink = () => {
-        let nextPage = "/work";
-        let nextPageName = "Work";
-
-        switch (pathname) {
-            case '/':
-                nextPage = "/work";
-                nextPageName = "Work";
-                break;
-            case '/work':
-                nextPage = "/Contact";
-                nextPageName = "Contact";
-                break;
-            case '/services':
-                nextPage = "/about";
-                nextPageName = "About";
-                break;
-            case '/studio':
-                nextPage = "/services";
-                nextPageName = "Services";
-                break;
-            case '/terms':
-                nextPage = "/privacy";
-                nextPageName = "Privacy";
-                break;
-            case '/privacy':
-                nextPage = "/work";
-                nextPageName = "Work";
-                break;
-            default:
-                return null;
-        }
-
+        const nextPageData = nextPageMap[pathname];
+        if (!nextPageData) return null;
         return (
-            <div className={styles.nextPage}>
-                <h2>Next Page</h2>
-                <TransitionLink href={`${nextPage}`} label={`${nextPageName}`} />
-            </div>
+            <li>
+                <TransitionLink href={nextPageData.nextPage} label={nextPageData.nextPageName} />
+            </li>
         );
     };
 
+
+    const socialLinks = [
+        { href: "https://www.instagram.com/cairostudioo/", label: "Instagram" },
+        { href: "https://www.linkedin.com/company/cairostudio/", label: "LinkedIn" },
+        { href: "https://www.facebook.com/cairostudiooo", label: "Facebook" },
+        { href: "https://twitter.com/cairostudioo", label: "Twitter" },
+        { href: "mailto:hello@cairo-studio.com", label: "Email" }
+    ];
+
     return (
-        <>
-            <footer className={styles.footer} style={{ display: (workPathRegex.test(pathname)) ? "none" : "block" }}>
-                <div className={styles.footer__bottom}>
-                    <div className={styles.footer__con}>
-                        <div className={styles.footer__upper}>
-                            {getNextPageLink()}
-                        </div>
-                        <div className={styles.footer__container}>
-                            <div className={styles.footer__address}>
-                                <h2>Business Inquiries</h2>
-                                <ul className={styles.focon__content}>
-                                    <li>
-                                        <a href="mailto:hello@cairo-studio.com" target='_blank' rel="noopener noreferrer">
-                                            hello@cairo-studio.com
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.footer__top}>
-                        <AnimatedH3 word='CAIRO STUDIO' />
-                    </div>
-                </div>
-            </footer>
-            <div className={styles.footer__footer}  style={{ display: (workPathRegex.test(pathname)) ? "none" : "block" }}>
-                <div className={styles.footer__footer_container}>
-                    <div className={styles.footer__logo}>
-                        <h2>Cairo Studio © {new Date().getFullYear()} All Rights Reserved</h2>
-                    </div>
-                    <div className={styles.footer__rest}>
-                        <ul className={styles.foso__content}>
-                            <li>
-                                <a href="https://www.instagram.com/cairostudioo/" target='_blank' rel="noopener noreferrer">
-                                    Instagram
-                                    <span>Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/company/cairostudio/" target='_blank' rel="noopener noreferrer">
-                                    LinkedIn
-                                    <span>LinkedIn</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </>
+        <footer className={styles.footer} style={{ backgroundColor: (workPathRegex.test(pathname)) ? "#131313" : "var(--background-color)" }}>
+            <nav aria-label="Footer navigation">
+                <ul className={styles.footer__content}>
+                    {getNextPageLink()}
+                    {socialLinks.map((link, index) => (
+                        <li key={index}>
+                            <a style={{ color: (workPathRegex.test(pathname)) ? "#f1dbb2" : "var(--title-color)" }} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={`Follow us on ${link.label}`}>
+                                {link.label}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <h3 style={{ color: (workPathRegex.test(pathname)) ? "#f1dbb2" : "var(--title-color)" }}>Cairo Studio</h3>
+        </footer>
     );
 };
 

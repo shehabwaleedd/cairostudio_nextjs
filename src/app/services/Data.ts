@@ -108,7 +108,7 @@ const Data: Service[] = [
         ],
         process: [
             {
-                description: "An Agile, Iterative Process Allows For Incremental Delivery And Mitigated Risk.",
+                description: "Our Agile, iterative process ensures continuous delivery and minimizes risk. By focusing on small, manageable sprints, we adapt swiftly to changes and deliver high-quality solutions incrementally. This approach promotes collaboration, early issue detection, and ensures alignment with client goals.",
                 content: [
                     {
                         name: "Strategy",
@@ -272,7 +272,7 @@ const Data: Service[] = [
         ],
         process: [
             {
-                description: "An Agile, Iterative Process Allows For Incremental Delivery And Mitigated Risk.",
+                description: "Our dynamic, strategy-driven process guarantees robust and scalable e-commerce solutions. We prioritize seamless functionality and stunning aesthetics to create engaging online shopping experiences. Our iterative approach allows us to refine and enhance the platform continuously, ensuring it meets the evolving needs of your business and customers.",
                 content: [
                     {
                         name: "Strategy",
@@ -406,7 +406,7 @@ const Data: Service[] = [
         ],
         process: [
             {
-                description: "Our Meticulous Analysis Informs A Strategic Approach That Guides Every Stage Of Our Process For Effective Implementation.",
+                description: "Our meticulous analysis and strategic approach transform brands into memorable experiences. We delve deep into your brand's values and market positioning to craft a unique and impactful identity. Our process ensures that every aspect of your brand resonates with your target audience, creating a strong and lasting impression.",
                 content: [
                     {
                         name: "Discovery",
@@ -512,7 +512,7 @@ const Data: Service[] = [
         ],
         process: [
             {
-                description: "Our meticulous analysis informs a strategic approach that guides every stage of our process for effective implementation.",
+                description: "Our comprehensive design process combines creativity with strategic insights to deliver visually compelling and cohesive designs. We focus on understanding your brand's essence and translating it into powerful visual narratives. Our iterative design approach ensures that each element is meticulously crafted to achieve maximum impact and engagement.",
                 content: [
                     {
                         name: "Discovery",

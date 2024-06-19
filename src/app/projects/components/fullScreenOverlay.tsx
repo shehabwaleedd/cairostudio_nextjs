@@ -33,6 +33,8 @@ const FullScreenOverlay: React.FC<FullScreenOverlayProps> = ({ selectedMedia, se
                         layout="fill"
                         objectFit="contain"
                         className={styles.fullscreen_image}
+                        placeholder='blur'
+                        blurDataURL={selectedMedia.src}
                     />
                 )}
                 {selectedMedia.type === 'video' && (

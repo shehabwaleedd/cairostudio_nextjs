@@ -14,7 +14,6 @@ const Upper = ({ p1, p2, link, label, h2, span, secondRow }: { p1: string, p2: s
                     <h2>{h2} </h2>
                     {span && <span> [{span}]</span>}
                 </div>
-                {/* {link && <Link href={link}>{label}</Link>} */}
                 <TransitionLink href={`${link}`} label={`${label}`} />
             </div>}
         </div>

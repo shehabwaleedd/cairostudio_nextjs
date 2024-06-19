@@ -8,10 +8,6 @@
     padding-top: 7vh;
     position: relative;
     z-index: 9;
-
-
-
-
     img {
         width: 100%;
         height: 100%;
@@ -29,75 +25,39 @@
         justify-content: flex-start;
         height: 100%;
         width: 100%;
-        padding: 2rem;
-
+        padding: 1rem;
         @media (max-width: 978px) {
             padding: 0.5rem;
         }
-
-
-
-
     }
 }
 
-.seboco__left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
+.services__process {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     height: 100%;
-    gap: 1rem;
-    border-bottom: 1px solid var(--title-color);
-    padding-bottom: 1rem;
+    width: 100%;
+    padding: 2rem;
+    border-top: 1px solid var(--title-color);
+    @media (max-width: 666px) {
+        display: flex;
+        flex-direction: column;
+
+    }
 
     h3 {
-        font-size: 4vw;
-        font-weight: 400;
-        line-height: 1;
-        color: var(--title-color);
-        letter-spacing: 0.05rem;
-        text-transform: uppercase;
-
-        @media (max-width: 978px) {
-            font-size: 4vh;
-        }
+        font-weight: 500;
+        font-size: var(--large-text-font-size);
     }
-
     p {
-        font-size: 1.1rem;
-        font-weight: 300;
-        text-align: left;
-        text-transform: uppercase;
-        color: var(--title-color);
-        width: 70%;
-
-        @media (max-width: 978px) {
-            font-size: 0.9rem;
-            letter-spacing: normal;
+        width: 85%;
+        @media (max-width: 1308px) {
+            padding-bottom: 0.5rem;
         }
     }
 
-    a {
-        background-color: var(--background-color);
-        padding: 1rem;
-        border: 1px solid var(--container-color);
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-
-        h4 {
-            font-weight: 400;
-            letter-spacing: 0.1rem;
-            color: var(--container-color);
-        }
-
-        &:hover {
-            background-color: var(--container-color);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-
-            h3 {
-                color: var(--background-color);
-            }
-        }
+    @media (max-width: 978px) {
+        padding: 0.5rem;
     }
+
 }

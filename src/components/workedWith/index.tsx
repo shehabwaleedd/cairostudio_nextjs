@@ -3,7 +3,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import dynamic from 'next/dynamic';
-const InsideSlider = dynamic(() => import('@/app/work/components/insideSlider'));
+const InsideSlider = dynamic(() => import('@/app/projects/components/insideSlider'));
 import './WorkedWith.scss';
 import { Project } from '@/common/types';
 

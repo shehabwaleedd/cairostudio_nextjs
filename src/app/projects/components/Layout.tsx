@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import styles from "@/app/work/page.module.scss"
+import styles from "@/app/projects/page.module.scss"
 import { Project, ProjectState } from '@/common/types'
 
 const Layout = ({ projectState, setProjectState, filteredProjects, handleProjectClick }: { projectState: ProjectState; setProjectState: any; filteredProjects: Project[]; handleProjectClick: any; }) => {
@@ -22,6 +22,8 @@ const Layout = ({ projectState, setProjectState, filteredProjects, handleProject
                                         fill
                                         loading="lazy"
                                         title={project.title}
+                                        placeholder='blur'
+                                        blurDataURL={project.homePage}
                                     />
                                     <AnimatePresence mode='wait'>
                                         {projectState.hoveredProjectIndex === index && (

@@ -1,6 +1,6 @@
-import React from 'react';
+import { GetServerSideProps } from 'next';
 import styles from './style.module.scss';
-import data from "./data"
+import { getDataWithBlur } from '@/lib/getDataWithBlur';
 import Card from './card';
 import Upper from '@/components/upper';
 
@@ -10,22 +10,25 @@ export interface ProjectData {
     img: string;
     descTitle: string;
     tags: string[];
-    
-
+    blurDataURL: string;
 }
 
-const ServicesList = ({ p2 }: { p2: string }) => {
+interface ServicesListProps {
+    p2: string;
+    projects: ProjectData[];
+}
+
+export default async function ServicesList({ p2 }: { p2: string }) {
+    const projects = await getDataWithBlur();
 
     return (
         <section className={styles.work}>
             <Upper p1="Services" p2={p2} />
             <div className={styles.projectsMain}>
-                {data.map((project, i) => {
-                    return <Card project={project} key={`p_${i}`} i={i} />
-                })}
+                {projects.map((project, i) => (
+                    <Card project={project} key={`p_${i}`} i={i} />
+                ))}
             </div>
         </section>
     );
-};
-
-export default ServicesList;
+}

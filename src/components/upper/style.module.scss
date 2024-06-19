@@ -49,11 +49,9 @@
             font-weight: 300;
             color: var(--container-color);
             letter-spacing: -0.05rem;
-            text-transform: uppercase;
             position: relative;
             @media (max-width: 1256px) {
                 font-size: calc(25/var(--gfs)*1rem);
-                margin: 1rem 0;
             }
             &::after {
                 content: '';

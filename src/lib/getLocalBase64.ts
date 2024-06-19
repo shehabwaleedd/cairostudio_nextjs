@@ -1,7 +1,7 @@
 import { getPlaiceholder } from "plaiceholder";
 import axios from "axios";
 
-export default async function getBase64(imageUrl: string): Promise<string> {
+export async function getBase64(imageUrl: string): Promise<string> {
     try {
         // Configuring Axios to return the image as a stream
         const response = await axios.get(imageUrl, {

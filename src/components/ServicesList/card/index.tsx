@@ -1,25 +1,20 @@
 'use client'
-
 import React from 'react';
 import styles from "../style.module.scss";
 import { ProjectData } from '..';
 import Link from 'next/link';
 import Image from 'next/image';
-import useWindowSize from '@/hooks/useWindowWidth';
+import { TransitionCard } from '@/components/transitionLink';
 
 const Card = ({
     project,
     i,
-
 }: {
     project: ProjectData,
     i: number,
-
 }) => {
-
-
     return (
-        <div className={styles.cardContainer} key={i}>
+        <TransitionCard className={styles.cardContainer} key={i} href={project.link}>
             <div className={styles.wrapper}>
                 <div className={styles.card}>
                     <div className={styles.upper}>
@@ -33,17 +28,18 @@ const Card = ({
                     </div>
                     <div className={styles.lower}>
                         <Image
-                            src={project ? project.img : ""}
-                            alt=""
+                            src={project.img}
+                            alt={project.title}
                             width={1920}
                             height={1260}
                             placeholder='blur'
-                            blurDataURL={project.img}
+                            blurDataURL={project.blurDataURL}
+                            loading='lazy'
                         />
                     </div>
                 </div>
             </div>
-        </div>
+        </TransitionCard>
     );
 };
 

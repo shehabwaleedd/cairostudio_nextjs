@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, useCallback } from 'react';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { doc, updateDoc, collection, getDocs } from 'firebase/firestore';
 import { db } from "../../../../firebase.config";
 import RenderSectionOption from '../newItem/renders/RenderSectionOptions';
 import RenderScopeOfWork from '../newItem/renders/RenderScopeOfWork';
@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { storage } from '../../../../firebase.config';
 import { useRouter } from 'next/navigation';
 import "../newItem/NewItem.scss"; // Assume similar styling as NewItem
+import slugify from 'slugify';
 
 const EditProject = ({ params }) => {
     const navigate = useRouter();
@@ -29,7 +30,7 @@ const EditProject = ({ params }) => {
                 ...doc.data(),
                 id: doc.id,
             }));
-            const project = projectsData.find((p) => p.title === params.title);
+            const project = projectsData.find((p) => slugify(p.title, { lower: true }) === params.title);
             if (!project) throw new Error('Project not found');
             setProjectData(project);
         } catch (err) {
@@ -44,15 +45,12 @@ const EditProject = ({ params }) => {
     }, [fetchData]);
 
 
-    // In your render function
     if (loading) return <div>LOADING</div>;
     if (error) return <p>Error: {error}</p>;
 
     if (!projectData) {
         return <p>Project data is not available</p>;
     }
-
-    // Render your form here
 
     const handleDisplayedChange = (e) => {
         const newDisplayedValue = e.target.checked;
@@ -65,17 +63,14 @@ const EditProject = ({ params }) => {
         setProjectData(prevState => ({ ...prevState, [name]: value }));
     };
 
-    // Other handlers (handleFileChange, handleItemChange, etc.) go here
-    // Ensure they modify the `editData` state
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const projectRef = doc(db, 'projects', projectId);
+            const projectRef = doc(db, 'projects', projectData.id);
             await updateDoc(projectRef, projectData);
 
             console.log('Project updated in Firestore');
-            navigate('/admin');
+            navigate.push('/admin'); 
         } catch (error) {
             console.error('Error updating project:', error);
         }
@@ -84,7 +79,6 @@ const EditProject = ({ params }) => {
     const handleCategoryChange = (category) => {
         const selectedCategories = projectData.categories ? [...projectData.categories] : [];
 
-        // Toggle the category's selection
         if (selectedCategories.includes(category)) {
             selectedCategories.splice(selectedCategories.indexOf(category), 1);
         } else {
@@ -96,11 +90,7 @@ const EditProject = ({ params }) => {
             categories: selectedCategories,
         }));
         console.log('Updated projectData:', projectData);
-
     };
-
-
-
 
     const handleSectionTitleChange = (sectionIndex, value) => {
         const updatedScopeOfWork = [...projectData.projectsDetails.scopeOfWork];
@@ -163,12 +153,10 @@ const EditProject = ({ params }) => {
         </label>
     );
 
-
-
     const handleSectionChange = (sectionIndex, value) => {
         setProjectData(prevState => {
             const updatedSections = [...prevState.projectsDetails.sections];
-            updatedSections[sectionIndex].name = value; // Update the name field
+            updatedSections[sectionIndex].name = value;
             return {
                 ...prevState,
                 projectsDetails: {
@@ -179,9 +167,6 @@ const EditProject = ({ params }) => {
         });
     };
 
-
-
-    // Function to add a new option to a section
     const addNewSectionOption = (sectionIndex) => {
         const updatedSections = [...projectData.projectsDetails.sections];
         if (!updatedSections[sectionIndex]) {
@@ -201,8 +186,6 @@ const EditProject = ({ params }) => {
         });
     };
 
-
-    // Function to remove an option from a section
     const removeSectionOption = (sectionIndex, optionIndex) => {
         const updatedSections = [...projectData.projectsDetails.sections];
         updatedSections[sectionIndex].options.splice(optionIndex, 1);
@@ -215,21 +198,15 @@ const EditProject = ({ params }) => {
         });
     };
 
-    // Function to handle changes in options of a section
     const handleSectionOptionChange = (sectionIndex, optionIndex, value) => {
         setProjectData(prevState => {
-            // Copy the current state
             const updatedState = { ...prevState };
-
-            // Access the specific section
             const section = updatedState.projectsDetails.sections[sectionIndex];
-
-            // Update the specific option's text
             section.options[optionIndex].text = value;
-
             return updatedState;
         });
     };
+
     const handleItemChange = (type, index, field, value) => {
         setProjectData(prevState => {
             const updatedItems = prevState.collectiveItems.map(item => {
@@ -245,7 +222,6 @@ const EditProject = ({ params }) => {
         });
     };
 
-    // Generic handler to remove items like collectiveGrid, collective1, projectImages
     const removeItem = (type, index) => {
         setProjectData(prevState => {
             const updatedItems = prevState.collectiveItems.map(item => {
@@ -258,9 +234,6 @@ const EditProject = ({ params }) => {
             return { ...prevState, collectiveItems: updatedItems };
         });
     };
-
-
-
 
     const renderTextArea = (label, name, value) => (
         <label>
@@ -275,9 +248,7 @@ const EditProject = ({ params }) => {
     );
 
     const renderDateInput = () => {
-        // Provide a default value if projectData or projectData.date is null
         const dateValue = projectData?.date || 'default-date';
-
         return (
             <label>
                 Year:
@@ -295,10 +266,6 @@ const EditProject = ({ params }) => {
         );
     };
 
-    if (!projectData) {
-        return <p>Loading project...</p>; // Or any other loading state
-    }
-
     const renderFileInput = (label, name) => (
         <>
             <label>
@@ -309,7 +276,7 @@ const EditProject = ({ params }) => {
                 {projectData[name] && projectData[name] !== '' &&
                     <>
                         {name === 'homePage' || name === 'poster' || name === 'cover' ?
-                            <Image src={projectData[name]} alt={name} />
+                            <Image src={projectData[name]} alt={name}  width={200} height={200}/>
                             :
                             <video src={projectData[name]} controls />
                         }
@@ -317,12 +284,11 @@ const EditProject = ({ params }) => {
                 }
             </div>
         </>
-
     );
 
     const handleFileChange = async (e, fieldName) => {
         try {
-            const projectTitle = projectData.title.trim().replace(/\s+/g, '_'); // Sanitize the title
+            const projectTitle = projectData.title.trim().replace(/\s+/g, '_');
             if (!projectTitle) {
                 console.error("Project title is required for file upload");
                 return;
@@ -364,24 +330,16 @@ const EditProject = ({ params }) => {
         }
     };
 
-
-    if (loading) return <p>Loading project...</p>;
-    if (error) return <p>Error: {error}</p>;
-
-
     return (
         <main className='newItem'>
             <h1>Edit Project</h1>
-
             <Link href="/admin">
                 <button>Back</button>
             </Link>
-
             <form onSubmit={handleSubmit} className="newItem__form">
                 {renderTextInput("Title", "title", projectData.title)}
                 {renderTextInput("Link", "link", projectData.link)}
                 {renderDateInput()}
-
                 <div className="textAreaForm">
                     {renderTextArea("Description", "description", projectData.description)}
                     {renderTextArea("Challenge", "challenge", projectData.challenge)}
@@ -400,7 +358,7 @@ const EditProject = ({ params }) => {
                         type="checkbox"
                         name="displayed"
                         checked={displayed}
-                        onChange={handleDisplayedChange} // Use the new handler
+                        onChange={handleDisplayedChange}
                     />
                 </div>
                 <RenderCategories projectData={projectData} categories={categories} handleCategoryChange={handleCategoryChange} />
