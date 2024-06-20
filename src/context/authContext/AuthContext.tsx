@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import {
   createUserWithEmailAndPassword,
@@ -36,12 +36,16 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const signIn = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const signIn = async (email: string, password: string) => {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const token = await userCredential.user.getIdToken();
+    Cookies.set('auth-token', token, { expires: 7 }); // Set auth-token cookie
+    return userCredential;
   };
 
-  const logOut = () => {
-    return signOut(auth);
+  const logOut = async () => {
+    await signOut(auth);
+    Cookies.remove('auth-token'); // Remove auth-token cookie
   };
 
   const passwordReset = (email: string) => {
@@ -54,7 +58,13 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        const token = await currentUser.getIdToken();
+        Cookies.set('auth-token', token, { expires: 7 });
+      } else {
+        Cookies.remove('auth-token');
+      }
       setUser(currentUser);
     });
 

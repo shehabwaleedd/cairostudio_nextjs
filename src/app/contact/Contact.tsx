@@ -47,7 +47,6 @@ const Contact: React.FC = () => {
         const emailData: Record<string, unknown> = { ...formData };
         emailjs.send('service_5y7rll1', 'template_3xzot3e', emailData, '4nyzjigYhVGMwCX0W')
             .then((response) => {
-                console.log('Email sent:', response);
                 toast.success("Thank you for reaching out! We have received your project proposal and will be in contact with you shortly to discuss the details. 📩🤝");
                 resetForm();
             })
