@@ -1,0 +1,42 @@
+.cookies_consent {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    &_btns {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    p, a {
+        margin: 0 0 10px;
+        color: #fff;
+        width: 80%;
+    }
+
+    button {
+
+        margin: 0 5px;
+        padding: 5px 10px;
+        border: 1px solid white;
+        background-color: #000;
+        color: white;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: var(--animation-primary);
+
+        &:hover {
+            transition: var(--animation-primary);
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+}
