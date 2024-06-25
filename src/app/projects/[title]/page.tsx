@@ -27,12 +27,12 @@ export async function generateMetadata({ params }: ProjectsDetailsProps): Promis
 
     return {
         title: `${project.title} - Cairo Studio`,
-        description: project.introduction.slice(0, 165),
+        description: project.description.slice(0, 165),
         openGraph: {
             type: 'website',
             url,
             title: project.title,
-            description: project.introduction,
+            description: project.description,
             images: [
                 {
                     url: project.cover,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: ProjectsDetailsProps): Promis
         twitter: {
             card: 'summary_large_image',
             title: project.title,
-            description: project.introduction,
+            description: project.description,
             images: [project.cover],
         },
         robots: {

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { TransitionLink } from '../transitionLink'
 const Upper = ({ p1, p2, link, label, h2, span, secondRow }: { p1: string, p2: string, p3?: string, h2?: string, span?: string, secondRow?: boolean, link?:string, label?: string }) => {
     return (
-        <div className={styles.upper}>
+        <section className={styles.upper}>
             <div className={styles.upper_top}>
                 <p>{p1}</p>
                 <p>[S: {p2}]</p>
@@ -16,7 +16,7 @@ const Upper = ({ p1, p2, link, label, h2, span, secondRow }: { p1: string, p2: s
                 </div>
                 <TransitionLink href={`${link}`} label={`${label}`} />
             </div>}
-        </div>
+        </section>
         )
 }
 

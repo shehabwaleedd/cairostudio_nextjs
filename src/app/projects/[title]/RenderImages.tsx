@@ -18,7 +18,7 @@ const RenderImages: React.FC<RenderImagesProps> = ({ items }) => {
             {items.map((item, index) => (
                 <div className={styles.prdeco__collective1__item} key={`item-${index}`}>
                     {item.isImg ? (
-                        <Image src={item.image} alt={`Image ${index}`} loading="lazy" key={`image-${index}`} width={600} height={600}/>
+                        <Image src={item.image} alt={`Image ${index}`} key={`image-${index}`} width={600} height={600} priority={index < 3 ? true : false} />
                     ) : (
                         <video src={item.image} autoPlay loop muted playsInline title={`Video ${index}`} key={`video-${index}`} />
                     )}

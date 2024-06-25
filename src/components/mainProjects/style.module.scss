@@ -23,18 +23,15 @@
             padding: 0.5rem;
         }
 
-        &__imgs {
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-            position: relative;
+        img {
+            width: 45vw;
+            height: 33vh;
+            object-fit: cover;
+            transition: var(--animation-primary);
 
-            img {
-                aspect-ratio: 6/4;
-                width: 100%; // Ensure images take full width of their container
-                height: auto; // Maintain aspect ratio
-                object-fit: cover;
-                transition: var(--animation-primary);
+            @media (max-width: 1300px) {
+                width: 100%;
+                height: auto;
             }
         }
     }
@@ -61,7 +58,7 @@
 
         @media (min-width: 956px) {
             &:nth-child(1) {
-                padding-left: 0;
+                padding-left: 5%;
             }
 
             &:nth-child(2) {

@@ -15,14 +15,14 @@ const MainProjects = async () => {
     const numberOfProjects = displayedProjects.length;
 
     return (
-        <div className={styles.mainProjects}>
+        <section className={styles.mainProjects}>
             <Upper p1="Latest Projects" p2="02" label="All Projects" link='/projects' h2="Latest" secondRow={true} span={`${numberOfProjects}`} />
             <div className={styles.mainProjects__container}>
                 {displayedProjects.map((item: Project, index: number) => (
                     <ProjectItem item={item} key={index} index={index} />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

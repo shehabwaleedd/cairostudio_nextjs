@@ -1,14 +1,17 @@
 import React from 'react';
 import Navbar from '../components/navbar';
 import './globals.css';
+import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 import { UserContextProvider } from '../context/authContext/AuthContext';
 import { ThemeProvider } from '@/context/ThemeProvider';
-import SmoothScrolling from '@/animations/SmoothScrolling';
+// import SmoothScrolling from '@/animations/SmoothScrolling';
 import { Toaster } from 'sonner';
-import Script from 'next/script';
 import Footer from '@/components/footer';
-import CookiesConsent from '@/components/cookiesConsent';
+// import CookiesConsent from '@/components/cookiesConsent';
+
+const SmoothScrolling = dynamic(() => import('@/animations/SmoothScrolling'), { ssr: false });
+const CookiesConsent = dynamic(() => import('@/components/cookiesConsent'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'Cairo Studio | Premium Web Development, Branding & Graphic Design in Egypt',
@@ -41,6 +44,7 @@ export const metadata: Metadata = {
     description: 'Cairo Studio: Egypt\'s leading digital studio for web development, UI/UX, graphic design, and branding. Transform your digital presence.',
     images: 'https://res.cloudinary.com/ds20vy7zo/image/upload/v1718735293/CDS_OG_Image_2_qdahop.webp'
   },
+
   robots: {
     index: true,
     follow: true,

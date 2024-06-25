@@ -76,7 +76,7 @@ const WorkedWith = <T extends BaseData>({ Data, filteredProjects }: WorkedWithPr
     }, []);
 
     return (
-        <div className="faqs" ref={containerRef}>
+        <section className="faqs" ref={containerRef}>
             <div className="faqs__container containered">
                 {Data.map(({ id, name, desc, categories, insideSlider }, index) => (
                     <div className={`item-1 ${activeAccordion === id ? 'open' : ''}`} key={id}>
@@ -105,7 +105,7 @@ const WorkedWith = <T extends BaseData>({ Data, filteredProjects }: WorkedWithPr
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

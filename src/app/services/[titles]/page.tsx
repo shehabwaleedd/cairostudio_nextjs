@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: { params: { titles: string } 
         };
     }
 
+    const formattedTitle = service.serviceTitle.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     const keywords = [
         service.serviceTitle,
         ...service.services[0].content.flatMap(content => content.options),
@@ -58,11 +59,11 @@ export async function generateMetadata({ params }: { params: { titles: string } 
     ].join(', ');
 
     return {
-        title: `${service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} - Cairo Studio`,
+        title: `${formattedTitle} - Cairo Studio`,
         description: service.upperDescription,
         keywords: keywords,
         openGraph: {
-            title: `${service.serviceTitle} - Cairo Studio`,
+            title: `${formattedTitle} - Cairo Studio`,
             description: service.upperDescription,
             url: `https://cairo-studio.com/services/${title}`,
             type: 'website',
@@ -100,13 +101,17 @@ const ServicesSections: React.FC<ServicesSectionsProps> = async ({ params }) => 
         desc: item.desc
     }));
 
+    const formattedTitle = service.serviceTitle.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
     return (
         <main className={styles.servicesSections}>
             <h1 style={{ display: "none" }}>
-                Cairo Studio&apos;s {service.serviceTitle.charAt(0).toUpperCase() + service.serviceTitle.slice(1)} Service
+                {formattedTitle} - Cairo Studio
             </h1>
             <Header header={service.header} />
-            <Image src={service.image.src} alt={service.serviceTitle} width={1920} height={1230} placeholder='blur' blurDataURL={service.image.src} />
+            <Image src={service.image.src} alt={service.serviceTitle} width={1920} height={1230} placeholder='blur' blurDataURL={service.image.src} priority={true} quality={75}
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            />
             <section className={styles.services__bottom}>
                 <ServicesSplit data={transformedData} />
             </section>

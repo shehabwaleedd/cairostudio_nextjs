@@ -1,6 +1,6 @@
 export interface Project {
     id: number;
-    headline?: HTMLHeadingElement | null;
+    headline?: HTMLElement | null;
     title: string;
     elements: { text: string }[];
 }

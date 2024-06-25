@@ -8,7 +8,6 @@ import Nav from "./nav/index";
 import { NavLink } from "@/common/types";
 import ToggleTheme from '../toggleTheme';
 
-
 const links: NavLink[] = [
     { title: "Services", href: "/services" },
     { title: "Projects", href: "/projects" },
@@ -19,7 +18,6 @@ const links: NavLink[] = [
 const Navbar: React.FC = () => {
     const [navOpen, setNavOpen] = useState<boolean>(false);
     const pathname = usePathname();
-
     const toggleNavOpen = useCallback(() => {
         setNavOpen(prevNavOpen => !prevNavOpen);
     }, []);
@@ -59,7 +57,11 @@ const Navbar: React.FC = () => {
                 </div>
                 <ToggleTheme />
                 <div className={styles.mobile}>
-                    <button onClick={toggleNavOpen} className={styles.menuNav}>
+                    <button onClick={toggleNavOpen} className={styles.menuNav}
+                        aria-label={navOpen ? "close" : "menu"}
+                        aria-expanded={navOpen}
+                        aria-controls="nav"
+                    >
                         {navOpen ? "close" : "menu"}
                     </button>
                 </div>

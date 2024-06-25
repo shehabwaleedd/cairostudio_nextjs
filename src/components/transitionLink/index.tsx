@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import { animatePageOut } from "../../animations/animatePageOut"
+import { animatePageIn } from "../../animations/animatePageOut"
 import styles from "../../components/navbar/style.module.scss"
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export const TransitionLink = ({ href, label }: { href: string, label: string })
 
     const handleClick = () => {
         if (pathname !== href) {
-            animatePageOut(href, router);
+            animatePageIn(href, router);
         }
     };
 
@@ -27,7 +27,7 @@ export const TransitionLogo = ({ href, label }: { href: string, label: string })
 
     const handleClick = () => {
         if (pathname !== href) {
-            animatePageOut(href, router);
+            animatePageIn(href, router);
         }
     };
 
@@ -45,7 +45,7 @@ export const TransitionH4 = ({ href, label }: { href: string, label: string }) =
 
     const handleClick = () => {
         if (pathname !== href) {
-            animatePageOut(href, router);
+            animatePageIn(href, router);
         }
     };
 
@@ -64,7 +64,7 @@ export const TransitionButton = ({ href, label }: { href: string, label: string 
 
     const handleClick = () => {
         if (pathname !== href) {
-            animatePageOut(href, router);
+            animatePageIn(href, router);
         }
     };
 
@@ -81,7 +81,7 @@ export const TransitionCard = ({ href, children, className }: { href: string; ch
 
     const handleClick = () => {
         if (pathname !== href) {
-            animatePageOut(href, router);
+            animatePageIn(href, router);
         }
     };
 
@@ -99,12 +99,12 @@ export const TransitionP = ({ href, children, label }: { href: string; children:
 
     const handleClick = () => {
         if (pathname !== href) {
-            animatePageOut(href, router);
+            animatePageIn(href, router);
         }
     };
 
     return (
-        <p  onClick={handleClick} aria-label={label}>
+        <p onClick={handleClick} aria-label={label}>
             {children}
         </p>
     );

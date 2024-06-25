@@ -18,7 +18,7 @@ const Data: Service[] = [
             isImg: true,
             src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718124200/Macbook_Pro_Mockup_kdwc6t.webp",
         },
-        upperDescription: "Transforming User Experiences Through Exceptional Design.",
+        upperDescription: "Looking for expert web development? Discover our responsive, cutting-edge websites designed to deliver innovative and dynamic user experiences. Boost your online presence today.",
         serviceDescription: [
             "We create beautifully crafted, scalable, and meaningful digital experiences that drive change. By understanding how your customers connect with your brand, we design and develop websites that captivate and bring your unique message to life. Through a blend of robust utility, intuitive design, and the power of storytelling, we forge deep connections with your audience.",
         ],
@@ -179,7 +179,7 @@ const Data: Service[] = [
             isImg: true,
             src: "https://res.cloudinary.com/ds20vy7zo/image/upload/v1718131555/Mockup_2_ymumub.webp",
         },
-        upperDescription: "Crafting Immersive Digital Experiences That Drive Results",
+        upperDescription: "Searching for top-notch e-commerce solutions? Our responsive, visually stunning platforms enhance customer trust and drive conversions. Maximize and increase your online sales with us.",
         serviceDescription: [
             "Our passion lies in crafting beautifully tailored digital experiences that not only captivate but also drive tangible results. By delving deep into your brand, target audience, and industry landscape, we gain a profound understanding of your unique selling points and customer journey.",
             "Armed with this knowledge, we design and develop e-commerce websites that seamlessly blend intuitive functionality, stunning aesthetics, and persuasive storytelling. Our goal is to create an immersive and delightful online shopping environment that entices customers, fosters trust, and ultimately leads to increased conversions.",
@@ -354,7 +354,7 @@ const Data: Service[] = [
             "Strategy Driven Branding",
             "Delivering Unforgettable Online Experiences."
         ],
-        upperDescription: "In The Current Landscape, Brands Must Do More Than Just Exist. They Must Differentiate Themselves To Make A Lasting Impact.",
+        upperDescription: "Need professional branding services? We create unique and memorable brand identities that communicate your values and resonate with your audience. Transform your brand now.",
         serviceDescription: [
             "Brands have to be like humans today more than ever. In many ways, like humans, ethics, values, tone and personality define a brand.",
             "Consumers are increasingly seeking out brands that they identify with – that mirror their lifestyle, their beliefs and their actions. And it is precisely when a brand translates its own ethics and values through defined brand identity and communication that it comes across as authentic, natural, almost human-like.",
@@ -460,7 +460,7 @@ const Data: Service[] = [
             "Elite Graphic Design Services",
             "Transforming Ideas into Visual Art"
         ],
-        upperDescription: "In today's competitive market, standing out visually is imperative. Our graphic design services ensure your brand not only captures attention but also remains memorable.",
+        upperDescription: "Seeking premium graphic design services? Our visually compelling designs capture attention and elevate your brand’s presence. Stand out in a competitive market with us.",
         serviceDescription: [
             "In an era where visual content dominates, your brand needs more than just a good look. It needs a compelling story, conveyed through meticulously crafted design elements that resonate with your audience.",
             "Our team of experts focuses on creating designs that reflect your brand's values and identity, making your brand relatable and unforgettable. From logos to full-fledged branding packages, we ensure every detail is perfect."

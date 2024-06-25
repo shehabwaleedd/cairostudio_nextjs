@@ -1,12 +1,22 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "./style.module.scss"
 import getChars from '../../animations/animatedHeaders/getChars'
 import Link from 'next/link'
 import data from "@/components/workedWith/WorkedWithData"
 import { TransitionLink } from '../transitionLink'
+import { getCalApi } from "@calcom/embed-react";
+
 import Upper from '../upper'
 const Home = () => {
+
+    useEffect(() => {
+        (async function () {
+            const cal = await getCalApi({});
+            cal("ui", { "styles": { "branding": { "brandColor": "#ff4b26" } }, "hideEventTypeDetails": false, "layout": "month_view" });
+        })();
+    }, [])
+
 
     return (
         <section className={styles.home}>
@@ -40,7 +50,7 @@ const Home = () => {
                         </span>
                     </div>
                     <div className={styles.lower__callToActionsBtns}>
-                        <Link className={styles.schedule} href="https://calendly.com/hello-cairo-studio/30min" target="_blank" rel="noopener noreferrer"> Schedule A brief </Link>
+                        <button style={{backgroundColor: "var(--accent-color)", color: "var(--title-color)"}} data-cal-namespace=""data-cal-link="cairostudio/30min" data-cal-config='{"layout":"month_view"}'>Brief a schedule</button>
                         <TransitionLink href="/contact" label="Contact Us" />
                     </div>
                 </div>

@@ -1,9 +1,8 @@
-// ServicesSplit.tsx
 'use client'
 import React, { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './aboutServices.scss';
+import styles from './style.module.scss';
 import { Project } from '@/types/interface';
 
 interface ServicesSplitProps {
@@ -16,18 +15,17 @@ const ServicesSplit: React.FC<ServicesSplitProps> = ({ data }) => {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const details = gsap.utils.toArray<HTMLElement>('.aboutServicesCo__right_content_section:not(:first-child)');
-        const photos = gsap.utils.toArray<HTMLElement>('.aboutServicesCo__left_container_details:not(:first-child)');
+        const details = gsap.utils.toArray<HTMLElement>(`.${styles.aboutServices__container__right_content_section}:not(:first-child)`);
+        const photos = gsap.utils.toArray<HTMLElement>(`.${styles.aboutServices__container__left_container_details}:not(:first-child)`);
         gsap.set(photos, { yPercent: 101 });
-        const allPhotos = gsap.utils.toArray<HTMLElement>('.aboutServicesCo__left_container_details');
+        const allPhotos = gsap.utils.toArray<HTMLElement>(`.${styles.aboutServices__container__left_container_details}`);
 
         details.forEach((detail, index) => {
-            const headline = detail.querySelector('h2') as HTMLElement;
+            const headline = detail.querySelector('span') as HTMLElement;
             const animation = gsap.timeline({
                 defaults: { ease: "power2.inOut" }
             })
                 .fromTo(photos[index], { yPercent: 101 }, { yPercent: 0, duration: 1.5 })
-                .from(headline, { scale: 0.8, autoAlpha: 0, duration: 1 }, "-=1")
                 .set(allPhotos[index], { autoAlpha: 0 });
 
             ScrollTrigger.create({
@@ -41,15 +39,15 @@ const ServicesSplit: React.FC<ServicesSplitProps> = ({ data }) => {
     }, [data]);
 
     return (
-        <section className="aboutServices">
-            <div className="aboutServices__container" ref={containerRef}>
-                <div className="aboutServicesCo__right">
-                    <div className="aboutServicesCo__right_content">
+        <section className={styles.aboutServices}>
+            <div className={styles.aboutServices__container} ref={containerRef}>
+                <div className={styles.aboutServices__container__right}>
+                    <div className={styles.aboutServices__container__right_content}>
                         {data.map((item: Project) => (
-                            <div key={item.id} className="aboutServicesCo__right_content_section">
-                                <h2 ref={(el) => { item.headline = el; }}>- 0{item.id}</h2>
+                            <div key={item.id} className={styles.aboutServices__container__right_content_section}>
+                                <span ref={(el) => { item.headline = el; }}>- 0{item.id}</span>
                                 {item.elements.map((element, index) => (
-                                    <div key={index} className="aboutServices__details_container">
+                                    <div key={index} className={styles.aboutServices__details_container}>
                                         <AnimatedText>{element.text}</AnimatedText>
                                     </div>
                                 ))}
@@ -57,11 +55,11 @@ const ServicesSplit: React.FC<ServicesSplitProps> = ({ data }) => {
                         ))}
                     </div>
                 </div>
-                <div className="aboutServicesCo__left">
-                    <div className="aboutServicesCo__left_container">
+                <div className={styles.aboutServices__container__left}>
+                    <div className={styles.aboutServices__container__left_container}>
                         {data.map((item: Project) => (
-                            <div key={item.id} className="aboutServicesCo__left_container_details">
-                                <h3>{item.title}</h3>
+                            <div key={item.id} className={styles.aboutServices__container__left_container_details}>
+                                <h2>{item.title}</h2>
                             </div>
                         ))}
                     </div>
@@ -100,5 +98,5 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children }) => {
         );
     }, []);
 
-    return <p ref={text}>{children}</p>
+    return <h3 ref={text}>{children}</h3>
 };

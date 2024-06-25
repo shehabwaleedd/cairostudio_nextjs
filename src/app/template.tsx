@@ -1,14 +1,14 @@
 'use client'
 import { useEffect } from "react";
-import { animatePageIn } from "@/animations/animatePageOut"
-import getChars from "@/animations/animatedHeaders/getChars";
+import { animatePageOut } from "@/animations/animatePageOut"
 import styles from "./page.module.scss";
 import { usePathname } from "next/navigation";
+import AnimatedSpans from "@/animations/animatedSpans";
 
 export default function Template({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
     useEffect(() => {
-        animatePageIn();
+        animatePageOut();
     }, [pathname]);
 
 
@@ -17,7 +17,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
             <div id="banner-1" className={styles.banner1}></div>
             <div id="text-animation" className={styles.textAnimation}>
                 <div>
-                    {getChars("Cairo Studio")}
+                    <AnimatedSpans word="Cairo Studio" />
                 </div>
             </div>
             {children}

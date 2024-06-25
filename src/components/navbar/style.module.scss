@@ -10,10 +10,10 @@
     width: 100%;
     overflow: hidden;
     transition: var(--animation-primary);
-    z-index: 999999999;
+    z-index: 999;
     user-select: none;
     mix-blend-mode: difference;
-
+    
     @media (max-width: 900px) {
         background-color: var(--background-color);
         mix-blend-mode: normal;

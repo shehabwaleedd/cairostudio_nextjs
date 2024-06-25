@@ -10,6 +10,7 @@ const ServicesList = dynamic(() => import('@/components/ServicesList'));
 const WorkedWith = dynamic(() => import('@/components/workedWith'));
 const Perpective = dynamic(() => import('@/components/perpective/Perpective'));
 import Upper from '@/components/upper';
+import Zoom from '@/components/zoom';
 
 const HomePage: React.FC = () => {
   return (
@@ -21,9 +22,11 @@ const HomePage: React.FC = () => {
       <ServicesList p2="04" />
       <Upper p1="Snippets" p2="05" />
       <Perpective />
+      <Upper p1="What We Offer" p2="06" />
+      <Zoom />
       <TextMask />
-      <Upper p1="Worked With" p2="06" />
-      <WorkedWith Data={FaqsData} />
+      <Upper p1="Worked With" p2="07" />
+    <WorkedWith Data={FaqsData} />
     </main >
   );
 }

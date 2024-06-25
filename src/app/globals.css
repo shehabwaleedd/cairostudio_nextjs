@@ -8,18 +8,19 @@
   --heavy-font-weight: 900;
   --semi-bold-font-weight: 600;
   --gfs: 14.4;
-  --xxl-header-font-size: calc(128 / var(--gfs) * 1rem);  
-  --xl-header-font-size: calc(112 / var(--gfs) * 1rem);   
-  --header-font-size: calc(96 / var(--gfs) * 1rem);       
-  --large-title-font-size: calc(72 / var(--gfs) * 1rem);  
-  --title-font-size: calc(64 / var(--gfs) * 1rem);        
-  --subtitle-font-size: calc(48 / var(--gfs) * 1rem);     
-  --large-text-font-size: calc(32 / var(--gfs) * 1rem);   
-  --normal-font-size: calc(16 / var(--gfs) * 1rem);       
+  --xxl-header-font-size: calc(128 / var(--gfs) * 1rem);
+  --xl-header-font-size: calc(112 / var(--gfs) * 1rem);
+  --header-font-size: calc(96 / var(--gfs) * 1rem);
+  --large-title-font-size: calc(72 / var(--gfs) * 1rem);
+  --title-font-size: calc(64 / var(--gfs) * 1rem);
+  --subtitle-font-size: calc(48 / var(--gfs) * 1rem);
+  --large-text-font-size: calc(32 / var(--gfs) * 1rem);
+  --normal-font-size: calc(16 / var(--gfs) * 1rem);
   --small-font-size: calc(12 / var(--gfs) * 1rem);
   --caption-font-size: calc(10 / var(--gfs) * 1rem);
-  --xxs-text-font-size: calc(8 / var(--gfs) * 1rem); 
+  --xxs-text-font-size: calc(8 / var(--gfs) * 1rem);
   --animation-primary: 0.4s cubic-bezier(0.5, 0.75, 0, 1);
+  --accent-color: #ff4b26;
 
 }
 
@@ -27,12 +28,10 @@
   --container-color: #242322;
   --title-color: #242322;
   --subtitle-color: #8a8a8a;
-  --accent-color: #ff4b26;
   --background-color: #fdefe0;
   --color-number: #999;
   --border-color: #eae4d8;
   --opposite-color: #fff;
-  background-color: var(--background-color)
 
 }
 
@@ -40,13 +39,18 @@
   --container-color: #f1dbb2;
   --title-color: #f1dbb2;
   --subtitle-color: #9c9485;
-  --accent-color: #ff3911;
   --background-color: #131313;
   --border-color: #fdefe0;
   --menu-text-color: #fff;
   --opposite-color: #f1dbb2;
+}
 
-  background-color: var(--background-color)
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
 
@@ -198,6 +202,7 @@ h4,
 h5,
 h6,
 p,
-span, li {
+span,
+li {
   color: var(--title-color);
 }
