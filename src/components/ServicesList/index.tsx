@@ -3,6 +3,7 @@ import styles from './style.module.scss';
 import { getDataWithBlur } from '@/lib/getDataWithBlur';
 import Card from './card';
 import Upper from '@/components/upper';
+import { TransitionCard } from '../transitionLink';
 
 export interface ProjectData {
     title: string;
